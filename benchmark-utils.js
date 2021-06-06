@@ -1,3 +1,7 @@
+/**
+ * @param max
+ * @param min
+ */
 function generateRandomInteger (max, min = 0) {
   if (min) {
     return Math.floor(Math.random() * (max - min + 1) + min)

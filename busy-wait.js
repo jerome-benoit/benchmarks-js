@@ -5,11 +5,18 @@ const suite = new Benchmark.Suite()
 
 const timeout = 2000
 
+/**
+ * @param timeoutMs
+ */
 function dummyTimeoutBusyWait (timeoutMs) {
   const timeoutDateMs = Date.now() + timeoutMs
   do {} while (Date.now() < timeoutDateMs)
 }
 
+/**
+ * @param timeoutMs
+ * @param delayMs
+ */
 function setIntervalTimeoutBusyWait (timeoutMs, delayMs = 200) {
   const tries = Math.round(timeoutMs / delayMs)
   let count = 0

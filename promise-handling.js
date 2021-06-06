@@ -3,10 +3,16 @@ const { LIST_FORMATTER } = require('./benchmark-utils')
 
 const suite = new Benchmark.Suite()
 
+/**
+ *
+ */
 function promise () {
   return new Promise()
 }
 
+/**
+ *
+ */
 async function asyncFunction () {
   await promise()
 }

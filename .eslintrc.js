@@ -1,4 +1,4 @@
-// @ts-check
+// eslint-disable-next-line node/no-unpublished-require
 const { defineConfig } = require('eslint-define-config')
 
 module.exports = defineConfig({
@@ -10,6 +10,8 @@ module.exports = defineConfig({
   extends: [
     'standard',
     'eslint:recommended',
+    'plugin:node/recommended',
+    'plugin:jsdoc/recommended',
     'plugin:import/recommended',
     'plugin:promise/recommended',
     'plugin:prettierx/standardx'
