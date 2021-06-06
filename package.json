@@ -10,6 +10,7 @@
     "benchmark:busy-wait": "node busy-wait.js",
     "benchmark:quick-select": "node quick-select.js",
     "benchmark:promise-handling": "node promise-handling.js",
+    "benchmark:fibonacci": "node fibonacci.js",
     "format": "prettier --loglevel silent --write .; prettierx --write .",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

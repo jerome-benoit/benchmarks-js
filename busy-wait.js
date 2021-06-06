@@ -1,5 +1,5 @@
 const Benchmark = require('benchmark')
-const { LIST_FORMATTER } = require('./benchmark-utils')
+const { LIST_FORMATTER, sleep } = require('./benchmark-utils')
 
 const suite = new Benchmark.Suite()
 
@@ -9,8 +9,21 @@ const timeout = 2000
  * @param timeoutMs
  */
 function dummyTimeoutBusyWait (timeoutMs) {
-  const timeoutDateMs = Date.now() + timeoutMs
-  do {} while (Date.now() < timeoutDateMs)
+  const timeoutTimestampMs = Date.now() + timeoutMs
+  do {} while (Date.now() < timeoutTimestampMs)
+}
+
+/**
+ * @param timeoutMs
+ * @param delayMs
+ */
+async function divideAndConquerTimeoutBusyWait (timeoutMs, delayMs = 200) {
+  const tries = Math.round(timeoutMs / delayMs)
+  let count = 0
+  do {
+    count++
+    await sleep(delayMs)
+  } while (count <= tries)
 }
 
 /**
@@ -31,6 +44,9 @@ function setIntervalTimeoutBusyWait (timeoutMs, delayMs = 200) {
 suite
   .add('dummyTimeoutBusyWait', function () {
     dummyTimeoutBusyWait(timeout)
+  })
+  .add('divideAndConquerTimeoutBusyWait', async function () {
+    await divideAndConquerTimeoutBusyWait(timeout)
   })
   .add('setIntervalTimeoutBusyWait', function () {
     setIntervalTimeoutBusyWait(timeout)
