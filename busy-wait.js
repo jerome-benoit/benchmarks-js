@@ -15,30 +15,30 @@ function dummyTimeoutBusyWait (timeoutMs) {
 
 /**
  * @param timeoutMs
- * @param delayMs
+ * @param intervalMs
  */
-async function divideAndConquerTimeoutBusyWait (timeoutMs, delayMs = 200) {
-  const tries = Math.round(timeoutMs / delayMs)
+async function divideAndConquerTimeoutBusyWait (timeoutMs, intervalMs = 200) {
+  const tries = Math.round(timeoutMs / intervalMs)
   let count = 0
   do {
     count++
-    await sleep(delayMs)
+    await sleep(intervalMs)
   } while (count <= tries)
 }
 
 /**
  * @param timeoutMs
- * @param delayMs
+ * @param intervalMs
  */
-function setIntervalTimeoutBusyWait (timeoutMs, delayMs = 200) {
-  const tries = Math.round(timeoutMs / delayMs)
+function setIntervalTimeoutBusyWait (timeoutMs, intervalMs = 200) {
+  const tries = Math.round(timeoutMs / intervalMs)
   let count = 0
   const triesSetInterval = setInterval(() => {
     count++
     if (count === tries) {
       clearInterval(triesSetInterval)
     }
-  }, delayMs)
+  }, intervalMs)
 }
 
 suite
