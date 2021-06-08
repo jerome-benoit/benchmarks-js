@@ -9,6 +9,14 @@ const interval = 1000
 /**
  * @param timeoutMs
  */
+function dummyTimeoutBusyWait (timeoutMs) {
+  const timeoutTimestampMs = Date.now() + timeoutMs
+  do {} while (Date.now() < timeoutTimestampMs)
+}
+
+/**
+ * @param timeoutMs
+ */
 async function sleepTimeoutBusyWait (timeoutMs) {
   const timeoutTimestampMs = Date.now() + timeoutMs
   do {
@@ -48,6 +56,9 @@ function setIntervalTimeoutBusyWait (timeoutMs, intervalMs = interval) {
 }
 
 suite
+  .add('dummyTimeoutBusyWait', function () {
+    dummyTimeoutBusyWait(timeout)
+  })
   .add('sleepTimeoutBusyWait', async function () {
     sleepTimeoutBusyWait(timeout)
   })
