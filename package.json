@@ -11,6 +11,7 @@
     "benchmark:quick-select": "node quick-select.js",
     "benchmark:promise-handling": "node promise-handling.js",
     "benchmark:fibonacci": "node fibonacci.js",
+    "benchmark:random": "node random.js",
     "format": "prettier --loglevel silent --write .; prettierx --write .",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
