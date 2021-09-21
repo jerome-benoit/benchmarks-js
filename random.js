@@ -1,17 +1,9 @@
 const Benchmark = require('benchmark')
-const crypto = require('crypto')
-const { LIST_FORMATTER } = require('./benchmark-utils')
+const { LIST_FORMATTER, secureRandom } = require('./benchmark-utils')
 
 const suite = new Benchmark.Suite()
 
 const maximum = 1000
-
-/**
- *
- */
-function secureRandom () {
-  return crypto.randomBytes(4).readUInt32LE() / 0x100000000
-}
 
 /**
  * @param max
