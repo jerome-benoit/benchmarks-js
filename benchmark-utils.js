@@ -1,12 +1,31 @@
+const crypto = require('crypto')
+
+/**
+ * Generate a cryptographically secure random number in the [0,1[ range
+ *
+ * @returns
+ */
+function secureRandom () {
+  return crypto.randomBytes(4).readUInt32LE() / 0x100000000
+}
+
 /**
  * @param max
  * @param min
  */
 function generateRandomInteger (max, min = 0) {
-  if (min) {
-    return Math.floor(Math.random() * (max - min + 1) + min)
+  if (max < 0) {
+    throw new RangeError('Invalid interval')
   }
-  return Math.floor(Math.random() * max + 1)
+  max = Math.floor(max)
+  if (min) {
+    if (max < min || min < 0) {
+      throw new RangeError('Invalid interval')
+    }
+    min = Math.ceil(min)
+    return Math.floor(secureRandom() * (max - min + 1)) + min
+  }
+  return Math.floor(secureRandom() * (max + 1))
 }
 
 /**
@@ -21,4 +40,4 @@ const LIST_FORMATTER = new Intl.ListFormat('en-US', {
   type: 'conjunction'
 })
 
-module.exports = { generateRandomInteger, sleep, LIST_FORMATTER }
+module.exports = { generateRandomInteger, sleep, secureRandom, LIST_FORMATTER }
