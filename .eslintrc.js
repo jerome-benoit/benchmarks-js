@@ -1,10 +1,16 @@
+// @ts-check
 // eslint-disable-next-line n/no-unpublished-require
 const { defineConfig } = require('eslint-define-config')
 
 module.exports = defineConfig({
+  root: true,
   env: {
     es2021: true,
     node: true
+  },
+  parserOptions: {
+    ecmaVersion: 2021,
+    sourceType: 'module'
   },
   plugins: ['promise', 'prettierx', 'jsdoc'],
   extends: [
