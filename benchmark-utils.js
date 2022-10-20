@@ -12,6 +12,7 @@ function secureRandom () {
 /**
  * @param max
  * @param min
+ * @returns
  */
 function generateRandomInteger (max, min = 0) {
   if (max < 0) {
@@ -30,6 +31,7 @@ function generateRandomInteger (max, min = 0) {
 
 /**
  * @param ms
+ * @returns
  */
 async function sleep (ms) {
   return new Promise(resolve => setTimeout(resolve, ms))

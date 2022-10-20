@@ -7,6 +7,7 @@ const number = 30
 
 /**
  * @param num
+ * @returns
  */
 function fibonacciLoop (num) {
   let a = 1
@@ -25,6 +26,7 @@ function fibonacciLoop (num) {
 
 /**
  * @param num
+ * @returns
  */
 function fibonacciRecursion (num) {
   if (num <= 1) return 1
@@ -35,6 +37,7 @@ function fibonacciRecursion (num) {
 /**
  * @param num
  * @param memo
+ * @returns
  */
 function fibonacciRecursionMemoization (num, memo) {
   memo = memo || {}
@@ -64,7 +67,7 @@ suite
     console.log(
       'Fastest is ' + LIST_FORMATTER.format(this.filter('fastest').map('name'))
     )
-    // eslint-disable-next-line no-process-exit
+    // eslint-disable-next-line n/no-process-exit
     process.exit()
   })
   .run()

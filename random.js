@@ -8,6 +8,7 @@ const maximum = 1000
 /**
  * @param max
  * @param min
+ * @returns
  */
 function getSecureRandomInteger (max, min = 0) {
   max = Math.floor(max)
@@ -21,6 +22,7 @@ function getSecureRandomInteger (max, min = 0) {
 /**
  * @param max
  * @param min
+ * @returns
  */
 function getRandomInteger (max, min = 0) {
   max = Math.floor(max)
@@ -45,7 +47,7 @@ suite
     console.log(
       'Fastest is ' + LIST_FORMATTER.format(this.filter('fastest').map('name'))
     )
-    // eslint-disable-next-line no-process-exit
+    // eslint-disable-next-line n/no-process-exit
     process.exit()
   })
   .run()
