@@ -57,19 +57,19 @@ function setIntervalTimeoutBusyWait (timeoutMs, intervalMs = interval) {
 }
 
 suite
-  .add('dummyTimeoutBusyWait', function () {
+  .add('dummyTimeoutBusyWait', () => {
     dummyTimeoutBusyWait(timeout)
   })
-  .add('sleepTimeoutBusyWait', async function () {
+  .add('sleepTimeoutBusyWait', async () => {
     sleepTimeoutBusyWait(timeout)
   })
-  .add('divideAndConquerTimeoutBusyWait', async function () {
+  .add('divideAndConquerTimeoutBusyWait', async () => {
     await divideAndConquerTimeoutBusyWait(timeout)
   })
-  .add('setIntervalTimeoutBusyWait', function () {
+  .add('setIntervalTimeoutBusyWait', () => {
     setIntervalTimeoutBusyWait(timeout)
   })
-  .on('cycle', function (event) {
+  .on('cycle', event => {
     console.log(event.target.toString())
   })
   .on('complete', function () {

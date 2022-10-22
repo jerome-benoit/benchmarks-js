@@ -51,16 +51,16 @@ function fibonacciRecursionMemoization (num, memo) {
 }
 
 suite
-  .add('fibonacciLoop', function () {
+  .add('fibonacciLoop', () => {
     fibonacciLoop(number)
   })
-  .add('fibonacciRecursion', function () {
+  .add('fibonacciRecursion', () => {
     fibonacciRecursion(number)
   })
-  .add('fibonacciRecursionMemoization', function () {
+  .add('fibonacciRecursionMemoization', () => {
     fibonacciRecursionMemoization(number)
   })
-  .on('cycle', function (event) {
+  .on('cycle', event => {
     console.log(event.target.toString())
   })
   .on('complete', function () {
