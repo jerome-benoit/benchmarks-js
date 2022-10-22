@@ -12,15 +12,14 @@ module.exports = defineConfig({
     ecmaVersion: 2021,
     sourceType: 'module'
   },
-  plugins: ['promise', 'prettierx', 'jsdoc'],
+  plugins: ['promise', 'jsdoc'],
   extends: [
     'standard',
     'eslint:recommended',
     'plugin:n/recommended',
     'plugin:jsdoc/recommended',
     'plugin:import/recommended',
-    'plugin:promise/recommended',
-    'plugin:prettierx/standardx'
+    'plugin:promise/recommended'
   ],
   rules: {
     'sort-imports': [
