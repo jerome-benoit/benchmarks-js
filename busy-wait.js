@@ -61,7 +61,7 @@ suite
     dummyTimeoutBusyWait(timeout)
   })
   .add('sleepTimeoutBusyWait', async () => {
-    sleepTimeoutBusyWait(timeout)
+    await sleepTimeoutBusyWait(timeout)
   })
   .add('divideAndConquerTimeoutBusyWait', async () => {
     await divideAndConquerTimeoutBusyWait(timeout)

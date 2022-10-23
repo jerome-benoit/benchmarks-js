@@ -30,6 +30,19 @@ function generateRandomInteger (max, min = 0) {
 }
 
 /**
+ *
+ * @param size
+ * @param max
+ */
+function generateRandomIntegerArray (size, max = Number.MAX_SAFE_INTEGER) {
+  const integerArray = []
+  for (let i = 0; i < size; i++) {
+    integerArray.push(generateRandomInteger(max))
+  }
+  return integerArray
+}
+
+/**
  * @param ms
  * @returns
  */
@@ -42,4 +55,10 @@ const LIST_FORMATTER = new Intl.ListFormat('en-US', {
   type: 'conjunction'
 })
 
-module.exports = { generateRandomInteger, sleep, secureRandom, LIST_FORMATTER }
+module.exports = {
+  generateRandomInteger,
+  generateRandomIntegerArray,
+  sleep,
+  secureRandom,
+  LIST_FORMATTER
+}
