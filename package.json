@@ -11,6 +11,7 @@
     "benchmark:busy-wait": "node busy-wait.js",
     "benchmark:empty-array": "node empty-array.js",
     "benchmark:quick-select": "node quick-select.js",
+    "benchmark:max": "node max.js",
     "benchmark:promise-handling": "node promise-handling.js",
     "benchmark:fibonacci": "node fibonacci.js",
     "benchmark:random": "node random.js",
@@ -23,6 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "benchmark": "^2.1.4",
+    "benny": "^3.7.1",
     "microtime": "^3.1.1"
   },
   "devDependencies": {
