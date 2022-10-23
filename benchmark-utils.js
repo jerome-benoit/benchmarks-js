@@ -14,7 +14,7 @@ function secureRandom () {
  * @param min
  * @returns
  */
-function generateRandomInteger (max, min = 0) {
+function generateRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
   if (max < 0) {
     throw new RangeError('Invalid interval')
   }
