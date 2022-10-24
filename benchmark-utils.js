@@ -69,16 +69,10 @@ async function sleep (ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
-const LIST_FORMATTER = new Intl.ListFormat('en-US', {
-  style: 'long',
-  type: 'conjunction'
-})
-
 module.exports = {
   generateRandomInteger,
   generateRandomFloat,
   generateRandomNumberArray,
   sleep,
-  secureRandom,
-  LIST_FORMATTER
+  secureRandom
 }
