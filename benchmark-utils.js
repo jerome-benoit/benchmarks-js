@@ -15,18 +15,31 @@ function secureRandom () {
  * @returns
  */
 function generateRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
-  if (max < 0) {
+  if (max < min || max < 0 || min < 0) {
     throw new RangeError('Invalid interval')
   }
   max = Math.floor(max)
   if (min != null && min !== 0) {
-    if (max < min || min < 0) {
-      throw new RangeError('Invalid interval')
-    }
     min = Math.ceil(min)
     return Math.floor(secureRandom() * (max - min + 1)) + min
   }
   return Math.floor(secureRandom() * (max + 1))
+}
+
+/**
+ *
+ * @param max
+ * @param min
+ * @param negative
+ * @returns
+ */
+function generateRandomFloat (max = Number.MAX_VALUE, min = 0, negative = true) {
+  if (max < min || max < 0 || min < 0) {
+    throw new RangeError('Invalid interval')
+  }
+  const randomPositiveFloat = crypto.randomBytes(4).readUInt32LE() / 0xffffffff
+  const sign = negative && randomPositiveFloat < 0.5 ? -1 : 1
+  return sign * (randomPositiveFloat * (max - min) + min)
 }
 
 /**
@@ -46,22 +59,6 @@ function generateRandomNumberArray (
     array.push(numberGenerator(max))
   }
   return array
-}
-
-/**
- *
- * @param max
- * @param min
- * @param negative
- * @returns
- */
-function generateRandomFloat (max = Number.MAX_VALUE, min = 0, negative = true) {
-  if (max < min || min < 0 || max < 0) {
-    throw new RangeError('Invalid interval')
-  }
-  const randomPositiveFloat = crypto.randomBytes(4).readUInt32LE() / 0xffffffff
-  const sign = negative && randomPositiveFloat < 0.5 ? -1 : 1
-  return sign * (randomPositiveFloat * (max - min) + min)
 }
 
 /**
