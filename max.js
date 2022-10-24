@@ -6,6 +6,7 @@ const testArray = generateRandomNumberArray(10000)
 /**
  *
  * @param values
+ * @returns
  */
 function loopMax (values) {
   let max = -Infinity
@@ -18,6 +19,7 @@ function loopMax (values) {
 /**
  *
  * @param values
+ * @returns
  */
 function reduceTernaryMax (values) {
   return values.reduce((a, b) => (a > b ? a : b), -Infinity)
@@ -26,6 +28,7 @@ function reduceTernaryMax (values) {
 /**
  *
  * @param values
+ * @returns
  */
 function reduceMathMax (values) {
   return values.reduce((a, b) => Math.max(a, b), -Infinity)
@@ -34,6 +37,7 @@ function reduceMathMax (values) {
 /**
  *
  * @param values
+ * @returns
  */
 function sortMax (values) {
   return values.sort((a, b) => b - a)[0]
