@@ -41,6 +41,19 @@ Benchmark.suite(
   }),
   Benchmark.cycle(),
   Benchmark.complete(),
-  Benchmark.save({ file: 'random-integer-generator', format: 'chart.html' }),
-  Benchmark.save({ file: 'random-integer-generator', format: 'table.html' })
+  Benchmark.save({
+    file: 'random-integer-generator',
+    format: 'json',
+    details: true
+  }),
+  Benchmark.save({
+    file: 'random-integer-generator',
+    format: 'chart.html',
+    details: true
+  }),
+  Benchmark.save({
+    file: 'random-integer-generator',
+    format: 'table.html',
+    details: true
+  })
 )

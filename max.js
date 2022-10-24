@@ -50,7 +50,7 @@ Benchmark.suite(
   Benchmark.add('reduceTernaryMax', () => {
     reduceTernaryMax(testArray)
   }),
-  Benchmark.add('reduceMathMax', () => {
+  Benchmark.add('reduceMath.max', () => {
     reduceMathMax(testArray)
   }),
   Benchmark.add('sortMax', () => {
@@ -58,6 +58,7 @@ Benchmark.suite(
   }),
   Benchmark.cycle(),
   Benchmark.complete(),
-  Benchmark.save({ file: 'max', format: 'chart.html' }),
-  Benchmark.save({ file: 'max', format: 'table.html' })
+  Benchmark.save({ file: 'max', format: 'json', details: true }),
+  Benchmark.save({ file: 'max', format: 'chart.html', details: true }),
+  Benchmark.save({ file: 'max', format: 'table.html', details: true })
 )

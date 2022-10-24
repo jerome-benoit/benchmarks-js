@@ -26,6 +26,7 @@ Benchmark.suite(
   }),
   Benchmark.cycle(),
   Benchmark.complete(),
-  Benchmark.save({ file: 'empty-array', format: 'chart.html' }),
-  Benchmark.save({ file: 'empty-array', format: 'table.html' })
+  Benchmark.save({ file: 'empty-array', format: 'json', details: true }),
+  Benchmark.save({ file: 'empty-array', format: 'chart.html', details: true }),
+  Benchmark.save({ file: 'empty-array', format: 'table.html', details: true })
 )
