@@ -15,6 +15,7 @@
     "benchmark:promise-handling": "node promise-handling.js",
     "benchmark:fibonacci": "node fibonacci.js",
     "benchmark:random": "node random.js",
+    "benchmark:uuid-generator": "node uuid-generator.js",
     "format": "prettier . --write; standard . --fix",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --cache --fix",
@@ -25,7 +26,9 @@
   "dependencies": {
     "benchmark": "^2.1.4",
     "benny": "^3.7.1",
-    "microtime": "^3.1.1"
+    "microtime": "^3.1.1",
+    "uuid": "^9.0.0",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {
     "eslint": "^8.26.0",
