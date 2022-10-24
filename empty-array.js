@@ -1,7 +1,7 @@
 const Benchmark = require('benny')
-const { generateRandomIntegerArray } = require('./benchmark-utils')
+const { generateRandomNumberArray } = require('./benchmark-utils')
 
-let testArray = generateRandomIntegerArray(10000)
+let testArray = generateRandomNumberArray(10000)
 
 Benchmark.suite(
   'Empty array',

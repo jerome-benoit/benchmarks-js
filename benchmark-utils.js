@@ -33,13 +33,33 @@ function generateRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
  *
  * @param size
  * @param max
+ * @param numberGenerator
  */
-function generateRandomIntegerArray (size, max = Number.MAX_SAFE_INTEGER) {
-  const integerArray = []
+function generateRandomNumberArray (
+  size,
+  max = Number.MAX_VALUE,
+  numberGenerator = generateRandomFloat
+) {
+  const array = []
   for (let i = 0; i < size; i++) {
-    integerArray.push(generateRandomInteger(max))
+    array.push(numberGenerator(max))
   }
-  return integerArray
+  return array
+}
+
+/**
+ *
+ * @param max
+ * @param min
+ * @param negative
+ */
+function generateRandomFloat (max = Number.MAX_VALUE, min = 0, negative = true) {
+  if (max < min || min < 0 || max < 0) {
+    throw new RangeError('Invalid interval')
+  }
+  const randomPositiveFloat = crypto.randomBytes(4).readUInt32LE() / 0xffffffff
+  const sign = negative && randomPositiveFloat < 0.5 ? -1 : 1
+  return sign * (randomPositiveFloat * (max - min) + min)
 }
 
 /**
@@ -57,7 +77,8 @@ const LIST_FORMATTER = new Intl.ListFormat('en-US', {
 
 module.exports = {
   generateRandomInteger,
-  generateRandomIntegerArray,
+  generateRandomFloat,
+  generateRandomNumberArray,
   sleep,
   secureRandom,
   LIST_FORMATTER

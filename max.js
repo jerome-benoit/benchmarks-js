@@ -1,7 +1,7 @@
 const Benchmark = require('benny')
-const { generateRandomIntegerArray } = require('./benchmark-utils')
+const { generateRandomNumberArray } = require('./benchmark-utils')
 
-const testArray = generateRandomIntegerArray(10000)
+const testArray = generateRandomNumberArray(10000)
 
 /**
  *
