@@ -10,7 +10,7 @@ const maximum = Number.MAX_SAFE_INTEGER
  */
 function getSecureRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
   max = Math.floor(max)
-  if (min) {
+  if (min != null && min !== 0) {
     min = Math.ceil(min)
     return Math.floor(secureRandom() * (max - min + 1)) + min
   }
@@ -24,7 +24,7 @@ function getSecureRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
  */
 function getRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
   max = Math.floor(max)
-  if (min) {
+  if (min != null && min !== 0) {
     min = Math.ceil(min)
     return Math.floor(Math.random() * (max - min + 1)) + min
   }
