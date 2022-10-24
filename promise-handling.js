@@ -18,13 +18,13 @@ async function asyncFunction () {
 }
 
 suite
-  .add('await promise', async function () {
+  .add('await promise', async () => {
     await asyncFunction()
   })
-  .add('promise', function () {
+  .add('promise', () => {
     asyncFunction()
   })
-  .on('cycle', function (event) {
+  .on('cycle', event => {
     console.log(event.target.toString())
   })
   .on('complete', function () {

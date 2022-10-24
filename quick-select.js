@@ -1,7 +1,5 @@
-const Benchmark = require('benchmark')
-const { generateRandomInteger, LIST_FORMATTER } = require('./benchmark-utils')
-
-const suite = new Benchmark.Suite()
+const Benchmark = require('benny')
+const { generateRandomInteger } = require('./benchmark-utils')
 
 /**
  * @param numberOfWorkers
@@ -229,41 +227,41 @@ function quickSelectRecursionRandomPivot (tasksMap) {
   )
 }
 
-// console.log(Array.from(tasksMap))
-// console.log(loopSelect(tasksMap))
-// console.log(arraySortSelect(tasksMap))
-// console.log(quickSelectLoop(tasksMap))
-// console.log(quickSelectLoopRandomPivot(tasksMap))
-// console.log(quickSelectRecursion(tasksMap))
-// console.log(quickSelectRecursionRandomPivot(tasksMap))
-
-suite
-  .add('Loop select', function () {
+Benchmark.suite(
+  'Quick select',
+  Benchmark.add('Loop select', () => {
     loopSelect(tasksMap)
-  })
-  .add('Array sort select', function () {
+  }),
+  Benchmark.add('Array sort select', () => {
     arraySortSelect(tasksMap)
-  })
-  .add('Quick select loop', function () {
+  }),
+  Benchmark.add('Quick select loop', () => {
     quickSelectLoop(tasksMap)
-  })
-  .add('Quick select loop with random pivot', function () {
+  }),
+  Benchmark.add('Quick select loop with random pivot', () => {
     quickSelectLoopRandomPivot(tasksMap)
-  })
-  .add('Quick select recursion', function () {
+  }),
+  Benchmark.add('Quick select recursion', () => {
     quickSelectRecursion(tasksMap)
-  })
-  .add('Quick select recursion with random pivot', function () {
+  }),
+  Benchmark.add('Quick select recursion with random pivot', () => {
     quickSelectRecursionRandomPivot(tasksMap)
+  }),
+  Benchmark.cycle(),
+  Benchmark.complete(),
+  Benchmark.save({
+    file: 'quick-select',
+    format: 'json',
+    details: true
+  }),
+  Benchmark.save({
+    file: 'quick-select',
+    format: 'chart.html',
+    details: true
+  }),
+  Benchmark.save({
+    file: 'quick-select',
+    format: 'table.html',
+    details: true
   })
-  .on('cycle', function (event) {
-    console.log(event.target.toString())
-  })
-  .on('complete', function () {
-    console.log(
-      'Fastest is ' + LIST_FORMATTER.format(this.filter('fastest').map('name'))
-    )
-    // eslint-disable-next-line n/no-process-exit
-    process.exit()
-  })
-  .run()
+)

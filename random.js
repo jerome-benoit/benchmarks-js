@@ -33,10 +33,10 @@ function getRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
 
 Benchmark.suite(
   'Random Integer Generator',
-  Benchmark.add('Secure random integer generator', function () {
+  Benchmark.add('Secure random integer generator', () => {
     getSecureRandomInteger(maximum)
   }),
-  Benchmark.add('Random integer generator', function () {
+  Benchmark.add('Random integer generator', () => {
     getRandomInteger(maximum)
   }),
   Benchmark.cycle(),
