@@ -1,7 +1,6 @@
 const Benchmark = require('benny')
 const crypto = require('crypto')
-const { v4: uuidv4 } = require('uuid')
-const { uuid } = require('uuidv4')
+const { v4: uuid } = require('uuid')
 
 Benchmark.suite(
   'UUIDv4 generator',
@@ -9,9 +8,6 @@ Benchmark.suite(
     crypto.randomUUID()
   }),
   Benchmark.add('uuid', () => {
-    uuidv4()
-  }),
-  Benchmark.add('uuidv4', () => {
     uuid()
   }),
   Benchmark.cycle(),

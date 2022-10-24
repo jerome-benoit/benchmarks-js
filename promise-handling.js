@@ -13,7 +13,7 @@ function promise () {
  *
  */
 async function asyncFunction () {
-  await promise()
+  return await promise()
 }
 
 Benchmark.suite(
