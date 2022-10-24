@@ -1,7 +1,5 @@
-const Benchmark = require('benchmark')
-const { LIST_FORMATTER, sleep } = require('./benchmark-utils')
-
-const suite = new Benchmark.Suite()
+const Benchmark = require('benny')
+const { sleep } = require('./benchmark-utils')
 
 const timeout = 2000
 const interval = 1000
@@ -56,27 +54,23 @@ function setIntervalTimeoutBusyWait (timeoutMs, intervalMs = interval) {
   }, intervalMs)
 }
 
-suite
-  .add('dummyTimeoutBusyWait', () => {
+Benchmark.suite(
+  'Busy wait',
+  Benchmark.add('dummyTimeoutBusyWait', () => {
     dummyTimeoutBusyWait(timeout)
-  })
-  .add('sleepTimeoutBusyWait', async () => {
+  }),
+  Benchmark.add('sleepTimeoutBusyWait', async () => {
     await sleepTimeoutBusyWait(timeout)
-  })
-  .add('divideAndConquerTimeoutBusyWait', async () => {
+  }),
+  Benchmark.add('divideAndConquerTimeoutBusyWait', async () => {
     await divideAndConquerTimeoutBusyWait(timeout)
-  })
-  .add('setIntervalTimeoutBusyWait', () => {
+  }),
+  Benchmark.add('setIntervalTimeoutBusyWait', () => {
     setIntervalTimeoutBusyWait(timeout)
-  })
-  .on('cycle', event => {
-    console.log(event.target.toString())
-  })
-  .on('complete', function () {
-    console.log(
-      'Fastest is ' + LIST_FORMATTER.format(this.filter('fastest').map('name'))
-    )
-    // eslint-disable-next-line n/no-process-exit
-    process.exit()
-  })
-  .run()
+  }),
+  Benchmark.cycle(),
+  Benchmark.complete(),
+  Benchmark.save({ file: 'busy-wait', format: 'json', details: true }),
+  Benchmark.save({ file: 'busy-wait', format: 'chart.html', details: true }),
+  Benchmark.save({ file: 'busy-wait', format: 'table.html', details: true })
+)

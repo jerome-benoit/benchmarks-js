@@ -1,7 +1,4 @@
-const Benchmark = require('benchmark')
-const { LIST_FORMATTER } = require('./benchmark-utils')
-
-const suite = new Benchmark.Suite()
+const Benchmark = require('benny')
 
 const number = 30
 
@@ -50,24 +47,20 @@ function fibonacciRecursionMemoization (num, memo) {
     fibonacciRecursionMemoization(num - 2, memo))
 }
 
-suite
-  .add('fibonacciLoop', () => {
+Benchmark.suite(
+  'Fibonacci',
+  Benchmark.add('fibonacciLoop', () => {
     fibonacciLoop(number)
-  })
-  .add('fibonacciRecursion', () => {
+  }),
+  Benchmark.add('fibonacciRecursion', () => {
     fibonacciRecursion(number)
-  })
-  .add('fibonacciRecursionMemoization', () => {
+  }),
+  Benchmark.add('fibonacciRecursionMemoization', () => {
     fibonacciRecursionMemoization(number)
-  })
-  .on('cycle', event => {
-    console.log(event.target.toString())
-  })
-  .on('complete', function () {
-    console.log(
-      'Fastest is ' + LIST_FORMATTER.format(this.filter('fastest').map('name'))
-    )
-    // eslint-disable-next-line n/no-process-exit
-    process.exit()
-  })
-  .run()
+  }),
+  Benchmark.cycle(),
+  Benchmark.complete(),
+  Benchmark.save({ file: 'fibonacci', format: 'json', details: true }),
+  Benchmark.save({ file: 'fibonacci', format: 'chart.html', details: true }),
+  Benchmark.save({ file: 'fibonacci', format: 'table.html', details: true })
+)
