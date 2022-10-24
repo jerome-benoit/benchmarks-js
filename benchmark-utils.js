@@ -34,6 +34,7 @@ function generateRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
  * @param size
  * @param max
  * @param numberGenerator
+ * @returns
  */
 function generateRandomNumberArray (
   size,
@@ -52,6 +53,7 @@ function generateRandomNumberArray (
  * @param max
  * @param min
  * @param negative
+ * @returns
  */
 function generateRandomFloat (max = Number.MAX_VALUE, min = 0, negative = true) {
   if (max < min || min < 0 || max < 0) {
