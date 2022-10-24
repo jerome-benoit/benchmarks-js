@@ -9,6 +9,9 @@ const maximum = Number.MAX_SAFE_INTEGER
  * @returns
  */
 function getSecureRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
+  if (max < min || max < 0 || min < 0) {
+    throw new RangeError('Invalid interval')
+  }
   max = Math.floor(max)
   if (min != null && min !== 0) {
     min = Math.ceil(min)
@@ -23,6 +26,9 @@ function getSecureRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
  * @returns
  */
 function getRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
+  if (max < min || max < 0 || min < 0) {
+    throw new RangeError('Invalid interval')
+  }
   max = Math.floor(max)
   if (min != null && min !== 0) {
     min = Math.ceil(min)
