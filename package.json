@@ -10,6 +10,7 @@
     "prepare": "node prepare.js",
     "benchmark:busy-wait": "node busy-wait.js",
     "benchmark:empty-array": "node empty-array.js",
+    "benchmark:empty-object": "node empty-object.js",
     "benchmark:quick-select": "node quick-select.js",
     "benchmark:max": "node max.js",
     "benchmark:promise-handling": "node promise-handling.js",
