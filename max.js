@@ -1,7 +1,8 @@
 const Benchmark = require('benny')
 const { generateRandomNumberArray } = require('./benchmark-utils')
 
-const testArray = generateRandomNumberArray(10000)
+const size = 10000
+const testArray = generateRandomNumberArray(size)
 
 /**
  *
@@ -44,7 +45,7 @@ function sortMax (values) {
 }
 
 Benchmark.suite(
-  'max',
+  `Max from ${size} numbers`,
   Benchmark.add('Math.max', () => {
     Math.max(...testArray)
   }),

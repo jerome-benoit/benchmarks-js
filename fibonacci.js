@@ -48,7 +48,7 @@ function fibonacciRecursionMemoization (num, memo) {
 }
 
 Benchmark.suite(
-  'Fibonacci',
+  `Fibonacci number ${number}`,
   Benchmark.add('fibonacciLoop', () => {
     fibonacciLoop(number)
   }),

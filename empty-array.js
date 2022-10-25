@@ -1,10 +1,11 @@
 const Benchmark = require('benny')
 const { generateRandomNumberArray } = require('./benchmark-utils')
 
-let testArray = generateRandomNumberArray(10000)
+const size = 10000
+let testArray = generateRandomNumberArray(size)
 
 Benchmark.suite(
-  'Empty array',
+  `Empty array with ${size} elements`,
   Benchmark.add('length = 0', () => {
     testArray.length = 0
   }),
