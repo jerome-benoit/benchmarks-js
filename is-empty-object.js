@@ -10,7 +10,7 @@ for (let i = 0; i < size; i++) {
 Benchmark.suite(
   `Is empty object with ${size} keys`,
   Benchmark.add('Reflect keys', (obj = testObject) => {
-    return Reflect.ownKeys(obj).length === 0 && obj.constructor === Object
+    return Reflect.ownKeys(obj).length === 0 && obj?.constructor === Object
   }),
   Benchmark.add('Keys iteration ', (obj = testObject) => {
     if (obj?.constructor !== Object) return false
@@ -21,7 +21,7 @@ Benchmark.suite(
     return true
   }),
   Benchmark.add('Object keys', (obj = testObject) => {
-    return obj.constructor === Object && !Object.keys(obj).length
+    return obj?.constructor === Object && !Object.keys(obj).length
   }),
   Benchmark.cycle(),
   Benchmark.complete(),
