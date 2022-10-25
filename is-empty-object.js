@@ -13,7 +13,7 @@ Benchmark.suite(
     return Reflect.ownKeys(obj).length === 0 && obj.constructor === Object
   }),
   Benchmark.add('Keys iteration ', (obj = testObject) => {
-    if (obj.constructor !== Object) return false
+    if (obj?.constructor !== Object) return false
     // Iterates over the keys of an object, if
     // any exist, return false.
     // eslint-disable-next-line no-unreachable-loop

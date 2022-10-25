@@ -2,6 +2,9 @@
   "name": "benchmarks-js",
   "version": "0.0.1",
   "description": "JS code pattern benchmarks",
+  "engines": {
+    "node": ">=14.x"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/jerome-benoit/benchmarks-js.git"
