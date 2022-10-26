@@ -12,7 +12,7 @@ Benchmark.suite(
   Benchmark.add('Reflect keys', (obj = testObject) => {
     return Reflect.ownKeys(obj).length === 0 && obj?.constructor === Object
   }),
-  Benchmark.add('Keys iteration ', (obj = testObject) => {
+  Benchmark.add('Keys iteration', (obj = testObject) => {
     if (obj?.constructor !== Object) return false
     // Iterates over the keys of an object, if
     // any exist, return false.

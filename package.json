@@ -14,6 +14,7 @@
     "benchmark:busy-wait": "node busy-wait.js",
     "benchmark:empty-array": "node empty-array.js",
     "benchmark:is-empty-object": "node is-empty-object.js",
+    "benchmark:is-undefined": "node is-undefined.js",
     "benchmark:quick-select": "node quick-select.js",
     "benchmark:max": "node max.js",
     "benchmark:promise-handling": "node promise-handling.js",
