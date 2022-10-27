@@ -1,7 +1,7 @@
 const Benchmark = require('benny')
 const { generateRandomInteger } = require('./benchmark-utils')
 
-const size = generateRandomInteger(100000)
+const size = generateRandomInteger(500)
 const testObject = {}
 for (let i = 0; i < size; i++) {
   testObject[i.toString()] = i
@@ -10,7 +10,7 @@ for (let i = 0; i < size; i++) {
 Benchmark.suite(
   `Is empty object with ${size} keys`,
   Benchmark.add('Reflect keys', (obj = testObject) => {
-    return Reflect.ownKeys(obj).length === 0 && obj?.constructor === Object
+    return obj?.constructor === Object && Reflect.ownKeys(obj).length === 0
   }),
   Benchmark.add('Keys iteration', (obj = testObject) => {
     if (obj?.constructor !== Object) return false
@@ -21,7 +21,7 @@ Benchmark.suite(
     return true
   }),
   Benchmark.add('Object keys', (obj = testObject) => {
-    return obj?.constructor === Object && !Object.keys(obj).length
+    return obj?.constructor === Object && Object.keys(obj).length === 0
   }),
   Benchmark.cycle(),
   Benchmark.complete(),
