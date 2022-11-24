@@ -21,7 +21,7 @@
     "benchmark:fibonacci": "node fibonacci.js",
     "benchmark:random": "node random.js",
     "benchmark:uuid-generator": "node uuid-generator.js",
-    "format": "prettier . --write; standard . --fix",
+    "format": "prettier . --cache --write; standard . --fix",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --cache --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
