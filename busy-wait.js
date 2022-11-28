@@ -15,11 +15,12 @@ function dummyTimeoutBusyWait (timeoutMs) {
 
 /**
  * @param timeoutMs
+ * @param intervalMs
  */
-async function sleepTimeoutBusyWait (timeoutMs) {
+async function sleepTimeoutBusyWait (timeoutMs, intervalMs = interval) {
   const timeoutTimestampMs = Date.now() + timeoutMs
   do {
-    await sleep(interval)
+    await sleep(intervalMs)
   } while (Date.now() < timeoutTimestampMs)
 }
 
@@ -43,13 +44,14 @@ async function divideAndConquerTimeoutBusyWait (
  * @param timeoutMs
  * @param intervalMs
  */
-function setIntervalTimeoutBusyWait (timeoutMs, intervalMs = interval) {
+async function setIntervalTimeoutBusyWait (timeoutMs, intervalMs = interval) {
   const tries = Math.round(timeoutMs / intervalMs)
   let count = 0
   const triesSetInterval = setInterval(() => {
     count++
     if (count === tries) {
       clearInterval(triesSetInterval)
+      return Promise.resolve()
     }
   }, intervalMs)
 }
@@ -65,8 +67,8 @@ Benchmark.suite(
   Benchmark.add('divideAndConquerTimeoutBusyWait', async () => {
     await divideAndConquerTimeoutBusyWait(timeout)
   }),
-  Benchmark.add('setIntervalTimeoutBusyWait', () => {
-    setIntervalTimeoutBusyWait(timeout)
+  Benchmark.add('setIntervalTimeoutBusyWait', async () => {
+    await setIntervalTimeoutBusyWait(timeout)
   }),
   Benchmark.cycle(),
   Benchmark.complete(),
