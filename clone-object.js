@@ -2,6 +2,7 @@
 const Benchmark = require('benny')
 const { generateRandomInteger } = require('./benchmark-utils')
 const _ = require('lodash')
+const clone = require('just-clone')
 
 const size = generateRandomInteger(500)
 const testObject = {}
@@ -28,6 +29,9 @@ Benchmark.suite(
   }),
   Benchmark.add('lodash deep clone', (obj = testObject) => {
     const objClone = _.cloneDeep(obj)
+  }),
+  Benchmark.add('just-clone', (obj = testObject) => {
+    const objClone = clone(obj)
   }),
   Benchmark.cycle(),
   Benchmark.complete(),
