@@ -19,9 +19,22 @@ async function asyncFunction () {
 Benchmark.suite(
   'Promise handling',
   Benchmark.add('await promise', async () => {
-    await asyncFunction()
+    try {
+      return await asyncFunction()
+    } catch (e) {
+      console.error(e)
+    }
   }),
-  Benchmark.add('promise', () => {
+  Benchmark.add('promise with then().catch()', () => {
+    asyncFunction()
+      .then(r => {
+        return r
+      })
+      .catch(e => {
+        console.error(e)
+      })
+  }),
+  Benchmark.add('mishandled promise', () => {
     asyncFunction()
   }),
   Benchmark.cycle(),
