@@ -4,10 +4,10 @@ const { generateRandomObject } = require('./benchmark-utils')
 const _ = require('lodash')
 const clone = require('just-clone')
 
-const { object, size } = generateRandomObject()
+const object = generateRandomObject()
 
 Benchmark.suite(
-  `Deep clone object with ${size} keys`,
+  `Deep clone object with ${Object.keys(object).length} keys`,
   Benchmark.add('JSON stringify/parse', (obj = object) => {
     const objClone = JSON.parse(JSON.stringify(obj))
   }),

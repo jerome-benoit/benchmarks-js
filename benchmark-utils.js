@@ -78,7 +78,7 @@ function generateRandomObject (
   for (let i = 0; i < size; i++) {
     object[i.toString()] = numberGenerator(numberMax)
   }
-  return { object, size }
+  return object
 }
 
 /**

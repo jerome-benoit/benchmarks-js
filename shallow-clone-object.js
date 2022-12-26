@@ -3,10 +3,10 @@ const Benchmark = require('benny')
 const { generateRandomObject } = require('./benchmark-utils')
 const _ = require('lodash')
 
-const { object, size } = generateRandomObject()
+const object = generateRandomObject()
 
 Benchmark.suite(
-  `Shallow clone object with ${size} keys`,
+  `Shallow clone object with ${Object.keys(object).length} keys`,
   Benchmark.add('Spread', (obj = object) => {
     const objClone = { ...obj }
   }),

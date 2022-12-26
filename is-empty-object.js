@@ -1,10 +1,10 @@
 const Benchmark = require('benny')
 const { generateRandomObject } = require('./benchmark-utils')
 
-const { object, size } = generateRandomObject()
+const object = generateRandomObject()
 
 Benchmark.suite(
-  `Is empty object with ${size} keys`,
+  `Is empty object with ${Object.keys(object).length} keys`,
   Benchmark.add('Reflect keys', (obj = object) => {
     return obj?.constructor === Object && Reflect.ownKeys(obj).length === 0
   }),
