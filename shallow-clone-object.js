@@ -1,23 +1,19 @@
 /* eslint-disable no-unused-vars */
 const Benchmark = require('benny')
-const { generateRandomInteger } = require('./benchmark-utils')
+const { generateRandomObject } = require('./benchmark-utils')
 const _ = require('lodash')
 
-const size = generateRandomInteger(500)
-const testObject = {}
-for (let i = 0; i < size; i++) {
-  testObject[i.toString()] = i
-}
+const { object, size } = generateRandomObject()
 
 Benchmark.suite(
   `Shallow clone object with ${size} keys`,
-  Benchmark.add('Spread', (obj = testObject) => {
+  Benchmark.add('Spread', (obj = object) => {
     const objClone = { ...obj }
   }),
-  Benchmark.add('Object assign', (obj = testObject) => {
+  Benchmark.add('Object assign', (obj = object) => {
     const objClone = Object.assign({}, obj)
   }),
-  Benchmark.add('lodash clone', (obj = testObject) => {
+  Benchmark.add('lodash clone', (obj = object) => {
     const objClone = _.clone(obj)
   }),
   Benchmark.cycle(),

@@ -1,27 +1,23 @@
 /* eslint-disable no-unused-vars */
 const Benchmark = require('benny')
-const { generateRandomInteger } = require('./benchmark-utils')
+const { generateRandomObject } = require('./benchmark-utils')
 const _ = require('lodash')
 const clone = require('just-clone')
 
-const size = generateRandomInteger(500)
-const testObject = {}
-for (let i = 0; i < size; i++) {
-  testObject[i.toString()] = i
-}
+const { object, size } = generateRandomObject()
 
 Benchmark.suite(
   `Deep clone object with ${size} keys`,
-  Benchmark.add('JSON stringify/parse', (obj = testObject) => {
+  Benchmark.add('JSON stringify/parse', (obj = object) => {
     const objClone = JSON.parse(JSON.stringify(obj))
   }),
-  Benchmark.add('structuredClone', (obj = testObject) => {
+  Benchmark.add('structuredClone', (obj = object) => {
     const objClone = structuredClone(obj)
   }),
-  Benchmark.add('lodash cloneDeep', (obj = testObject) => {
+  Benchmark.add('lodash cloneDeep', (obj = object) => {
     const objClone = _.cloneDeep(obj)
   }),
-  Benchmark.add('just-clone', (obj = testObject) => {
+  Benchmark.add('just-clone', (obj = object) => {
     const objClone = clone(obj)
   }),
   Benchmark.cycle(),

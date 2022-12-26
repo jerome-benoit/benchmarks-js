@@ -62,6 +62,26 @@ function generateRandomNumberArray (
 }
 
 /**
+ *
+ * @param sizeMax
+ * @param numberMax
+ * @param numberGenerator
+ * @returns
+ */
+function generateRandomObject (
+  sizeMax = 500,
+  numberMax = Number.MAX_VALUE,
+  numberGenerator = generateRandomFloat
+) {
+  const size = generateRandomInteger(sizeMax)
+  const object = {}
+  for (let i = 0; i < size; i++) {
+    object[i.toString()] = numberGenerator(numberMax)
+  }
+  return { object, size }
+}
+
+/**
  * @param ms
  * @returns
  */
@@ -73,6 +93,7 @@ module.exports = {
   generateRandomInteger,
   generateRandomFloat,
   generateRandomNumberArray,
+  generateRandomObject,
   sleep,
   secureRandom
 }
