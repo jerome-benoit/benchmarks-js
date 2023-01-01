@@ -34,6 +34,10 @@ Benchmark.suite(
         console.error(e)
       })
   }),
+  Benchmark.add('voided promise', () => {
+    // eslint-disable-next-line no-void
+    void asyncFunction()
+  }),
   Benchmark.add('mishandled promise', () => {
     asyncFunction()
   }),
