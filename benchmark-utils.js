@@ -10,6 +10,15 @@ function secureRandom () {
 }
 
 /**
+ *  Generate a cryptographically secure random number in the [0,1[ range
+ *
+ * @param
+ */
+function secureRandomWithRandomValues () {
+  return crypto.getRandomValues(new Uint32Array(1))[0] / 0x100000000
+}
+
+/**
  * @param max
  * @param min
  * @returns
@@ -95,5 +104,6 @@ module.exports = {
   generateRandomNumberArray,
   generateRandomObject,
   sleep,
-  secureRandom
+  secureRandom,
+  secureRandomWithRandomValues
 }
