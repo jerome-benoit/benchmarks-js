@@ -5,7 +5,7 @@ const {
 } = require('./benchmark-utils')
 const crypto = require('crypto')
 
-const maximum = 281474976710655
+const maximum = 281474976710654
 
 /**
  * @param max
@@ -72,8 +72,13 @@ Benchmark.suite(
       getSecureRandomIntegerWithRandomValues(maximum)
     }
   ),
-  Benchmark.add('Crypto random integer generator', () => {
-    crypto.randomInt(maximum)
+  Benchmark.add('Crypto random integer generator', (max = maximum, min = 0) => {
+    max = Math.floor(max)
+    if (min !== undefined && min !== 0) {
+      min = Math.ceil(min)
+      return Math.floor(crypto.randomInt(min, max + 1))
+    }
+    return Math.floor(crypto.randomInt(max + 1))
   }),
   Benchmark.add('Math random integer generator', () => {
     getRandomInteger(maximum)
