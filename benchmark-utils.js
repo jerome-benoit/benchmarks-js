@@ -12,7 +12,7 @@ function secureRandom () {
 /**
  *  Generate a cryptographically secure random number in the [0,1[ range
  *
- * @param
+ * @returns
  */
 function secureRandomWithRandomValues () {
   return crypto.getRandomValues(new Uint32Array(1))[0] / 0x100000000
