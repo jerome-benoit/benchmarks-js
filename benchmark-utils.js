@@ -39,16 +39,16 @@ function generateRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
  *
  * @param max
  * @param min
- * @param negative
  * @returns
  */
-function generateRandomFloat (max = Number.MAX_VALUE, min = 0, negative = true) {
-  if (max < min || max < 0 || min < 0) {
+function generateRandomFloat (max = Number.MAX_VALUE, min = 0) {
+  if (max < min) {
     throw new RangeError('Invalid interval')
   }
-  const randomPositiveFloat = crypto.randomBytes(4).readUInt32LE() / 0xffffffff
-  const sign = negative && randomPositiveFloat < 0.5 ? -1 : 1
-  return sign * (randomPositiveFloat * (max - min) + min)
+  if (max - min === Infinity) {
+    throw new RangeError('Invalid interval')
+  }
+  return (crypto.randomBytes(4).readUInt32LE() / 0xffffffff) * (max - min) + min
 }
 
 /**
