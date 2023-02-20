@@ -1,7 +1,11 @@
 const Benchmark = require('benny')
-const { secureRandom } = require('./benchmark-utils')
+const {
+  secureRandom,
+  secureRandomWithRandomValues
+} = require('./benchmark-utils')
+const crypto = require('crypto')
 
-const maximum = Number.MAX_SAFE_INTEGER
+const maximum = 281474976710654
 
 /**
  * @param max
@@ -18,6 +22,26 @@ function getSecureRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
     return Math.floor(secureRandom() * (max - min + 1)) + min
   }
   return Math.floor(secureRandom() * (max + 1))
+}
+
+/**
+ * @param max
+ * @param min
+ * @returns
+ */
+function getSecureRandomIntegerWithRandomValues (
+  max = Number.MAX_SAFE_INTEGER,
+  min = 0
+) {
+  if (max < min || max < 0 || min < 0) {
+    throw new RangeError('Invalid interval')
+  }
+  max = Math.floor(max)
+  if (min != null && min !== 0) {
+    min = Math.ceil(min)
+    return Math.floor(secureRandomWithRandomValues() * (max - min + 1)) + min
+  }
+  return Math.floor(secureRandomWithRandomValues() * (max + 1))
 }
 
 /**
@@ -42,7 +66,21 @@ Benchmark.suite(
   Benchmark.add('Secure random integer generator', () => {
     getSecureRandomInteger(maximum)
   }),
-  Benchmark.add('Random integer generator', () => {
+  Benchmark.add(
+    'Secure random with getRandomValues() integer generator',
+    () => {
+      getSecureRandomIntegerWithRandomValues(maximum)
+    }
+  ),
+  Benchmark.add('Crypto random integer generator', (max = maximum, min = 0) => {
+    max = Math.floor(max)
+    if (min !== undefined && min !== 0) {
+      min = Math.ceil(min)
+      return Math.floor(crypto.randomInt(min, max + 1))
+    }
+    return Math.floor(crypto.randomInt(max + 1))
+  }),
+  Benchmark.add('Math random integer generator', () => {
     getRandomInteger(maximum)
   }),
   Benchmark.cycle(),

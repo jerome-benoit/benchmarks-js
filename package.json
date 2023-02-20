@@ -13,6 +13,8 @@
     "prepare": "node prepare.js",
     "benchmark:busy-wait": "node busy-wait.js",
     "benchmark:empty-array": "node empty-array.js",
+    "benchmark:deep-clone-object": "node deep-clone-object.js",
+    "benchmark:shallow-clone-object": "node shallow-clone-object.js",
     "benchmark:is-empty-object": "node is-empty-object.js",
     "benchmark:is-undefined": "node is-undefined.js",
     "benchmark:quick-select": "node quick-select.js",
@@ -21,7 +23,7 @@
     "benchmark:fibonacci": "node fibonacci.js",
     "benchmark:random": "node random.js",
     "benchmark:uuid-generator": "node uuid-generator.js",
-    "format": "prettier . --write; standard . --fix",
+    "format": "prettier . --cache --write; standard . --fix",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --cache --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -30,21 +32,23 @@
   "license": "MIT",
   "dependencies": {
     "benny": "^3.7.1",
+    "just-clone": "^6.2.0",
+    "lodash": "^4.17.21",
     "microtime": "^3.1.1",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.27.0",
+    "eslint": "^8.34.0",
     "eslint-config-standard": "^17.0.0",
-    "eslint-define-config": "^1.12.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsdoc": "^39.6.2",
-    "eslint-plugin-n": "^15.5.1",
+    "eslint-define-config": "^1.15.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsdoc": "^40.0.0",
+    "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-promise": "^6.1.1",
-    "husky": "^8.0.2",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "prettier": "^2.8.4",
     "standard": "^17.0.0",
-    "typescript": "^4.8.4"
+    "typescript": "^4.9.5"
   }
 }
