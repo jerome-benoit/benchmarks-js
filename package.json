@@ -9,6 +9,10 @@
     "type": "git",
     "url": "git://github.com/jerome-benoit/benchmarks-js.git"
   },
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/fraggle_"
+  },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prepare": "node prepare.js",
