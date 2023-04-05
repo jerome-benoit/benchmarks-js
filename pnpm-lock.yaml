@@ -608,7 +608,7 @@ packages:
     dependencies:
       debug: 3.2.7
       is-core-module: 2.11.0
-      resolve: 1.22.1
+      resolve: 1.22.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -675,7 +675,7 @@ packages:
       is-glob: 4.0.3
       minimatch: 3.1.2
       object.values: 1.1.6
-      resolve: 1.22.1
+      resolve: 1.22.2
       semver: 6.3.0
       tsconfig-paths: 3.14.2
     transitivePeerDependencies:
@@ -715,7 +715,7 @@ packages:
       ignore: 5.2.4
       is-core-module: 2.11.0
       minimatch: 3.1.2
-      resolve: 1.22.1
+      resolve: 1.22.2
       semver: 7.3.8
     dev: true
 
@@ -1810,8 +1810,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /resolve@1.22.1:
-    resolution: {integrity: sha512-nBpuuYuY5jFsli/JIs1oldw6fOQCBioohqWZg/2hiaOybXOft4lonv85uDOKXdf8rhyK159cxU5cDcK/NKk8zw==}
+  /resolve@1.22.2:
+    resolution: {integrity: sha512-Sb+mjNHOULsBv818T40qSPeRiuWLyaGMa5ewydRLFimneixmVy2zdivRl+AF6jaYPC8ERxGDmFSiqui6SfPd+g==}
     hasBin: true
     dependencies:
       is-core-module: 2.11.0
