@@ -74,7 +74,7 @@ Benchmark.suite(
   ),
   Benchmark.add('Crypto random integer generator', (max = maximum, min = 0) => {
     max = Math.floor(max)
-    if (min !== undefined && min !== 0) {
+    if (min != null && min !== 0) {
       min = Math.ceil(min)
       return Math.floor(crypto.randomInt(min, max + 1))
     }
