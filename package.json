@@ -60,6 +60,6 @@
     "lint-staged": "^13.2.1",
     "prettier": "^2.8.7",
     "standard": "^17.0.0",
-    "typescript": "^5.0.3"
+    "typescript": "^5.0.4"
   }
 }
