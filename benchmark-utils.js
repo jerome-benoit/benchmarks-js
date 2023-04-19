@@ -2,7 +2,6 @@ const crypto = require('crypto')
 
 /**
  * Generate a cryptographically secure random number in the [0,1[ range
- *
  * @returns
  */
 function secureRandom () {
@@ -11,7 +10,6 @@ function secureRandom () {
 
 /**
  *  Generate a cryptographically secure random number in the [0,1[ range
- *
  * @returns
  */
 function secureRandomWithRandomValues () {

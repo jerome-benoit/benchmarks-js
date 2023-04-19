@@ -31,8 +31,8 @@ devDependencies:
     specifier: ^2.27.5
     version: 2.27.5(eslint@8.38.0)
   eslint-plugin-jsdoc:
-    specifier: ^43.0.3
-    version: 43.0.3(eslint@8.38.0)
+    specifier: ^43.0.6
+    version: 43.0.6(eslint@8.38.0)
   eslint-plugin-n:
     specifier: ^15.7.0
     version: 15.7.0(eslint@8.38.0)
@@ -86,9 +86,9 @@ packages:
       fast-deep-equal: 3.1.3
     dev: false
 
-  /@es-joy/jsdoccomment@0.37.0:
-    resolution: {integrity: sha512-hjK0wnsPCYLlF+HHB4R/RbUjOWeLW2SlarB67+Do5WsKILOkmIZvvPJFbtWSmbypxcjpoECLAMzoao0D4Bg5ZQ==}
-    engines: {node: ^14 || ^16 || ^17 || ^18 || ^19}
+  /@es-joy/jsdoccomment@0.37.1:
+    resolution: {integrity: sha512-5vxWJ1gEkEF0yRd0O+uK6dHJf7adrxwQSX8PuRiPfFSAbNLnY0ZJfXaZucoz14Jj2N11xn2DnlEPwWRpYpvRjg==}
+    engines: {node: ^14 || ^16 || ^17 || ^18 || ^19 || ^20}
     dependencies:
       comment-parser: 1.3.1
       esquery: 1.5.0
@@ -540,7 +540,7 @@ packages:
       object-inspect: 1.12.3
       object-keys: 1.1.1
       object.assign: 4.1.4
-      regexp.prototype.flags: 1.4.3
+      regexp.prototype.flags: 1.5.0
       safe-regex-test: 1.0.0
       string.prototype.trim: 1.2.7
       string.prototype.trimend: 1.0.6
@@ -689,13 +689,13 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-jsdoc@43.0.3(eslint@8.38.0):
-    resolution: {integrity: sha512-tHlpaUqB8ih2IhQw7Es/R3Z3anQZVfPUb33nUAVOgIcMugVYyD1ZE/KXjjN8HxykZsV1IXqrKZkKpUBrEi3G9Q==}
-    engines: {node: ^14 || ^16 || ^17 || ^18 || ^19}
+  /eslint-plugin-jsdoc@43.0.6(eslint@8.38.0):
+    resolution: {integrity: sha512-EJyrcIY4e/e51yzLLBpYX7/Ld1+08Bl/XparwHFTmQ8gUfir4wEmY2c/lj91k9+/8auKeNA5ejbyaOl42xX0AQ==}
+    engines: {node: ^14 || ^16 || ^17 || ^18 || ^19 || ^20}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0
     dependencies:
-      '@es-joy/jsdoccomment': 0.37.0
+      '@es-joy/jsdoccomment': 0.37.1
       are-docs-informative: 0.0.2
       comment-parser: 1.3.1
       debug: 4.3.4
@@ -1797,8 +1797,8 @@ packages:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
 
-  /regexp.prototype.flags@1.4.3:
-    resolution: {integrity: sha512-fjggEOO3slI6Wvgjwflkc4NFRCTZAu5CnNfBd5qOMYhWdn67nJBBu34/TkD++eeFmd8C9r9jfXJ27+nSiRkSUA==}
+  /regexp.prototype.flags@1.5.0:
+    resolution: {integrity: sha512-0SutC3pNudRKgquxGoRGIz946MZVHqbNfPjBdxeOhBrdgDKlRoXmYLQN9xRbrR09ZXWeGAdPuif7egofn6v5LA==}
     engines: {node: '>= 0.4'}
     dependencies:
       call-bind: 1.0.2
@@ -2014,7 +2014,7 @@ packages:
       get-intrinsic: 1.2.0
       has-symbols: 1.0.3
       internal-slot: 1.0.5
-      regexp.prototype.flags: 1.4.3
+      regexp.prototype.flags: 1.5.0
       side-channel: 1.0.4
     dev: true
 
