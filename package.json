@@ -23,7 +23,7 @@
     }
   ],
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
+    "preinstall": "npx --yes only-allow pnpm",
     "prepare": "node prepare.js",
     "benchmark:busy-wait": "node busy-wait.js",
     "benchmark:empty-array": "node empty-array.js",
