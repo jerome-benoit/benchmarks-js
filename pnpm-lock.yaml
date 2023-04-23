@@ -25,8 +25,8 @@ devDependencies:
     specifier: ^17.0.0
     version: 17.0.0(eslint-plugin-import@2.27.5)(eslint-plugin-n@15.7.0)(eslint-plugin-promise@6.1.1)(eslint@8.39.0)
   eslint-define-config:
-    specifier: ^1.18.0
-    version: 1.18.0
+    specifier: ^1.19.0
+    version: 1.19.0
   eslint-plugin-import:
     specifier: ^2.27.5
     version: 2.27.5(eslint@8.39.0)
@@ -603,8 +603,8 @@ packages:
       eslint-plugin-promise: 6.1.1(eslint@8.39.0)
     dev: true
 
-  /eslint-define-config@1.18.0:
-    resolution: {integrity: sha512-8qWT7aNU5M0W+WfoUixVaR79sqt3b280CK4bNPCkqXlTWUOYlEy3yEcXZFduvWawkNjuYWpZ2UjcBfvfnvGpvA==}
+  /eslint-define-config@1.19.0:
+    resolution: {integrity: sha512-kwny3BEyhJaG3ST1V9NwKzuFOkH3dfPIzoklJBZtu7DoEkuUkv5A254LhexJFZJeqfL27d3tsz/luAQf/wDbrQ==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0, npm: '>=6.14.13', pnpm: '>= 7.0.0'}
     dev: true
 
