@@ -1,4 +1,3 @@
-// @ts-check
 // eslint-disable-next-line n/no-unpublished-require
 const { defineConfig } = require('eslint-define-config')
 
