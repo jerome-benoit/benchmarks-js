@@ -8,9 +8,9 @@ const interval = 1000
  * @param timeoutMs
  */
 function dummyTimeoutBusyWait (timeoutMs) {
-  const timeoutTimestampMs = Date.now() + timeoutMs
+  const timeoutTimestampMs = performance.now() + timeoutMs
   // eslint-disable-next-line no-empty
-  do {} while (Date.now() < timeoutTimestampMs)
+  do {} while (performance.now() < timeoutTimestampMs)
 }
 
 /**
@@ -18,10 +18,10 @@ function dummyTimeoutBusyWait (timeoutMs) {
  * @param intervalMs
  */
 async function sleepTimeoutBusyWait (timeoutMs, intervalMs = interval) {
-  const timeoutTimestampMs = Date.now() + timeoutMs
+  const timeoutTimestampMs = performance.now() + timeoutMs
   do {
     await sleep(intervalMs)
-  } while (Date.now() < timeoutTimestampMs)
+  } while (performance.now() < timeoutTimestampMs)
 }
 
 /**
