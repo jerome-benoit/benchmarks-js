@@ -31,8 +31,8 @@ devDependencies:
     specifier: ^2.27.5
     version: 2.27.5(eslint@8.39.0)
   eslint-plugin-jsdoc:
-    specifier: ^43.0.7
-    version: 43.0.7(eslint@8.39.0)
+    specifier: ^43.1.0
+    version: 43.1.0(eslint@8.39.0)
   eslint-plugin-n:
     specifier: ^15.7.0
     version: 15.7.0(eslint@8.39.0)
@@ -689,9 +689,9 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-jsdoc@43.0.7(eslint@8.39.0):
-    resolution: {integrity: sha512-32Sx5I9VzO/bqbtslCu3L1GHIPo+QEliwqwjWq+qzbUv76wrkH6ifUEE0EbkuNEn+cHlSIOrg/IJ1PGNN72QZA==}
-    engines: {node: ^14 || ^16 || ^17 || ^18 || ^19 || ^20}
+  /eslint-plugin-jsdoc@43.1.0(eslint@8.39.0):
+    resolution: {integrity: sha512-TIeaVIW3nu9/dCrx/W5+IUUyNHyYP/dzEd4JKjxfhCFjEA6D1KmNFr00ykLxHcTeHsZs02TbT3CEA8Coen3u8A==}
+    engines: {node: '>=16'}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0
     dependencies:
@@ -1405,7 +1405,7 @@ packages:
       object-inspect: 1.12.3
       pidtree: 0.6.0
       string-argv: 0.3.1
-      yaml: 2.2.1
+      yaml: 2.2.2
     transitivePeerDependencies:
       - enquirer
       - supports-color
@@ -2236,8 +2236,8 @@ packages:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
     dev: true
 
-  /yaml@2.2.1:
-    resolution: {integrity: sha512-e0WHiYql7+9wr4cWMx3TVQrNwejKaEe7/rHNmQmqRjazfOP5W8PB6Jpebb5o6fIapbz9o9+2ipcaTM2ZwDI6lw==}
+  /yaml@2.2.2:
+    resolution: {integrity: sha512-CBKFWExMn46Foo4cldiChEzn7S7SRV+wqiluAb6xmueD/fGyRHIhX8m14vVGgeFWjN540nKCNVj6P21eQjgTuA==}
     engines: {node: '>= 14'}
     dev: true
 
