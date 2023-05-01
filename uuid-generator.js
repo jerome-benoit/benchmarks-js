@@ -1,5 +1,5 @@
-const Benchmark = require('benny')
 const crypto = require('crypto')
+const Benchmark = require('benny')
 const { v4: uuid } = require('uuid')
 
 Benchmark.suite(

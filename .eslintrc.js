@@ -4,11 +4,11 @@ const { defineConfig } = require('eslint-define-config')
 module.exports = defineConfig({
   root: true,
   env: {
-    es2021: true,
+    es2022: true,
     node: true
   },
   parserOptions: {
-    ecmaVersion: 2021,
+    ecmaVersion: 2022,
     sourceType: 'module'
   },
   plugins: ['promise', 'jsdoc'],
@@ -24,9 +24,9 @@ module.exports = defineConfig({
     'sort-imports': [
       'warn',
       {
-        ignoreMemberSort: true,
         ignoreDeclarationSort: true
       }
-    ]
+    ],
+    'import/order': 'warn'
   }
 })

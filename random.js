@@ -1,9 +1,9 @@
+const crypto = require('crypto')
 const Benchmark = require('benny')
 const {
   secureRandom,
   secureRandomWithRandomValues
 } = require('./benchmark-utils')
-const crypto = require('crypto')
 
 const maximum = 281474976710654
 
