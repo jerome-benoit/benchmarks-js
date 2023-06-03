@@ -45,15 +45,17 @@ async function divideAndConquerTimeoutBusyWait (
  * @param intervalMs
  */
 async function setIntervalTimeoutBusyWait (timeoutMs, intervalMs = interval) {
-  const tries = Math.round(timeoutMs / intervalMs)
-  let count = 0
-  const triesSetInterval = setInterval(() => {
-    count++
-    if (count === tries) {
-      clearInterval(triesSetInterval)
-      return Promise.resolve()
-    }
-  }, intervalMs)
+  return new Promise(resolve => {
+    const tries = Math.round(timeoutMs / intervalMs)
+    let count = 0
+    const triesSetInterval = setInterval(() => {
+      count++
+      if (count === tries) {
+        clearInterval(triesSetInterval)
+        return resolve()
+      }
+    }, intervalMs)
+  })
 }
 
 Benchmark.suite(
