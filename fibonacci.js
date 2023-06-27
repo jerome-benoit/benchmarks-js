@@ -7,18 +7,13 @@ const number = 30
  * @returns
  */
 function fibonacciLoop (num) {
-  let a = 1
-  let b = 0
-  let temp
-
-  while (num >= 0) {
-    temp = a
-    a = a + b
-    b = temp
-    num--
+  const fib = []
+  fib[0] = 0
+  fib[1] = 1
+  for (let i = 2; i <= num; i++) {
+    fib[i] = fib[i - 2] + fib[i - 1]
   }
-
-  return b
+  return fib[num]
 }
 
 /**
@@ -26,8 +21,7 @@ function fibonacciLoop (num) {
  * @returns
  */
 function fibonacciRecursion (num) {
-  if (num <= 1) return 1
-
+  if (num <= 1) return num
   return fibonacciRecursion(num - 1) + fibonacciRecursion(num - 2)
 }
 
@@ -40,7 +34,7 @@ function fibonacciRecursionMemoization (num, memo) {
   memo = memo || {}
 
   if (memo[num]) return memo[num]
-  if (num <= 1) return 1
+  if (num <= 1) return num
 
   return (memo[num] =
     fibonacciRecursionMemoization(num - 1, memo) +
