@@ -117,8 +117,8 @@ packages:
       eslint-visitor-keys: 3.4.1
     dev: true
 
-  /@eslint-community/regexpp@4.5.1:
-    resolution: {integrity: sha512-Z5ba73P98O1KUYCCJTUeVpja9RcGoMdncZ6T49FCUl2lN38JtCJ+3WgIDBv0AuY4WChU5PmtJmOCTlN6FZTFKQ==}
+  /@eslint-community/regexpp@4.6.0:
+    resolution: {integrity: sha512-uiPeRISaglZnaZk8vwrjQZ1CxogZeY/4IYft6gBOTqu1WhVXWmCmZMWxUv2Q/pxSvPdp1JPaO62kLOcOkMqWrw==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
     dev: true
 
@@ -696,14 +696,14 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-es-x@7.1.0(eslint@8.45.0):
-    resolution: {integrity: sha512-AhiaF31syh4CCQ+C5ccJA0VG6+kJK8+5mXKKE7Qs1xcPRg02CDPOj3mWlQxuWS/AYtg7kxrDNgW9YW3vc0Q+Mw==}
+  /eslint-plugin-es-x@7.2.0(eslint@8.45.0):
+    resolution: {integrity: sha512-9dvv5CcvNjSJPqnS5uZkqb3xmbeqRLnvXKK7iI5+oK/yTusyc46zbBZKENGsOfojm/mKfszyZb+wNqNPAPeGXA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=8'
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.45.0)
-      '@eslint-community/regexpp': 4.5.1
+      '@eslint-community/regexpp': 4.6.0
       eslint: 8.45.0
     dev: true
 
@@ -796,7 +796,7 @@ packages:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.45.0)
       builtins: 5.0.1
       eslint: 8.45.0
-      eslint-plugin-es-x: 7.1.0(eslint@8.45.0)
+      eslint-plugin-es-x: 7.2.0(eslint@8.45.0)
       ignore: 5.2.4
       is-core-module: 2.12.1
       minimatch: 3.1.2
@@ -883,7 +883,7 @@ packages:
     hasBin: true
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.45.0)
-      '@eslint-community/regexpp': 4.5.1
+      '@eslint-community/regexpp': 4.6.0
       '@eslint/eslintrc': 2.1.0
       '@eslint/js': 8.44.0
       '@humanwhocodes/config-array': 0.11.10
