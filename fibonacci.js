@@ -17,6 +17,22 @@ function fibonacciLoop (num) {
 }
 
 /**
+ *
+ * @param num
+ * @returns
+ */
+function fibonacciLoopWhile (num) {
+  let current = 1
+  let previous = 0
+  while (--num) {
+    const temp = current
+    current += previous
+    previous = temp
+  }
+  return current
+}
+
+/**
  * @param num
  * @returns
  */
@@ -45,6 +61,9 @@ Benchmark.suite(
   `Fibonacci number ${number}`,
   Benchmark.add('fibonacciLoop', () => {
     fibonacciLoop(number)
+  }),
+  Benchmark.add('fibonacciLoopWhile', () => {
+    fibonacciLoopWhile(number)
   }),
   Benchmark.add('fibonacciRecursion', () => {
     fibonacciRecursion(number)
