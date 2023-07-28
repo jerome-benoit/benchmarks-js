@@ -10,19 +10,19 @@ const object = generateRandomObject()
 Benchmark.suite(
   `Deep clone object with ${Object.keys(object).length} keys`,
   Benchmark.add('JSON stringify/parse', (obj = object) => {
-    const objClone = JSON.parse(JSON.stringify(obj))
+    const objCloned = JSON.parse(JSON.stringify(obj))
   }),
   Benchmark.add('structuredClone', (obj = object) => {
-    const objClone = structuredClone(obj)
+    const objCloned = structuredClone(obj)
   }),
   Benchmark.add('lodash cloneDeep', (obj = object) => {
-    const objClone = _.cloneDeep(obj)
+    const objCloned = _.cloneDeep(obj)
   }),
   Benchmark.add('just-clone', (obj = object) => {
-    const objClone = clone(obj)
+    const objCloned = clone(obj)
   }),
   Benchmark.add('deep-clone', (obj = object) => {
-    const objClone = deepClone(obj)
+    const objCloned = deepClone(obj)
   }),
   Benchmark.cycle(),
   Benchmark.complete(),
