@@ -18,7 +18,7 @@ Benchmark.suite(
   Benchmark.add('just-merge', (obj = object) => {
     const objMerged = merge(obj, objectToMerge)
   }),
-  Benchmark.add('deep-clone', (obj = object) => {
+  Benchmark.add('deepmerge', (obj = object) => {
     const objMerged = deepMerge(obj, objectToMerge)
   }),
   Benchmark.cycle(),
