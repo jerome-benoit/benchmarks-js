@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
-const Benchmark = require('benny')
-const _ = require('lodash')
-const clone = require('just-clone')
-const { generateRandomObject } = require('./benchmark-utils')
+import Benchmark from 'benny'
+import _ from 'lodash'
+import clone from 'just-clone'
+import deepClone from 'deep-clone'
+import { generateRandomObject } from './benchmark-utils.js'
 
 const object = generateRandomObject()
 
@@ -19,6 +20,9 @@ Benchmark.suite(
   }),
   Benchmark.add('just-clone', (obj = object) => {
     const objClone = clone(obj)
+  }),
+  Benchmark.add('deep-clone', (obj = object) => {
+    const objClone = deepClone(obj)
   }),
   Benchmark.cycle(),
   Benchmark.complete(),

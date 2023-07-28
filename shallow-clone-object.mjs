@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-const Benchmark = require('benny')
-const _ = require('lodash')
-const { generateRandomObject } = require('./benchmark-utils')
+import Benchmark from 'benny'
+import _ from 'lodash'
+import { generateRandomObject } from './benchmark-utils.js'
 
 const object = generateRandomObject()
 

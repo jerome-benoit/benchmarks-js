@@ -1,5 +1,5 @@
-const Benchmark = require('benny')
-const { generateRandomNumberArray } = require('./benchmark-utils')
+import Benchmark from 'benny'
+import { generateRandomNumberArray } from './benchmark-utils.js'
 
 const size = 10000
 let testArray = generateRandomNumberArray(size)

@@ -1,5 +1,5 @@
-const Benchmark = require('benny')
-const { sleep } = require('./benchmark-utils')
+import Benchmark from 'benny'
+import { sleep } from './benchmark-utils.js'
 
 const timeout = 2000
 const interval = 1000

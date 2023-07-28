@@ -1,5 +1,5 @@
-const Benchmark = require('benny')
-const { generateRandomInteger } = require('./benchmark-utils')
+import Benchmark from 'benny'
+import { generateRandomInteger } from './benchmark-utils.js'
 
 /**
  * @param numberOfWorkers

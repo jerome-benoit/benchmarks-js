@@ -1,4 +1,4 @@
-const Benchmark = require('benny')
+import Benchmark from 'benny'
 
 const number = 30
 

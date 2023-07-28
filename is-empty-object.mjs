@@ -1,5 +1,5 @@
-const Benchmark = require('benny')
-const { generateRandomObject } = require('./benchmark-utils')
+import Benchmark from 'benny'
+import { generateRandomObject } from './benchmark-utils.js'
 
 const object = generateRandomObject()
 

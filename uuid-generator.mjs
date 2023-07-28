@@ -1,6 +1,6 @@
-const crypto = require('crypto')
-const Benchmark = require('benny')
-const { v4: uuid } = require('uuid')
+import crypto from 'crypto'
+import Benchmark from 'benny'
+import { v4 as uuid } from 'uuid'
 
 Benchmark.suite(
   'UUIDv4 generator',

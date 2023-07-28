@@ -11,6 +11,9 @@ dependencies:
   benny:
     specifier: ^3.7.1
     version: 3.7.1
+  deep-clone:
+    specifier: ^4.0.0
+    version: 4.0.0
   just-clone:
     specifier: ^6.2.0
     version: 6.2.0
@@ -506,6 +509,10 @@ packages:
     dependencies:
       ms: 2.1.2
     dev: true
+
+  /deep-clone@4.0.0:
+    resolution: {integrity: sha512-bMvDVR8GiGCGHT4SgqXyXDD9Zmo3kv9YLq8aSO2xslP97A3mFkpNBg+t+fjXERvewzhmtk9efvL+V52iVkD0lg==}
+    dev: false
 
   /deep-is@0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
