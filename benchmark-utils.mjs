@@ -4,7 +4,7 @@ import crypto from 'crypto'
  * Generate a cryptographically secure random number in the [0,1[ range
  * @returns
  */
-function secureRandom () {
+export function secureRandom () {
   return crypto.randomBytes(4).readUInt32LE() / 0x100000000
 }
 
@@ -12,7 +12,7 @@ function secureRandom () {
  *  Generate a cryptographically secure random number in the [0,1[ range
  * @returns
  */
-function secureRandomWithRandomValues () {
+export function secureRandomWithRandomValues () {
   return crypto.getRandomValues(new Uint32Array(1))[0] / 0x100000000
 }
 
@@ -21,7 +21,7 @@ function secureRandomWithRandomValues () {
  * @param min
  * @returns
  */
-function generateRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
+export function generateRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
   if (max < min || max < 0 || min < 0) {
     throw new RangeError('Invalid interval')
   }
@@ -39,7 +39,7 @@ function generateRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
  * @param min
  * @returns
  */
-function generateRandomFloat (max = Number.MAX_VALUE, min = 0) {
+export function generateRandomFloat (max = Number.MAX_VALUE, min = 0) {
   if (max < min) {
     throw new RangeError('Invalid interval')
   }
@@ -56,7 +56,7 @@ function generateRandomFloat (max = Number.MAX_VALUE, min = 0) {
  * @param numberGenerator
  * @returns
  */
-function generateRandomNumberArray (
+export function generateRandomNumberArray (
   size,
   max = Number.MAX_VALUE,
   numberGenerator = generateRandomFloat
@@ -75,7 +75,7 @@ function generateRandomNumberArray (
  * @param numberGenerator
  * @returns
  */
-function generateRandomObject (
+export function generateRandomObject (
   sizeMax = 500,
   numberMax = Number.MAX_VALUE,
   numberGenerator = generateRandomFloat
@@ -92,16 +92,6 @@ function generateRandomObject (
  * @param ms
  * @returns
  */
-async function sleep (ms) {
+export async function sleep (ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
-}
-
-export {
-  generateRandomInteger,
-  generateRandomFloat,
-  generateRandomNumberArray,
-  generateRandomObject,
-  sleep,
-  secureRandom,
-  secureRandomWithRandomValues
 }
