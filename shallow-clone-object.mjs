@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import Benchmark from 'benny'
 import _ from 'lodash'
-import { generateRandomObject } from './benchmark-utils.js'
+import { generateRandomObject } from './benchmark-utils.mjs'
 
 const object = generateRandomObject()
 

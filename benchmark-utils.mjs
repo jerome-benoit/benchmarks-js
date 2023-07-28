@@ -1,4 +1,4 @@
-const crypto = require('crypto')
+import crypto from 'crypto'
 
 /**
  * Generate a cryptographically secure random number in the [0,1[ range
@@ -96,7 +96,7 @@ async function sleep (ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
-module.exports = {
+export {
   generateRandomInteger,
   generateRandomFloat,
   generateRandomNumberArray,

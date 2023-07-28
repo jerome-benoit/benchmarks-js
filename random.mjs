@@ -3,7 +3,7 @@ import Benchmark from 'benny'
 import {
   secureRandom,
   secureRandomWithRandomValues
-} from './benchmark-utils.js'
+} from './benchmark-utils.mjs'
 
 const maximum = 281474976710654
 

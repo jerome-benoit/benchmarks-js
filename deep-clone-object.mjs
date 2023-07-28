@@ -3,7 +3,7 @@ import Benchmark from 'benny'
 import _ from 'lodash'
 import clone from 'just-clone'
 import deepClone from 'deep-clone'
-import { generateRandomObject } from './benchmark-utils.js'
+import { generateRandomObject } from './benchmark-utils.mjs'
 
 const object = generateRandomObject()
 

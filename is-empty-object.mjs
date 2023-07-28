@@ -1,5 +1,5 @@
 import Benchmark from 'benny'
-import { generateRandomObject } from './benchmark-utils.js'
+import { generateRandomObject } from './benchmark-utils.mjs'
 
 const object = generateRandomObject()
 

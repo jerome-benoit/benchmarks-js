@@ -1,5 +1,5 @@
 import Benchmark from 'benny'
-import { generateRandomInteger } from './benchmark-utils.js'
+import { generateRandomInteger } from './benchmark-utils.mjs'
 
 /**
  * @param numberOfWorkers
