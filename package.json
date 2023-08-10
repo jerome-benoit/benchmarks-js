@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/package",
   "name": "benchmarks-js",
   "version": "0.0.1",
   "description": "JS code pattern benchmarks",
