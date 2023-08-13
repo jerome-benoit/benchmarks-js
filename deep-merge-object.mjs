@@ -38,6 +38,6 @@ Benchmark.suite(
     format: 'table.html',
     details: true
   })
-).catch(err => {
+).catch((err) => {
   console.error(err)
 })

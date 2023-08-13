@@ -76,6 +76,6 @@ Benchmark.suite(
   Benchmark.save({ file: 'fibonacci', format: 'json', details: true }),
   Benchmark.save({ file: 'fibonacci', format: 'chart.html', details: true }),
   Benchmark.save({ file: 'fibonacci', format: 'table.html', details: true })
-).catch(err => {
+).catch((err) => {
   console.error(err)
 })

@@ -66,6 +66,6 @@ Benchmark.suite(
   Benchmark.save({ file: 'max', format: 'json', details: true }),
   Benchmark.save({ file: 'max', format: 'chart.html', details: true }),
   Benchmark.save({ file: 'max', format: 'table.html', details: true })
-).catch(err => {
+).catch((err) => {
   console.error(err)
 })

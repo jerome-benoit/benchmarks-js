@@ -4,7 +4,7 @@ import Benchmark from 'benny'
  *
  */
 function promise () {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     resolve()
   })
 }
@@ -27,10 +27,10 @@ Benchmark.suite(
   }),
   Benchmark.add('promise with then().catch()', () => {
     asyncFunction()
-      .then(r => {
+      .then((r) => {
         return r
       })
-      .catch(e => {
+      .catch((e) => {
         console.error(e)
       })
   }),
@@ -58,6 +58,6 @@ Benchmark.suite(
     format: 'table.html',
     details: true
   })
-).catch(err => {
+).catch((err) => {
   console.error(err)
 })
