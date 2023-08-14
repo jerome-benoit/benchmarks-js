@@ -46,7 +46,7 @@
     "benchmark:fibonacci": "node fibonacci.mjs",
     "benchmark:random": "node random.mjs",
     "benchmark:uuid-generator": "node uuid-generator.mjs",
-    "format": "prettier . --cache --write; standard . --fix",
+    "format": "rome format . --write; standard . --fix",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --cache --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -73,7 +73,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.3.0",
-    "prettier": "^3.0.1",
+    "rome": "^12.1.3",
     "standard": "^17.1.0",
     "typescript": "^5.1.6"
   }

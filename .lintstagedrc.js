@@ -1,8 +1,8 @@
 module.exports = {
   '*.{js,jsx,cjs,mjs}': [
-    'prettier --cache --write',
+    'rome format --write',
     'standard --fix',
     'eslint --cache --fix'
   ],
-  '*.{json,md,yml,yaml}': ['prettier --cache --write']
+  '!(.vscode/**)*.{json,md,yml,yaml}': ['rome format --write']
 }
