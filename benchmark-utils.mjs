@@ -9,7 +9,7 @@ export function secureRandom () {
 }
 
 /**
- *  Generate a cryptographically secure random number in the [0,1[ range
+ * Generate a cryptographically secure random number in the [0,1[ range
  * @returns
  */
 export function secureRandomWithRandomValues () {
