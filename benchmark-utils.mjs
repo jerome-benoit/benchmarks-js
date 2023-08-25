@@ -1,4 +1,4 @@
-import crypto from 'crypto'
+import crypto, { webcrypto } from 'crypto'
 
 /**
  * Generate a cryptographically secure random number in the [0,1[ range
@@ -13,7 +13,7 @@ export function secureRandom () {
  * @returns
  */
 export function secureRandomWithRandomValues () {
-  return crypto.getRandomValues(new Uint32Array(1))[0] / 0x100000000
+  return webcrypto.getRandomValues(new Uint32Array(1))[0] / 0x100000000
 }
 
 /**
