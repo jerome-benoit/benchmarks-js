@@ -51,7 +51,11 @@
     "lint:fix": "eslint . --cache --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "jerome-benoit",
+  "author": {
+    "name": "Jérôme Benoit",
+    "email": "jerome.benoit@piment-noir.org",
+    "url": "https://github.com/jerome-benoit"
+  },
   "license": "MIT",
   "dependencies": {
     "benny": "^3.7.1",
