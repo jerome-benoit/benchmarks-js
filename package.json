@@ -42,6 +42,7 @@
     "benchmark:is-undefined": "node is-undefined.mjs",
     "benchmark:quick-select": "node quick-select.mjs",
     "benchmark:max": "node max.mjs",
+    "benchmark:min": "node min.mjs",
     "benchmark:promise-handling": "node promise-handling.mjs",
     "benchmark:fibonacci": "node fibonacci.mjs",
     "benchmark:random": "node random.mjs",
