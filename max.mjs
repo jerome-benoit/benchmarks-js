@@ -10,11 +10,11 @@ const testArray = generateRandomNumberArray(size)
  * @returns
  */
 function loopMax (values) {
-  let max = -Infinity
+  let maximum = -Infinity
   for (const value of values) {
-    if (value > max) max = value
+    if (value > maximum) maximum = value
   }
-  return max
+  return maximum
 }
 
 /**
@@ -23,7 +23,10 @@ function loopMax (values) {
  * @returns
  */
 function reduceTernaryMax (values) {
-  return values.reduce((a, b) => (a > b ? a : b), -Infinity)
+  return values.reduce(
+    (maximum, num) => (maximum > num ? maximum : num),
+    -Infinity
+  )
 }
 
 /**
@@ -32,7 +35,7 @@ function reduceTernaryMax (values) {
  * @returns
  */
 function reduceMathMax (values) {
-  return values.reduce((a, b) => Math.max(a, b), -Infinity)
+  return values.reduce((maximum, num) => Math.max(maximum, num), -Infinity)
 }
 
 /**

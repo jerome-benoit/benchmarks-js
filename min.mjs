@@ -10,11 +10,11 @@ const testArray = generateRandomNumberArray(size)
  * @returns
  */
 function loopMin (values) {
-  let min = Infinity
+  let minimum = Infinity
   for (const value of values) {
-    if (value < min) min = value
+    if (value < minimum) minimum = value
   }
-  return min
+  return minimum
 }
 
 /**
@@ -23,7 +23,10 @@ function loopMin (values) {
  * @returns
  */
 function reduceTernaryMin (values) {
-  return values.reduce((a, b) => (a < b ? a : b), Infinity)
+  return values.reduce(
+    (minimum, num) => (minimum < num ? minimum : num),
+    Infinity
+  )
 }
 
 /**
@@ -32,7 +35,7 @@ function reduceTernaryMin (values) {
  * @returns
  */
 function reduceMathMin (values) {
-  return values.reduce((a, b) => Math.min(a, b), Infinity)
+  return values.reduce((minimum, num) => Math.min(minimum, num), Infinity)
 }
 
 /**
