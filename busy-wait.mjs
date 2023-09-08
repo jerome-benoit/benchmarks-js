@@ -45,7 +45,7 @@ async function divideAndConquerTimeoutBusyWait (
  * @param intervalMs
  */
 async function setIntervalTimeoutBusyWait (timeoutMs, intervalMs = interval) {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     const tries = Math.round(timeoutMs / intervalMs)
     let count = 0
     const triesSetInterval = setInterval(() => {
@@ -77,6 +77,6 @@ Benchmark.suite(
   Benchmark.save({ file: 'busy-wait', format: 'json', details: true }),
   Benchmark.save({ file: 'busy-wait', format: 'chart.html', details: true }),
   Benchmark.save({ file: 'busy-wait', format: 'table.html', details: true })
-).catch((err) => {
+).catch(err => {
   console.error(err)
 })

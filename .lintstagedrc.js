@@ -1,9 +1,9 @@
 module.exports = {
   '*.{js,jsx,cjs,mjs}': [
-    'rome format --write',
+    'biome format --write',
     'standard --fix',
     'eslint --cache --fix'
   ],
-  '!(.vscode/**)*.json': ['rome format --write'],
+  '*.json': ['biome format --write'],
   '*.{md,yml,yaml}': ['prettier --cache --write']
 }
