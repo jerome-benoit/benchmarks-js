@@ -1,4 +1,4 @@
-import crypto, { webcrypto } from 'crypto'
+import crypto, { webcrypto } from 'node:crypto'
 
 /**
  * Generate a cryptographically secure random number in the [0,1[ range
