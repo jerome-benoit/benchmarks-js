@@ -3,8 +3,8 @@ import Benchmark from 'benny'
 /**
  *
  */
-function promise () {
-  return new Promise(resolve => {
+async function promise () {
+  return await new Promise(resolve => {
     resolve()
   })
 }
