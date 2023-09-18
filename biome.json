@@ -28,6 +28,6 @@
     }
   },
   "files": {
-    "ignore": [".vscode/", "pnpm-lock.yaml", "benchmark/results/"]
+    "ignore": ["pnpm-lock.yaml", "benchmark/results/"]
   }
 }
