@@ -2,10 +2,5 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
-  "cSpell.words": [
-    "benoit",
-    "deepmerge",
-    "microtime",
-    "preinstall"
-  ]
+  "cSpell.words": ["benoit", "deepmerge", "microtime", "piment", "preinstall"]
 }
