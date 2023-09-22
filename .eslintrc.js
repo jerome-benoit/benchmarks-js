@@ -19,14 +19,5 @@ module.exports = defineConfig({
     'plugin:jsdoc/recommended',
     'plugin:import/recommended',
     'plugin:promise/recommended'
-  ],
-  rules: {
-    'sort-imports': [
-      'warn',
-      {
-        ignoreDeclarationSort: true
-      }
-    ],
-    'import/order': 'warn'
-  }
+  ]
 })
