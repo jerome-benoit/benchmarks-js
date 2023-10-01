@@ -3,17 +3,10 @@ import Benchmark from 'benny'
 /**
  *
  */
-async function promise () {
-  return await new Promise(resolve => {
+async function asyncFunction () {
+  await new Promise(resolve => {
     resolve()
   })
-}
-
-/**
- *
- */
-async function asyncFunction () {
-  return await promise()
 }
 
 Benchmark.suite(
