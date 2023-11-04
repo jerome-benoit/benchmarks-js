@@ -270,4 +270,5 @@ tags
 # pnpm
 package-lock.json
 
+*.orig
 benchmark/
