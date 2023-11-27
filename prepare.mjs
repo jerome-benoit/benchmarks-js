@@ -7,7 +7,5 @@ if (isCIEnvironment === false) {
     .then(({ install }) => {
       return install()
     })
-    .catch(err => {
-      console.error(err)
-    })
+    .catch(console.error)
 }
