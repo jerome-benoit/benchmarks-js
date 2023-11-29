@@ -1,11 +1,11 @@
-import crypto, { webcrypto } from 'node:crypto'
+import { randomBytes, getRandomValues } from 'node:crypto'
 
 /**
  * Generate a cryptographically secure random number in the [0,1[ range
  * @returns
  */
 export function secureRandom () {
-  return crypto.randomBytes(4).readUInt32LE() / 0x100000000
+  return randomBytes(4).readUInt32LE() / 0x100000000
 }
 
 /**
@@ -13,7 +13,7 @@ export function secureRandom () {
  * @returns
  */
 export function secureRandomWithRandomValues () {
-  return webcrypto.getRandomValues(new Uint32Array(1))[0] / 0x100000000
+  return getRandomValues(new Uint32Array(1))[0] / 0x100000000
 }
 
 /**
