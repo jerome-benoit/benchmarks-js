@@ -1,4 +1,4 @@
-import crypto from 'node:crypto'
+import { randomInt } from 'node:crypto'
 import Benchmark from 'benny'
 import {
   secureRandom,
@@ -76,9 +76,9 @@ Benchmark.suite(
     max = Math.floor(max)
     if (min != null && min !== 0) {
       min = Math.ceil(min)
-      return Math.floor(crypto.randomInt(min, max + 1))
+      return Math.floor(randomInt(min, max + 1))
     }
-    return Math.floor(crypto.randomInt(max + 1))
+    return Math.floor(randomInt(max + 1))
   }),
   Benchmark.add('Math random integer generator', () => {
     getRandomInteger(maximum)

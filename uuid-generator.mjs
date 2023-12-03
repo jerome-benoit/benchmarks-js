@@ -1,11 +1,11 @@
-import crypto from 'node:crypto'
+import { randomUUID } from 'node:crypto'
 import Benchmark from 'benny'
 import { v4 as uuid } from 'uuid'
 
 Benchmark.suite(
   'UUIDv4 generator',
   Benchmark.add('crypto randomUUID', () => {
-    crypto.randomUUID()
+    randomUUID()
   }),
   Benchmark.add('uuid', () => {
     uuid()
