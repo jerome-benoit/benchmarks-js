@@ -23,9 +23,7 @@ Benchmark.suite(
       .then(r => {
         return r
       })
-      .catch(e => {
-        console.error(e)
-      })
+      .catch(console.error)
   }),
   Benchmark.add('voided promise', () => {
     // eslint-disable-next-line no-void
@@ -51,6 +49,4 @@ Benchmark.suite(
     format: 'table.html',
     details: true
   })
-).catch(err => {
-  console.error(err)
-})
+).catch(console.error)

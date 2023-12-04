@@ -77,6 +77,4 @@ Benchmark.suite(
   Benchmark.save({ file: 'busy-wait', format: 'json', details: true }),
   Benchmark.save({ file: 'busy-wait', format: 'chart.html', details: true }),
   Benchmark.save({ file: 'busy-wait', format: 'table.html', details: true })
-).catch(err => {
-  console.error(err)
-})
+).catch(console.error)
