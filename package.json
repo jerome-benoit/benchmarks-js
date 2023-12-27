@@ -7,9 +7,10 @@
     "node": ">=16.x",
     "pnpm": ">=8.6.0"
   },
+  "type": "module",
   "volta": {
     "node": "20.10.0",
-    "pnpm": "8.12.0"
+    "pnpm": "8.13.1"
   },
   "repository": {
     "type": "git",
@@ -74,7 +75,7 @@
     "@commitlint/config-conventional": "^18.4.3",
     "eslint": "^8.56.0",
     "eslint-config-standard": "^17.1.0",
-    "eslint-define-config": "^2.0.0",
+    "eslint-define-config": "^2.1.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsdoc": "^46.9.1",
     "eslint-plugin-n": "^16.5.0",
