@@ -1,4 +1,4 @@
-import { randomBytes, getRandomValues } from 'node:crypto'
+import { randomBytes, getRandomValues, randomInt } from 'node:crypto'
 
 /**
  * Generate a cryptographically secure random number in the [0,1[ range
@@ -14,23 +14,6 @@ export function secureRandom () {
  */
 export function secureRandomWithRandomValues () {
   return getRandomValues(new Uint32Array(1))[0] / 0x100000000
-}
-
-/**
- * @param max
- * @param min
- * @returns
- */
-export function generateRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
-  if (max < min || max < 0 || min < 0) {
-    throw new RangeError('Invalid interval')
-  }
-  max = Math.floor(max)
-  if (min != null && min !== 0) {
-    min = Math.ceil(min)
-    return Math.floor(secureRandom() * (max - min + 1)) + min
-  }
-  return Math.floor(secureRandom() * (max + 1))
 }
 
 /**
@@ -80,7 +63,7 @@ export function generateRandomObject (
   numberMax = Number.MAX_VALUE,
   numberGenerator = generateRandomFloat
 ) {
-  const size = generateRandomInteger(sizeMax)
+  const size = randomInt(sizeMax)
   const object = {}
   for (let i = 0; i < size; i++) {
     object[i.toString()] = numberGenerator(numberMax)

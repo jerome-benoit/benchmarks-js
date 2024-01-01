@@ -1,5 +1,5 @@
+import { randomInt } from 'node:crypto'
 import Benchmark from 'benny'
-import { generateRandomInteger } from './benchmark-utils.mjs'
 
 /**
  * @param numberOfWorkers
@@ -12,7 +12,7 @@ function generateRandomTasksMap (
 ) {
   const tasksArray = []
   for (let i = 0; i < numberOfWorkers; i++) {
-    const task = [i, generateRandomInteger(maxNumberOfTasksPerWorker)]
+    const task = [i, randomInt(maxNumberOfTasksPerWorker)]
     tasksArray.push(task)
   }
   return new Map(tasksArray)
@@ -63,7 +63,7 @@ const defaultPivotIndexSelect = (leftIndex, rightIndex) => {
 }
 
 const randomPivotIndexSelect = (leftIndex, rightIndex) => {
-  return generateRandomInteger(rightIndex, leftIndex)
+  return randomInt(leftIndex, rightIndex)
 }
 
 /**
