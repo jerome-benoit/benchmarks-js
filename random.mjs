@@ -17,7 +17,7 @@ function getSecureRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
     throw new RangeError('Invalid interval')
   }
   max = Math.floor(max)
-  if (min != null && min !== 0) {
+  if (min !== 0) {
     min = Math.ceil(min)
     return Math.floor(secureRandom() * (max - min + 1)) + min
   }
@@ -37,7 +37,7 @@ function getSecureRandomIntegerWithRandomValues (
     throw new RangeError('Invalid interval')
   }
   max = Math.floor(max)
-  if (min != null && min !== 0) {
+  if (min !== 0) {
     min = Math.ceil(min)
     return Math.floor(secureRandomWithRandomValues() * (max - min + 1)) + min
   }
@@ -54,7 +54,7 @@ function getRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
     throw new RangeError('Invalid interval')
   }
   max = Math.floor(max)
-  if (min != null && min !== 0) {
+  if (min !== 0) {
     min = Math.ceil(min)
     return Math.floor(Math.random() * (max - min + 1)) + min
   }
@@ -74,7 +74,7 @@ Benchmark.suite(
   ),
   Benchmark.add('Crypto random integer generator', (max = maximum, min = 0) => {
     max = Math.floor(max)
-    if (min != null && min !== 0) {
+    if (min !== 0) {
       min = Math.ceil(min)
       return Math.floor(randomInt(min, max + 1))
     }
