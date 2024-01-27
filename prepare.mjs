@@ -5,7 +5,7 @@ if (isCIEnvironment === false) {
   // eslint-disable-next-line n/no-unpublished-import
   import('husky')
     .then(husky => {
-      return husky.default()
+      return console.warn(husky.default())
     })
     .catch(console.error)
 }
