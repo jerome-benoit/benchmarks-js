@@ -4,13 +4,13 @@
   "version": "0.0.1",
   "description": "JS code pattern benchmarks",
   "engines": {
-    "node": ">=16.x",
+    "node": ">=18.x",
     "pnpm": ">=8.6.0"
   },
   "type": "module",
   "volta": {
     "node": "20.11.1",
-    "pnpm": "8.15.3"
+    "pnpm": "8.15.4"
   },
   "repository": {
     "type": "git",
