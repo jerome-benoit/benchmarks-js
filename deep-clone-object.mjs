@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
 import Benchmark from 'benny'
-import _ from 'lodash'
-import clone from 'just-clone'
 import deepClone from 'deep-clone'
+import clone from 'just-clone'
+import _ from 'lodash'
+
 import { generateRandomObject } from './benchmark-utils.mjs'
 
 const object = generateRandomObject()

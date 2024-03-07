@@ -1,4 +1,5 @@
 import { randomInt } from 'node:crypto'
+
 import Benchmark from 'benny'
 
 /**

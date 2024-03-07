@@ -1,4 +1,5 @@
 import Benchmark from 'benny'
+
 import { sleep } from './benchmark-utils.mjs'
 
 const timeout = 2000

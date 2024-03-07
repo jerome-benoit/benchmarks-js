@@ -1,4 +1,5 @@
 import { randomUUID } from 'node:crypto'
+
 import Benchmark from 'benny'
 import { v4 as uuid } from 'uuid'
 

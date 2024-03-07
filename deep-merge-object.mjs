@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
 import Benchmark from 'benny'
-import _ from 'lodash'
-import merge from 'just-merge'
 import deepMerge from 'deepmerge'
+import merge from 'just-merge'
+import _ from 'lodash'
+
 import { generateRandomObject } from './benchmark-utils.mjs'
 
 const object = generateRandomObject()

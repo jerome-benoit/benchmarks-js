@@ -1,4 +1,5 @@
 import Benchmark from 'benny'
+
 import { generateRandomObject } from './benchmark-utils.mjs'
 
 const object = generateRandomObject()

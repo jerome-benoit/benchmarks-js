@@ -1,4 +1,5 @@
 import Benchmark from 'benny'
+
 import { generateRandomNumberArray } from './benchmark-utils.mjs'
 
 const size = 10000
