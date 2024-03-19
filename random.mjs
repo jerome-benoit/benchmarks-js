@@ -7,7 +7,7 @@ import {
   secureRandomWithRandomValues
 } from './benchmark-utils.mjs'
 
-const maximum = 281474976710654
+const maximum = 281474976710655
 
 /**
  * @param max
@@ -74,13 +74,8 @@ Benchmark.suite(
       getSecureRandomIntegerWithRandomValues(maximum)
     }
   ),
-  Benchmark.add('Crypto random integer generator', (max = maximum, min = 0) => {
-    max = Math.floor(max)
-    if (min !== 0) {
-      min = Math.ceil(min)
-      return Math.floor(randomInt(min, max + 1))
-    }
-    return Math.floor(randomInt(max + 1))
+  Benchmark.add('Crypto random integer generator', () => {
+    randomInt(maximum)
   }),
   Benchmark.add('Math random integer generator', () => {
     getRandomInteger(maximum)
