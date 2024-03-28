@@ -25,9 +25,9 @@ function fibonacciLoopWhile (num) {
   let current = 1
   let previous = 0
   while (--num) {
-    const temp = current
+    const tmp = current
     current += previous
-    previous = temp
+    previous = tmp
   }
   return current
 }
