@@ -1,28 +1,14 @@
-import Benchmark from 'benny'
+import { bench, group, run } from 'mitata'
 
-Benchmark.suite(
-  'Is undefined',
-  Benchmark.add('=== undefined', (value = undefined) => {
+group('Is undefined', () => {
+  bench('=== undefined', (value = undefined) => {
     return value === undefined
-  }),
-  Benchmark.add("typeof === 'undefined'", (value = undefined) => {
-    return typeof value === 'undefined'
-  }),
-  Benchmark.cycle(),
-  Benchmark.complete(),
-  Benchmark.save({
-    file: 'is-undefined',
-    format: 'json',
-    details: true
-  }),
-  Benchmark.save({
-    file: 'is-undefined',
-    format: 'chart.html',
-    details: true
-  }),
-  Benchmark.save({
-    file: 'is-undefined',
-    format: 'table.html',
-    details: true
   })
-).catch(console.error)
+  bench("typeof === 'undefined'", (value = undefined) => {
+    return typeof value === 'undefined'
+  })
+})
+
+await run({
+  units: true
+})

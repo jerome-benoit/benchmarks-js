@@ -1,6 +1,6 @@
 import { randomInt } from 'node:crypto'
 
-import Benchmark from 'benny'
+import { bench, group, run } from 'mitata'
 
 import {
   secureRandom,
@@ -63,38 +63,21 @@ function getRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
   return Math.floor(Math.random() * (max + 1))
 }
 
-Benchmark.suite(
-  'Random Integer Generator',
-  Benchmark.add('Secure random integer generator', () => {
+group('Random Integer Generator', () => {
+  bench('Secure random integer generator', () => {
     getSecureRandomInteger(maximum)
-  }),
-  Benchmark.add(
-    'Secure random with getRandomValues() integer generator',
-    () => {
-      getSecureRandomIntegerWithRandomValues(maximum)
-    }
-  ),
-  Benchmark.add('Crypto random integer generator', () => {
-    randomInt(maximum)
-  }),
-  Benchmark.add('Math random integer generator', () => {
-    getRandomInteger(maximum)
-  }),
-  Benchmark.cycle(),
-  Benchmark.complete(),
-  Benchmark.save({
-    file: 'random-integer-generator',
-    format: 'json',
-    details: true
-  }),
-  Benchmark.save({
-    file: 'random-integer-generator',
-    format: 'chart.html',
-    details: true
-  }),
-  Benchmark.save({
-    file: 'random-integer-generator',
-    format: 'table.html',
-    details: true
   })
-).catch(console.error)
+  bench('Secure random with getRandomValues() integer generator', () => {
+    getSecureRandomIntegerWithRandomValues(maximum)
+  })
+  bench('Crypto random integer generator', () => {
+    randomInt(maximum)
+  })
+  bench('Math random integer generator', () => {
+    getRandomInteger(maximum)
+  })
+})
+
+await run({
+  units: true
+})

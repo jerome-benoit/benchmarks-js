@@ -1,6 +1,6 @@
 import { randomInt } from 'node:crypto'
 
-import Benchmark from 'benny'
+import { bench, group, run } from 'mitata'
 
 /**
  * @param numberOfWorkers
@@ -228,41 +228,27 @@ function quickSelectRecursionRandomPivot (tasksMap) {
   )
 }
 
-Benchmark.suite(
-  'Quick select',
-  Benchmark.add('Loop select', () => {
+group('Quick select', () => {
+  bench('Loop select', () => {
     loopSelect(tasksMap)
-  }),
-  Benchmark.add('Array sort select', () => {
-    arraySortSelect(tasksMap)
-  }),
-  Benchmark.add('Quick select loop', () => {
-    quickSelectLoop(tasksMap)
-  }),
-  Benchmark.add('Quick select loop with random pivot', () => {
-    quickSelectLoopRandomPivot(tasksMap)
-  }),
-  Benchmark.add('Quick select recursion', () => {
-    quickSelectRecursion(tasksMap)
-  }),
-  Benchmark.add('Quick select recursion with random pivot', () => {
-    quickSelectRecursionRandomPivot(tasksMap)
-  }),
-  Benchmark.cycle(),
-  Benchmark.complete(),
-  Benchmark.save({
-    file: 'quick-select',
-    format: 'json',
-    details: true
-  }),
-  Benchmark.save({
-    file: 'quick-select',
-    format: 'chart.html',
-    details: true
-  }),
-  Benchmark.save({
-    file: 'quick-select',
-    format: 'table.html',
-    details: true
   })
-).catch(console.error)
+  bench('Array sort select', () => {
+    arraySortSelect(tasksMap)
+  })
+  bench('Quick select loop', () => {
+    quickSelectLoop(tasksMap)
+  })
+  bench('Quick select loop with random pivot', () => {
+    quickSelectLoopRandomPivot(tasksMap)
+  })
+  bench('Quick select recursion', () => {
+    quickSelectRecursion(tasksMap)
+  })
+  bench('Quick select recursion with random pivot', () => {
+    quickSelectRecursionRandomPivot(tasksMap)
+  })
+})
+
+await run({
+  units: true
+})

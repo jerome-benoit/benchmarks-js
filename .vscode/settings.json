@@ -8,7 +8,9 @@
     "commitlint",
     "deepmerge",
     "microtime",
+    "mitata",
     "piment",
-    "preinstall"
+    "preinstall",
+    "rambda"
   ]
 }

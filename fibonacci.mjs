@@ -1,4 +1,4 @@
-import Benchmark from 'benny'
+import { bench, group, run } from 'mitata'
 
 const number = 30
 
@@ -57,23 +57,21 @@ function fibonacciRecursionMemoization (num, memo) {
     fibonacciRecursionMemoization(num - 2, memo))
 }
 
-Benchmark.suite(
-  `Fibonacci number ${number}`,
-  Benchmark.add('fibonacciLoop', () => {
+group(`Fibonacci number ${number}`, () => {
+  bench('fibonacciLoop', () => {
     fibonacciLoop(number)
-  }),
-  Benchmark.add('fibonacciLoopWhile', () => {
+  })
+  bench('fibonacciLoopWhile', () => {
     fibonacciLoopWhile(number)
-  }),
-  Benchmark.add('fibonacciRecursion', () => {
+  })
+  bench('fibonacciRecursion', () => {
     fibonacciRecursion(number)
-  }),
-  Benchmark.add('fibonacciRecursionMemoization', () => {
+  })
+  bench('fibonacciRecursionMemoization', () => {
     fibonacciRecursionMemoization(number)
-  }),
-  Benchmark.cycle(),
-  Benchmark.complete(),
-  Benchmark.save({ file: 'fibonacci', format: 'json', details: true }),
-  Benchmark.save({ file: 'fibonacci', format: 'chart.html', details: true }),
-  Benchmark.save({ file: 'fibonacci', format: 'table.html', details: true })
-).catch(console.error)
+  })
+})
+
+await run({
+  units: true
+})

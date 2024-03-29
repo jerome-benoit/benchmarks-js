@@ -64,9 +64,10 @@
     "deep-clone": "^4.0.0",
     "deepmerge": "^4.3.1",
     "just-clone": "^6.2.0",
-    "just-merge": "^3.2.0",
     "lodash": "^4.17.21",
     "microtime": "^3.1.1",
+    "mitata": "^0.1.11",
+    "rambda": "^9.1.1",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

@@ -1,45 +1,35 @@
 /* eslint-disable no-unused-vars */
-import Benchmark from 'benny'
 import deepClone from 'deep-clone'
 import clone from 'just-clone'
 import _ from 'lodash'
+import { bench, group, run } from 'mitata'
+import { clone as rambdaClone } from 'rambda'
 
 import { generateRandomObject } from './benchmark-utils.mjs'
 
 const object = generateRandomObject()
 
-Benchmark.suite(
-  `Deep clone object with ${Object.keys(object).length} keys`,
-  Benchmark.add('JSON stringify/parse', (obj = object) => {
+group(`Deep clone object with ${Object.keys(object).length} keys`, () => {
+  bench('JSON stringify/parse', (obj = object) => {
     const objCloned = JSON.parse(JSON.stringify(obj))
-  }),
-  Benchmark.add('structuredClone', (obj = object) => {
-    const objCloned = structuredClone(obj)
-  }),
-  Benchmark.add('lodash cloneDeep', (obj = object) => {
-    const objCloned = _.cloneDeep(obj)
-  }),
-  Benchmark.add('just-clone', (obj = object) => {
-    const objCloned = clone(obj)
-  }),
-  Benchmark.add('deep-clone', (obj = object) => {
-    const objCloned = deepClone(obj)
-  }),
-  Benchmark.cycle(),
-  Benchmark.complete(),
-  Benchmark.save({
-    file: 'deep-clone-object',
-    format: 'json',
-    details: true
-  }),
-  Benchmark.save({
-    file: 'deep-clone-object',
-    format: 'chart.html',
-    details: true
-  }),
-  Benchmark.save({
-    file: 'deep-clone-object',
-    format: 'table.html',
-    details: true
   })
-).catch(console.error)
+  bench('structuredClone', (obj = object) => {
+    const objCloned = structuredClone(obj)
+  })
+  bench('lodash cloneDeep', (obj = object) => {
+    const objCloned = _.cloneDeep(obj)
+  })
+  bench('rambda clone', (obj = object) => {
+    const objCloned = rambdaClone(obj)
+  })
+  bench('just-clone', (obj = object) => {
+    const objCloned = clone(obj)
+  })
+  bench('deep-clone', (obj = object) => {
+    const objCloned = deepClone(obj)
+  })
+})
+
+await run({
+  units: true
+})

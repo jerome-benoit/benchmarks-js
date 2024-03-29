@@ -1,4 +1,4 @@
-import Benchmark from 'benny'
+import { bench, group, run } from 'mitata'
 
 import { generateRandomNumberArray } from './benchmark-utils.mjs'
 
@@ -48,26 +48,24 @@ function sortMin (values) {
   return values.sort((a, b) => a - b)[0]
 }
 
-Benchmark.suite(
-  `Min from ${size} numbers`,
-  Benchmark.add('Math.min', () => {
+group(`Min from ${size} numbers`, () => {
+  bench('Math.min', () => {
     Math.min(...testArray)
-  }),
-  Benchmark.add('loopMin', () => {
+  })
+  bench('loopMin', () => {
     loopMin(testArray)
-  }),
-  Benchmark.add('reduceTernaryMin', () => {
+  })
+  bench('reduceTernaryMin', () => {
     reduceTernaryMin(testArray)
-  }),
-  Benchmark.add('reduceMath.min', () => {
+  })
+  bench('reduceMathMin', () => {
     reduceMathMin(testArray)
-  }),
-  Benchmark.add('sortMin', () => {
+  })
+  bench('sortMin', () => {
     sortMin(testArray)
-  }),
-  Benchmark.cycle(),
-  Benchmark.complete(),
-  Benchmark.save({ file: 'min', format: 'json', details: true }),
-  Benchmark.save({ file: 'min', format: 'chart.html', details: true }),
-  Benchmark.save({ file: 'min', format: 'table.html', details: true })
-).catch(console.error)
+  })
+})
+
+await run({
+  units: true
+})

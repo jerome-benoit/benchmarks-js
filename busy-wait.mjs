@@ -1,4 +1,4 @@
-import Benchmark from 'benny'
+import { bench, group, run } from 'mitata'
 
 import { sleep } from './benchmark-utils.mjs'
 
@@ -59,23 +59,21 @@ async function setIntervalTimeoutBusyWait (timeoutMs, intervalMs = interval) {
   })
 }
 
-Benchmark.suite(
-  'Busy wait',
-  Benchmark.add('dummyTimeoutBusyWait', () => {
+group('Busy wait', () => {
+  bench('dummyTimeoutBusyWait', () => {
     dummyTimeoutBusyWait(timeout)
-  }),
-  Benchmark.add('sleepTimeoutBusyWait', async () => {
+  })
+  bench('sleepTimeoutBusyWait', async () => {
     await sleepTimeoutBusyWait(timeout)
-  }),
-  Benchmark.add('divideAndConquerTimeoutBusyWait', async () => {
+  })
+  bench('divideAndConquerTimeoutBusyWait', async () => {
     await divideAndConquerTimeoutBusyWait(timeout)
-  }),
-  Benchmark.add('setIntervalTimeoutBusyWait', async () => {
+  })
+  bench('setIntervalTimeoutBusyWait', async () => {
     await setIntervalTimeoutBusyWait(timeout)
-  }),
-  Benchmark.cycle(),
-  Benchmark.complete(),
-  Benchmark.save({ file: 'busy-wait', format: 'json', details: true }),
-  Benchmark.save({ file: 'busy-wait', format: 'chart.html', details: true }),
-  Benchmark.save({ file: 'busy-wait', format: 'table.html', details: true })
-).catch(console.error)
+  })
+})
+
+await run({
+  units: true
+})

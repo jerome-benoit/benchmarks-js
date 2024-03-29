@@ -1,4 +1,4 @@
-import Benchmark from 'benny'
+import { bench, group, run } from 'mitata'
 
 import { generateRandomNumberArray } from './benchmark-utils.mjs'
 
@@ -48,26 +48,24 @@ function sortMax (values) {
   return values.sort((a, b) => b - a)[0]
 }
 
-Benchmark.suite(
-  `Max from ${size} numbers`,
-  Benchmark.add('Math.max', () => {
+group(`Max from ${size} numbers`, () => {
+  bench('Math.max', () => {
     Math.max(...testArray)
-  }),
-  Benchmark.add('loopMax', () => {
+  })
+  bench('loopMax', () => {
     loopMax(testArray)
-  }),
-  Benchmark.add('reduceTernaryMax', () => {
+  })
+  bench('reduceTernaryMax', () => {
     reduceTernaryMax(testArray)
-  }),
-  Benchmark.add('reduceMath.max', () => {
+  })
+  bench('reduceMathMax', () => {
     reduceMathMax(testArray)
-  }),
-  Benchmark.add('sortMax', () => {
+  })
+  bench('sortMax', () => {
     sortMax(testArray)
-  }),
-  Benchmark.cycle(),
-  Benchmark.complete(),
-  Benchmark.save({ file: 'max', format: 'json', details: true }),
-  Benchmark.save({ file: 'max', format: 'chart.html', details: true }),
-  Benchmark.save({ file: 'max', format: 'table.html', details: true })
-).catch(console.error)
+  })
+})
+
+await run({
+  units: true
+})
