@@ -24,7 +24,7 @@ group(`Is empty object with ${Object.keys(object).length} keys`, () => {
   bench('lodash isEmpty', (obj = object) => {
     return _.isEmpty(obj)
   })
-  bench('rambda is Empty', (obj = object) => {
+  bench('rambda isEmpty', (obj = object) => {
     return isEmpty(obj)
   })
 })
