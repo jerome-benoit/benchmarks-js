@@ -10,7 +10,7 @@
   "type": "module",
   "volta": {
     "node": "20.12.0",
-    "pnpm": "8.15.5"
+    "pnpm": "8.15.6"
   },
   "repository": {
     "type": "git",
@@ -68,7 +68,7 @@
     "lodash": "^4.17.21",
     "microtime": "^3.1.1",
     "mitata": "^0.1.11",
-    "rambda": "^9.1.1",
+    "rambda": "^9.2.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
