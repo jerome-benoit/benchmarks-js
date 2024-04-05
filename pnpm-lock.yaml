@@ -59,8 +59,8 @@ devDependencies:
     specifier: ^2.29.1
     version: 2.29.1(eslint@8.57.0)
   eslint-plugin-jsdoc:
-    specifier: ^48.2.2
-    version: 48.2.2(eslint@8.57.0)
+    specifier: ^48.2.3
+    version: 48.2.3(eslint@8.57.0)
   eslint-plugin-n:
     specifier: ^16.6.2
     version: 16.6.2(eslint@8.57.0)
@@ -1344,8 +1344,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-jsdoc@48.2.2(eslint@8.57.0):
-    resolution: {integrity: sha512-S0Gk+rpT5w/ephKCncUY7kUsix9uE4B9XI8D/fS1/26d8okE+vZsuG1IvIt4B6sJUdQqsnzi+YXfmh+HJG11CA==}
+  /eslint-plugin-jsdoc@48.2.3(eslint@8.57.0):
+    resolution: {integrity: sha512-r9DMAmFs66VNvNqRLLjHejdnJtILrt3xGi+Qx0op0oRfFGVpOR1Hb3BC++MacseHx93d8SKYPhyrC9BS7Os2QA==}
     engines: {node: '>=18'}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
@@ -2999,7 +2999,7 @@ packages:
       eslint-plugin-promise: 6.1.1(eslint@8.57.0)
       eslint-plugin-react: 7.34.1(eslint@8.57.0)
       standard-engine: 15.1.0
-      version-guard: 1.1.1
+      version-guard: 1.1.2
     transitivePeerDependencies:
       - '@typescript-eslint/parser'
       - eslint-import-resolver-typescript
@@ -3256,8 +3256,8 @@ packages:
     hasBin: true
     dev: false
 
-  /version-guard@1.1.1:
-    resolution: {integrity: sha512-MGQLX89UxmYHgDvcXyjBI0cbmoW+t/dANDppNPrno64rYr8nH4SHSuElQuSYdXGEs0mUzdQe1BY+FhVPNsAmJQ==}
+  /version-guard@1.1.2:
+    resolution: {integrity: sha512-D8d+YxCUpoqtCnQzDxm6SF7DLU3gr2535T4khAtMq4osBahsQnmSxuwXFdrbAdDGG8Uokzfis/jvyeFPdmlc7w==}
     engines: {node: '>=0.10.48'}
     dev: true
 
