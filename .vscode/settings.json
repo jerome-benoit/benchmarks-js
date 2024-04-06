@@ -10,6 +10,7 @@
     "microtime",
     "mitata",
     "piment",
+    "poolifier",
     "preinstall",
     "rambda"
   ]
