@@ -67,7 +67,7 @@
     "just-clone": "^6.2.0",
     "lodash": "^4.17.21",
     "microtime": "^3.1.1",
-    "mitata": "^0.1.11",
+    "mitata": "github:jerome-benoit/mitata#master",
     "rambda": "^9.2.0",
     "uuid": "^9.0.1"
   },
