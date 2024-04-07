@@ -28,7 +28,7 @@ dependencies:
     version: 3.1.1
   mitata:
     specifier: github:poolifier/mitata#master
-    version: github.com/poolifier/mitata/b2a1891fc415a3191712872a6a99ed0fd74effb9(typescript@5.4.4)
+    version: github.com/poolifier/mitata/a4a84ee5ee909c44ad668c753648b991c0eca672(typescript@5.4.4)
   rambda:
     specifier: ^9.2.0
     version: 9.2.0
@@ -3391,9 +3391,9 @@ packages:
     engines: {node: '>=12.20'}
     dev: true
 
-  github.com/poolifier/mitata/b2a1891fc415a3191712872a6a99ed0fd74effb9(typescript@5.4.4):
-    resolution: {tarball: https://codeload.github.com/poolifier/mitata/tar.gz/b2a1891fc415a3191712872a6a99ed0fd74effb9}
-    id: github.com/poolifier/mitata/b2a1891fc415a3191712872a6a99ed0fd74effb9
+  github.com/poolifier/mitata/a4a84ee5ee909c44ad668c753648b991c0eca672(typescript@5.4.4):
+    resolution: {tarball: https://codeload.github.com/poolifier/mitata/tar.gz/a4a84ee5ee909c44ad668c753648b991c0eca672}
+    id: github.com/poolifier/mitata/a4a84ee5ee909c44ad668c753648b991c0eca672
     name: mitata
     version: 0.1.11
     requiresBuild: true
