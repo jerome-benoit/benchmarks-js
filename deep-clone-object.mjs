@@ -2,8 +2,8 @@
 import deepClone from 'deep-clone'
 import clone from 'just-clone'
 import _ from 'lodash'
-import { bench, group, run } from 'mitata'
 import { clone as rambdaClone } from 'rambda'
+import { bench, group, run } from 'tatami-ng'
 
 import { generateRandomObject } from './benchmark-utils.mjs'
 

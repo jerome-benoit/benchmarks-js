@@ -67,8 +67,8 @@
     "just-clone": "^6.2.0",
     "lodash": "^4.17.21",
     "microtime": "^3.1.1",
-    "mitata": "github:poolifier/mitata#master",
     "rambda": "^9.2.0",
+    "tatami-ng": "^0.2.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

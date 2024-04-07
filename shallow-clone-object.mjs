@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import _ from 'lodash'
-import { bench, group, run } from 'mitata'
 import { assoc } from 'rambda'
+import { bench, group, run } from 'tatami-ng'
 
 import { generateRandomObject } from './benchmark-utils.mjs'
 

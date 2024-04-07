@@ -1,4 +1,4 @@
-import { bench, group, run } from 'mitata'
+import { bench, group, run } from 'tatami-ng'
 
 import { generateRandomNumberArray } from './benchmark-utils.mjs'
 

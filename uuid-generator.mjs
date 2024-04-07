@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto'
 
-import { bench, group, run } from 'mitata'
+import { bench, group, run } from 'tatami-ng'
 import { v4 as uuid } from 'uuid'
 
 group('UUIDv4 generator', () => {

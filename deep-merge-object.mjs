@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import deepMerge from 'deepmerge'
 import _ from 'lodash'
-import { bench, group, run } from 'mitata'
 import { mergeDeepRight } from 'rambda'
+import { bench, group, run } from 'tatami-ng'
 
 import { generateRandomObject } from './benchmark-utils.mjs'
 
