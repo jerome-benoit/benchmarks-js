@@ -68,7 +68,7 @@
     "lodash": "^4.17.21",
     "microtime": "^3.1.1",
     "rambda": "^9.2.0",
-    "tatami-ng": "^0.3.1",
+    "tatami-ng": "^0.3.2",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
@@ -82,7 +82,7 @@
     "eslint-plugin-jsdoc": "^48.2.3",
     "eslint-plugin-n": "^17.2.0",
     "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-simple-import-sort": "^12.0.0",
+    "eslint-plugin-simple-import-sort": "^12.1.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
