@@ -7,7 +7,6 @@
     "biomejs",
     "commitlint",
     "deepmerge",
-    "microtime",
     "piment",
     "poolifier",
     "preinstall",
