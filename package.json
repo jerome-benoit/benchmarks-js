@@ -68,13 +68,13 @@
     "lodash": "^4.17.21",
     "microtime": "^3.1.1",
     "rambda": "^9.2.0",
-    "tatami-ng": "^0.3.2",
+    "tatami-ng": "^0.3.3",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.6.4",
-    "@commitlint/cli": "^19.2.1",
-    "@commitlint/config-conventional": "^19.1.0",
+    "@commitlint/cli": "^19.2.2",
+    "@commitlint/config-conventional": "^19.2.2",
     "eslint": "^8.57.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-define-config": "^2.1.0",
