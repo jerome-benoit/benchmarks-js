@@ -67,7 +67,7 @@
     "just-clone": "^6.2.0",
     "lodash": "^4.17.21",
     "rambda": "^9.2.0",
-    "tatami-ng": "^0.3.4",
+    "tatami-ng": "^0.4.1",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
