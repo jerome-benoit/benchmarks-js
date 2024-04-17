@@ -7,11 +7,11 @@
     "node": ">=18.0.0",
     "pnpm": ">=9.0.0"
   },
-  "packageManager": "pnpm@9.0.1",
+  "packageManager": "pnpm@9.0.2",
   "type": "module",
   "volta": {
     "node": "20.12.2",
-    "pnpm": "9.0.1"
+    "pnpm": "9.0.2"
   },
   "repository": {
     "type": "git",
