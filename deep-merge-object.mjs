@@ -15,13 +15,13 @@ group(
   } keys, object with ${Object.keys(objectToMerge).length} keys`,
   () => {
     bench('lodash merge', (obj = object) => {
-      const objMerged = _.merge(obj, objectToMerge)
+      _.merge(obj, objectToMerge)
     })
     bench('rambda mergeDeepRight', (obj = object) => {
-      const objMerged = mergeDeepRight(obj, objectToMerge)
+      mergeDeepRight(obj, objectToMerge)
     })
     bench('deepmerge', (obj = object) => {
-      const objMerged = deepMerge(obj, objectToMerge)
+      deepMerge(obj, objectToMerge)
     })
   }
 )

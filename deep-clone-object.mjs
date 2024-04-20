@@ -11,22 +11,22 @@ const object = generateRandomObject()
 
 group(`Deep clone object with ${Object.keys(object).length} keys`, () => {
   bench('JSON stringify/parse', (obj = object) => {
-    const objCloned = JSON.parse(JSON.stringify(obj))
+    JSON.parse(JSON.stringify(obj))
   })
   bench('structuredClone', (obj = object) => {
-    const objCloned = structuredClone(obj)
+    structuredClone(obj)
   })
   bench('lodash cloneDeep', (obj = object) => {
-    const objCloned = _.cloneDeep(obj)
+    _.cloneDeep(obj)
   })
   bench('rambda clone', (obj = object) => {
-    const objCloned = rambdaClone(obj)
+    rambdaClone(obj)
   })
   bench('just-clone', (obj = object) => {
-    const objCloned = clone(obj)
+    clone(obj)
   })
   bench('deep-clone', (obj = object) => {
-    const objCloned = deepClone(obj)
+    deepClone(obj)
   })
 })
 

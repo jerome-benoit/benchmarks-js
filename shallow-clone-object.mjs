@@ -9,16 +9,16 @@ const object = generateRandomObject()
 
 group(`Shallow clone object with ${Object.keys(object).length} keys`, () => {
   bench('Spread', () => {
-    const objClone = { ...object }
+    return { ...object }
   })
   bench('Object assign', () => {
-    const objClone = Object.assign({}, object)
+    return Object.assign({}, object)
   })
   bench('lodash clone', () => {
-    const objClone = _.clone(object)
+    _.clone(object)
   })
   bench('rambda assoc', () => {
-    const objClone = assoc(object)
+    assoc(object)
   })
 })
 

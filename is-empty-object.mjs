@@ -22,10 +22,10 @@ group(`Is empty object with ${Object.keys(object).length} keys`, () => {
     return obj?.constructor === Object && Object.keys(obj).length === 0
   })
   bench('lodash isEmpty', (obj = object) => {
-    return _.isEmpty(obj)
+    _.isEmpty(obj)
   })
   bench('rambda isEmpty', (obj = object) => {
-    return isEmpty(obj)
+    isEmpty(obj)
   })
 })
 
