@@ -1696,8 +1696,8 @@ packages:
     resolution: {integrity: sha512-cUGJnCdr4STbePCgqNFbpVNCepa+kAVohJs1sLhxzdH+gnEoOd8VhbYa7pD3zZYGiURWM2xzEII3fQcRizDkYQ==}
     engines: {node: '>=6'}
 
-  type-fest@4.15.0:
-    resolution: {integrity: sha512-tB9lu0pQpX5KJq54g+oHOLumOx+pMep4RaM6liXh2PKmVRFF+/vAtUP0ZaJ0kOySfVNjF6doBWPHhBhISKdlIA==}
+  type-fest@4.16.0:
+    resolution: {integrity: sha512-z7Rf5PXxIhbI6eJBTwdqe5bO02nUUmctq4WqviFSstBAWV0YNtEQRhEnZw73WJ8sZOqgFG6Jdl8gYZu7NBJZnA==}
     engines: {node: '>=16'}
 
   typed-array-buffer@1.0.2:
@@ -2843,7 +2843,7 @@ snapshots:
       decircular: 0.1.1
       is-obj: 3.0.0
       sort-keys: 5.0.0
-      type-fest: 4.15.0
+      type-fest: 4.16.0
 
   hasown@2.0.2:
     dependencies:
@@ -3591,7 +3591,7 @@ snapshots:
 
   type-fest@0.3.1: {}
 
-  type-fest@4.15.0: {}
+  type-fest@4.16.0: {}
 
   typed-array-buffer@1.0.2:
     dependencies:
