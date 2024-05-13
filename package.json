@@ -7,11 +7,11 @@
     "node": ">=18.0.0",
     "pnpm": ">=9.0.0"
   },
-  "packageManager": "pnpm@9.1.0",
+  "packageManager": "pnpm@9.1.1",
   "type": "module",
   "volta": {
     "node": "22.1.0",
-    "pnpm": "9.1.0"
+    "pnpm": "9.1.1"
   },
   "repository": {
     "type": "git",
@@ -70,7 +70,7 @@
     "node-object-hash": "^3.0.0",
     "object-hash": "^3.0.0",
     "rambda": "^9.2.0",
-    "tatami-ng": "^0.4.4",
+    "tatami-ng": "^0.4.9",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
