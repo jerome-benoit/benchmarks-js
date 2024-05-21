@@ -26,7 +26,7 @@ export function generateRandomFloat (max = Number.MAX_VALUE, min = 0) {
   if (max < min) {
     throw new RangeError('Invalid interval')
   }
-  if (max - min === Infinity) {
+  if (max - min === Number.POSITIVE_INFINITY) {
     throw new RangeError('Invalid interval')
   }
   return (randomBytes(4).readUInt32LE() / 0xffffffff) * (max - min) + min
