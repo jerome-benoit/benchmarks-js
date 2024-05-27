@@ -7,11 +7,11 @@
     "node": ">=18.0.0",
     "pnpm": ">=9.0.0"
   },
-  "packageManager": "pnpm@9.1.2",
+  "packageManager": "pnpm@9.1.3",
   "type": "module",
   "volta": {
     "node": "22.2.0",
-    "pnpm": "9.1.2"
+    "pnpm": "9.1.3"
   },
   "repository": {
     "type": "git",
@@ -83,7 +83,7 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsdoc": "^48.2.6",
     "eslint-plugin-n": "^17.7.0",
-    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-promise": "^6.2.0",
     "eslint-plugin-simple-import-sort": "^12.1.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.5",
