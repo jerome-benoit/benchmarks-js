@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import deepClone from 'deep-clone'
 import clone from 'just-clone'
 import _ from 'lodash'
@@ -31,5 +30,5 @@ group(`Deep clone object with ${Object.keys(object).length} keys`, () => {
 })
 
 await run({
-  units: true
+  units: true,
 })

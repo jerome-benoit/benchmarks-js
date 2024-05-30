@@ -70,5 +70,5 @@ group(`Min from ${size} numbers`, () => {
 })
 
 await run({
-  units: true
+  units: true,
 })

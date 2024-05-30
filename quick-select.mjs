@@ -250,5 +250,5 @@ group('Quick select', () => {
 })
 
 await run({
-  units: true
+  units: true,
 })

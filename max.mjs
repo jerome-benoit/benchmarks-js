@@ -70,5 +70,5 @@ group(`Max from ${size} numbers`, () => {
 })
 
 await run({
-  units: true
+  units: true,
 })

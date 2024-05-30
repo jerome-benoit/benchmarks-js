@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import deepMerge from 'deepmerge'
 import _ from 'lodash'
 import { mergeDeepRight } from 'rambda'
@@ -27,5 +26,5 @@ group(
 )
 
 await run({
-  units: true
+  units: true,
 })

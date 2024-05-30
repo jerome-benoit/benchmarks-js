@@ -34,5 +34,5 @@ group('Promise handling', () => {
 })
 
 await run({
-  units: true
+  units: true,
 })

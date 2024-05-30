@@ -28,5 +28,5 @@ group(`Empty array with ${size} elements`, () => {
 })
 
 await run({
-  units: true
+  units: true,
 })

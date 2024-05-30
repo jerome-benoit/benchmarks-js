@@ -13,5 +13,5 @@ group('UUIDv4 generator', () => {
 })
 
 await run({
-  units: true
+  units: true,
 })

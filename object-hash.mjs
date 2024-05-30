@@ -20,5 +20,5 @@ group(`Hash object with ${Object.keys(object).length} keys`, () => {
 })
 
 await run({
-  units: true
+  units: true,
 })

@@ -10,5 +10,5 @@ group('Is undefined', () => {
 })
 
 await run({
-  units: true
+  units: true,
 })

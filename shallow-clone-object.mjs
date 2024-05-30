@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import _ from 'lodash'
 import { assoc } from 'rambda'
 import { bench, group, run } from 'tatami-ng'
@@ -23,5 +22,5 @@ group(`Shallow clone object with ${Object.keys(object).length} keys`, () => {
 })
 
 await run({
-  units: true
+  units: true,
 })

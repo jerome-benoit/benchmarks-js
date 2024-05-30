@@ -75,5 +75,5 @@ group('Busy wait', () => {
 })
 
 await run({
-  units: true
+  units: true,
 })

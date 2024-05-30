@@ -4,7 +4,7 @@ import { bench, group, run } from 'tatami-ng'
 
 import {
   secureRandom,
-  secureRandomWithRandomValues
+  secureRandomWithRandomValues,
 } from './benchmark-utils.mjs'
 
 const maximum = 281474976710655
@@ -79,5 +79,5 @@ group('Random Integer Generator', () => {
 })
 
 await run({
-  units: true
+  units: true,
 })

@@ -73,5 +73,5 @@ group(`Fibonacci number ${number}`, () => {
 })
 
 await run({
-  units: true
+  units: true,
 })

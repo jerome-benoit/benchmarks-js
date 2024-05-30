@@ -7,8 +7,8 @@ const sampleObj = {
   expertise: ['html', 'css', 'react'],
   address: {
     city: 'New york',
-    state: 'NY'
-  }
+    state: 'NY',
+  },
 }
 
 group('JSON stringify', () => {
@@ -18,5 +18,5 @@ group('JSON stringify', () => {
 })
 
 await run({
-  units: true
+  units: true,
 })
