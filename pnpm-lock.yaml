@@ -39,8 +39,8 @@ importers:
         specifier: ^0.4.13
         version: 0.4.13(typescript@5.4.5)
       uuid:
-        specifier: ^9.0.1
-        version: 9.0.1
+        specifier: ^10.0.0
+        version: 10.0.0
     devDependencies:
       '@biomejs/biome':
         specifier: ^1.8.0
@@ -887,8 +887,8 @@ packages:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
 
-  lilconfig@3.1.1:
-    resolution: {integrity: sha512-O18pf7nyvHTckunPWCV1XUNXU1piu01y2b7ATJ0ppkUkk8ocqVWBrYjJBCwHDjD/ZWcfyrA0P4gKhzWGi5EINQ==}
+  lilconfig@3.1.2:
+    resolution: {integrity: sha512-eop+wDAvpItUys0FWkHIKeC9ybYrTGbU41U5K7+bttZZeohvnY7M9dZ5kB21GNWiFT2q1OoPTvncPCgSOVO5ow==}
     engines: {node: '>=14'}
 
   lines-and-columns@1.2.4:
@@ -1273,8 +1273,8 @@ packages:
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
 
-  uuid@9.0.1:
-    resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
+  uuid@10.0.0:
+    resolution: {integrity: sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==}
     hasBin: true
 
   which@2.0.2:
@@ -2156,7 +2156,7 @@ snapshots:
       prelude-ls: 1.2.1
       type-check: 0.4.0
 
-  lilconfig@3.1.1: {}
+  lilconfig@3.1.2: {}
 
   lines-and-columns@1.2.4: {}
 
@@ -2166,7 +2166,7 @@ snapshots:
       commander: 12.1.0
       debug: 4.3.5
       execa: 8.0.1
-      lilconfig: 3.1.1
+      lilconfig: 3.1.2
       listr2: 8.2.1
       micromatch: 4.0.7
       pidtree: 0.6.0
@@ -2489,7 +2489,7 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  uuid@9.0.1: {}
+  uuid@10.0.0: {}
 
   which@2.0.2:
     dependencies:

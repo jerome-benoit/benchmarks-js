@@ -71,7 +71,7 @@
     "object-hash": "^3.0.0",
     "rambda": "^9.2.0",
     "tatami-ng": "^0.4.13",
-    "uuid": "^9.0.1"
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.0",
