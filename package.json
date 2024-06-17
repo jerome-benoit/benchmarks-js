@@ -7,11 +7,11 @@
     "node": ">=18.0.0",
     "pnpm": ">=9.0.0"
   },
-  "packageManager": "pnpm@9.3.0",
+  "packageManager": "pnpm@9.4.0",
   "type": "module",
   "volta": {
     "node": "22.3.0",
-    "pnpm": "9.3.0"
+    "pnpm": "9.4.0"
   },
   "repository": {
     "type": "git",
@@ -70,7 +70,7 @@
     "node-object-hash": "^3.0.0",
     "object-hash": "^3.0.0",
     "rambda": "^9.2.0",
-    "tatami-ng": "^0.4.13",
+    "tatami-ng": "^0.4.15",
     "uuid": "^10.0.0"
   },
   "devDependencies": {
@@ -83,10 +83,10 @@
     "eslint-plugin-jsdoc": "^48.2.12",
     "eslint-plugin-n": "^17.9.0",
     "eslint-plugin-simple-import-sort": "^12.1.0",
-    "globals": "^15.5.0",
+    "globals": "^15.6.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
-    "neostandard": "^0.7.1",
+    "neostandard": "^0.7.2",
     "prettier": "^3.3.2"
   }
 }
