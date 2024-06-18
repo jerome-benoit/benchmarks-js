@@ -69,7 +69,7 @@
     "lodash": "^4.17.21",
     "node-object-hash": "^3.0.0",
     "object-hash": "^3.0.0",
-    "rambda": "^9.2.0",
+    "rambda": "^9.2.1",
     "tatami-ng": "^0.4.15",
     "uuid": "^10.0.0"
   },
