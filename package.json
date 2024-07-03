@@ -10,7 +10,7 @@
   "packageManager": "pnpm@9.4.0",
   "type": "module",
   "volta": {
-    "node": "22.3.0",
+    "node": "22.4.0",
     "pnpm": "9.4.0"
   },
   "repository": {
