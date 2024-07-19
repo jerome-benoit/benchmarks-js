@@ -9,6 +9,7 @@
     "deepmerge",
     "hasher",
     "neostandard",
+    "Parens",
     "piment",
     "poolifier",
     "preinstall",
