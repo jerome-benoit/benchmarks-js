@@ -9,7 +9,7 @@
   },
   "type": "module",
   "volta": {
-    "node": "22.5.0",
+    "node": "22.5.1",
     "pnpm": "9.5.0"
   },
   "packageManager": "pnpm@9.5.0",
@@ -80,7 +80,7 @@
     "@eslint/js": "^9.7.0",
     "eslint": "^9.7.0",
     "eslint-define-config": "^2.1.0",
-    "eslint-plugin-jsdoc": "^48.7.0",
+    "eslint-plugin-jsdoc": "^48.8.3",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "husky": "^9.1.1",
     "lint-staged": "^15.2.7",
