@@ -1,14 +1,14 @@
 import { bench, group, run } from 'tatami-ng'
 
 const sampleObj = {
-  name: 'Sid',
-  age: 29,
-  engineer: true,
-  expertise: ['html', 'css', 'react'],
   address: {
     city: 'New york',
     state: 'NY',
   },
+  age: 29,
+  engineer: true,
+  expertise: ['html', 'css', 'react'],
+  name: 'Sid',
 }
 
 group('JSON stringify', () => {

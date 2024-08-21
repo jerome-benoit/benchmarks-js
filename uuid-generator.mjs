@@ -1,5 +1,4 @@
 import { randomUUID } from 'node:crypto'
-
 import { bench, group, run } from 'tatami-ng'
 import { v4 as uuid } from 'uuid'
 
