@@ -10,9 +10,9 @@
   "type": "module",
   "volta": {
     "node": "22.9.0",
-    "pnpm": "9.12.1"
+    "pnpm": "9.12.2"
   },
-  "packageManager": "pnpm@9.12.1",
+  "packageManager": "pnpm@9.12.2",
   "repository": {
     "type": "git",
     "url": "git://github.com/jerome-benoit/benchmarks-js.git"
@@ -70,7 +70,7 @@
     "node-object-hash": "^3.0.0",
     "object-hash": "^3.0.0",
     "rambda": "^9.3.0",
-    "tatami-ng": "^0.8.4",
+    "tatami-ng": "^0.8.5",
     "uuid": "^10.0.0"
   },
   "devDependencies": {
