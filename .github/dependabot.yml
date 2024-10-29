@@ -16,11 +16,11 @@ updates:
     groups:
       regular:
         update-types:
-          - 'minor'
           - 'patch'
-      major:
-        update-types:
-          - 'major'
+          - 'minor'
+      commitlint:
+        patterns:
+          - '@commitlint/*'
     labels:
       - 'dependencies'
     reviewers:
