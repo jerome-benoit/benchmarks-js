@@ -4,5 +4,5 @@ export default {
     'eslint --cache --fix',
   ],
   '*.{md,yml,yaml}': ['prettier --cache --write'],
-  '*.json': ['biome format --write'],
+  '*.json': ['biome format --no-errors-on-unmatched --write'],
 }
