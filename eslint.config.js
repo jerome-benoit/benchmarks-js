@@ -11,5 +11,7 @@ export default defineFlatConfig([
   plugins.n.configs['flat/recommended'],
   jsdoc.configs['flat/recommended'],
   perfectionist.configs['recommended-natural'],
-  ...neostandard(),
+  ...neostandard({
+    noJsx: true,
+  }),
 ])
