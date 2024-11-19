@@ -23,9 +23,9 @@ function loopMin (values) {
  * @param values
  * @returns
  */
-function reduceTernaryMin (values) {
+function reduceMathMin (values) {
   return values.reduce(
-    (minimum, num) => (minimum < num ? minimum : num),
+    (minimum, num) => Math.min(minimum, num),
     Number.POSITIVE_INFINITY
   )
 }
@@ -35,9 +35,9 @@ function reduceTernaryMin (values) {
  * @param values
  * @returns
  */
-function reduceMathMin (values) {
+function reduceTernaryMin (values) {
   return values.reduce(
-    (minimum, num) => Math.min(minimum, num),
+    (minimum, num) => (minimum < num ? minimum : num),
     Number.POSITIVE_INFINITY
   )
 }

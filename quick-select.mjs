@@ -24,6 +24,22 @@ const tasksMap = generateRandomTasksMap(60, 20)
  * @param tasksMap
  * @returns
  */
+function arraySortSelect (tasksMap) {
+  const tasksArray = Array.from(tasksMap)
+  return tasksArray.sort((a, b) => {
+    if (a[1] < b[1]) {
+      return -1
+    } else if (a[1] > b[1]) {
+      return 1
+    }
+    return 0
+  })[0]
+}
+
+/**
+ * @param tasksMap
+ * @returns
+ */
 function loopSelect (tasksMap) {
   let minKey
   let minValue = Number.POSITIVE_INFINITY
@@ -38,22 +54,6 @@ function loopSelect (tasksMap) {
   return [minKey, minValue]
 }
 
-/**
- * @param tasksMap
- * @returns
- */
-function arraySortSelect (tasksMap) {
-  const tasksArray = Array.from(tasksMap)
-  return tasksArray.sort((a, b) => {
-    if (a[1] < b[1]) {
-      return -1
-    } else if (a[1] > b[1]) {
-      return 1
-    }
-    return 0
-  })[0]
-}
-
 const defaultComparator = (a, b) => {
   return a < b
 }
@@ -64,17 +64,6 @@ const defaultPivotIndexSelect = (leftIndex, rightIndex) => {
 
 const randomPivotIndexSelect = (leftIndex, rightIndex) => {
   return randomInt(leftIndex, rightIndex)
-}
-
-/**
- * @param array
- * @param index1
- * @param index2
- */
-function swap (array, index1, index2) {
-  const tmp = array[index1]
-  array[index1] = array[index2]
-  array[index2] = tmp
 }
 
 /**
@@ -103,6 +92,68 @@ function partition (
   }
   swap(array, rightIndex, storeIndex)
   return storeIndex
+}
+
+/**
+ * @param tasksMap
+ * @returns
+ */
+function quickSelectLoop (tasksMap) {
+  const tasksArray = Array.from(tasksMap)
+
+  return selectLoop(tasksArray, 0, 0, tasksArray.length - 1, (a, b) => {
+    return a[1] < b[1]
+  })
+}
+
+/**
+ * @param tasksMap
+ * @returns
+ */
+function quickSelectLoopRandomPivot (tasksMap) {
+  const tasksArray = Array.from(tasksMap)
+
+  return selectLoop(
+    tasksArray,
+    0,
+    0,
+    tasksArray.length - 1,
+    (a, b) => {
+      return a[1] < b[1]
+    },
+    randomPivotIndexSelect
+  )
+}
+
+/**
+ * @param tasksMap
+ * @returns
+ */
+function quickSelectRecursion (tasksMap) {
+  const tasksArray = Array.from(tasksMap)
+
+  return selectRecursion(tasksArray, 0, 0, tasksArray.length - 1, (a, b) => {
+    return a[1] < b[1]
+  })
+}
+
+/**
+ * @param tasksMap
+ * @returns
+ */
+function quickSelectRecursionRandomPivot (tasksMap) {
+  const tasksArray = Array.from(tasksMap)
+
+  return selectRecursion(
+    tasksArray,
+    0,
+    0,
+    tasksArray.length - 1,
+    (a, b) => {
+      return a[1] < b[1]
+    },
+    randomPivotIndexSelect
+  )
 }
 
 /**
@@ -166,65 +217,14 @@ function selectRecursion (
 }
 
 /**
- * @param tasksMap
- * @returns
+ * @param array
+ * @param index1
+ * @param index2
  */
-function quickSelectLoop (tasksMap) {
-  const tasksArray = Array.from(tasksMap)
-
-  return selectLoop(tasksArray, 0, 0, tasksArray.length - 1, (a, b) => {
-    return a[1] < b[1]
-  })
-}
-
-/**
- * @param tasksMap
- * @returns
- */
-function quickSelectLoopRandomPivot (tasksMap) {
-  const tasksArray = Array.from(tasksMap)
-
-  return selectLoop(
-    tasksArray,
-    0,
-    0,
-    tasksArray.length - 1,
-    (a, b) => {
-      return a[1] < b[1]
-    },
-    randomPivotIndexSelect
-  )
-}
-
-/**
- * @param tasksMap
- * @returns
- */
-function quickSelectRecursion (tasksMap) {
-  const tasksArray = Array.from(tasksMap)
-
-  return selectRecursion(tasksArray, 0, 0, tasksArray.length - 1, (a, b) => {
-    return a[1] < b[1]
-  })
-}
-
-/**
- * @param tasksMap
- * @returns
- */
-function quickSelectRecursionRandomPivot (tasksMap) {
-  const tasksArray = Array.from(tasksMap)
-
-  return selectRecursion(
-    tasksArray,
-    0,
-    0,
-    tasksArray.length - 1,
-    (a, b) => {
-      return a[1] < b[1]
-    },
-    randomPivotIndexSelect
-  )
+function swap (array, index1, index2) {
+  const tmp = array[index1]
+  array[index1] = array[index2]
+  array[index2] = tmp
 }
 
 group('Quick select', () => {

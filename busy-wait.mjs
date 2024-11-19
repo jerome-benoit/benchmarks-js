@@ -7,26 +7,6 @@ const interval = 1000
 
 /**
  * @param timeoutMs
- */
-function dummyTimeoutBusyWait (timeoutMs) {
-  const timeoutTimestampMs = performance.now() + timeoutMs
-  // eslint-disable-next-line no-empty
-  do {} while (performance.now() < timeoutTimestampMs)
-}
-
-/**
- * @param timeoutMs
- * @param intervalMs
- */
-async function sleepTimeoutBusyWait (timeoutMs, intervalMs = interval) {
-  const timeoutTimestampMs = performance.now() + timeoutMs
-  do {
-    await sleep(intervalMs)
-  } while (performance.now() < timeoutTimestampMs)
-}
-
-/**
- * @param timeoutMs
  * @param intervalMs
  */
 async function divideAndConquerTimeoutBusyWait (
@@ -39,6 +19,15 @@ async function divideAndConquerTimeoutBusyWait (
     count++
     await sleep(intervalMs)
   } while (count <= tries)
+}
+
+/**
+ * @param timeoutMs
+ */
+function dummyTimeoutBusyWait (timeoutMs) {
+  const timeoutTimestampMs = performance.now() + timeoutMs
+  // eslint-disable-next-line no-empty
+  do {} while (performance.now() < timeoutTimestampMs)
 }
 
 /**
@@ -57,6 +46,17 @@ async function setIntervalTimeoutBusyWait (timeoutMs, intervalMs = interval) {
       }
     }, intervalMs)
   })
+}
+
+/**
+ * @param timeoutMs
+ * @param intervalMs
+ */
+async function sleepTimeoutBusyWait (timeoutMs, intervalMs = interval) {
+  const timeoutTimestampMs = performance.now() + timeoutMs
+  do {
+    await sleep(intervalMs)
+  } while (performance.now() < timeoutTimestampMs)
 }
 
 group('Busy wait', () => {

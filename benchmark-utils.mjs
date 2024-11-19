@@ -1,22 +1,6 @@
 import { getRandomValues, randomBytes, randomInt } from 'node:crypto'
 
 /**
- * Generate a cryptographically secure random number in the [0,1[ range
- * @returns
- */
-export function secureRandom () {
-  return randomBytes(4).readUInt32LE() / 0x100000000
-}
-
-/**
- * Generate a cryptographically secure random number in the [0,1[ range
- * @returns
- */
-export function secureRandomWithRandomValues () {
-  return getRandomValues(new Uint32Array(1))[0] / 0x100000000
-}
-
-/**
  *
  * @param max
  * @param min
@@ -69,6 +53,22 @@ export function generateRandomObject (
     object[i.toString()] = numberGenerator(numberMax)
   }
   return object
+}
+
+/**
+ * Generate a cryptographically secure random number in the [0,1[ range
+ * @returns
+ */
+export function secureRandom () {
+  return randomBytes(4).readUInt32LE() / 0x100000000
+}
+
+/**
+ * Generate a cryptographically secure random number in the [0,1[ range
+ * @returns
+ */
+export function secureRandomWithRandomValues () {
+  return getRandomValues(new Uint32Array(1))[0] / 0x100000000
 }
 
 /**

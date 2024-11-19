@@ -23,9 +23,9 @@ function loopMax (values) {
  * @param values
  * @returns
  */
-function reduceTernaryMax (values) {
+function reduceMathMax (values) {
   return values.reduce(
-    (maximum, num) => (maximum > num ? maximum : num),
+    (maximum, num) => Math.max(maximum, num),
     Number.NEGATIVE_INFINITY
   )
 }
@@ -35,9 +35,9 @@ function reduceTernaryMax (values) {
  * @param values
  * @returns
  */
-function reduceMathMax (values) {
+function reduceTernaryMax (values) {
   return values.reduce(
-    (maximum, num) => Math.max(maximum, num),
+    (maximum, num) => (maximum > num ? maximum : num),
     Number.NEGATIVE_INFINITY
   )
 }
