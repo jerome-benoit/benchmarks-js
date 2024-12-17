@@ -27,8 +27,8 @@ importers:
         specifier: ^4.17.21
         version: 4.17.21
       node-object-hash:
-        specifier: ^3.0.0
-        version: 3.0.0
+        specifier: ^3.1.1
+        version: 3.1.1
       object-hash:
         specifier: ^3.0.0
         version: 3.0.0
@@ -1279,8 +1279,8 @@ packages:
     peerDependencies:
       eslint: ^9.0.0
 
-  node-object-hash@3.0.0:
-    resolution: {integrity: sha512-jLF6tlyletktvSAawuPmH1SReP0YfZQ+tBrDiTCK+Ai7eXPMS9odi5xW/iKC7ZhrWJJ0Z5xYcW/x+1fVMn1Qvw==}
+  node-object-hash@3.1.1:
+    resolution: {integrity: sha512-A32kRGjXtwQ+uSa3GrXiCl8HVFY0Jy6IiKFO7UjagAKSaOOrruxB2Qf/w7TP5QtNfB3uOiHTu3cjhp8k/C0PCg==}
     engines: {node: '>=16', pnpm: '>=8'}
 
   npm-run-path@5.3.0:
@@ -3141,7 +3141,7 @@ snapshots:
       - supports-color
       - typescript
 
-  node-object-hash@3.0.0: {}
+  node-object-hash@3.1.1: {}
 
   npm-run-path@5.3.0:
     dependencies:
