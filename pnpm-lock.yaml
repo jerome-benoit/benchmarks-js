@@ -33,8 +33,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       rambda:
-        specifier: ^9.4.2
-        version: 9.4.2
+        specifier: ^10.0.0
+        version: 10.0.0
       tatami-ng:
         specifier: ^0.8.16
         version: 0.8.16(typescript@5.5.4)
@@ -1556,8 +1556,8 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
-  rambda@9.4.2:
-    resolution: {integrity: sha512-++euMfxnl7OgaEKwXh9QqThOjMeta2HH001N1v4mYQzBjJBnmXBh2BCK6dZAbICFVXOFUVD3xFG0R3ZPU0mxXw==}
+  rambda@10.0.0:
+    resolution: {integrity: sha512-2UFIKpP3ukH6ph3vKhaC8CxBqrSjGa1VHZpV+VRoufz2wsJmbtFaxRL3hZKUiWKcjP4tmIDgqoKVRl/50U7nLQ==}
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -3572,7 +3572,7 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
-  rambda@9.4.2: {}
+  rambda@10.0.0: {}
 
   react-is@16.13.1: {}
 
