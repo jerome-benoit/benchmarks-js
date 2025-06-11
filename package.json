@@ -10,9 +10,9 @@
   "type": "module",
   "volta": {
     "node": "22.16.0",
-    "pnpm": "10.11.1"
+    "pnpm": "10.12.1"
   },
-  "packageManager": "pnpm@10.11.1",
+  "packageManager": "pnpm@10.12.1",
   "repository": {
     "type": "git",
     "url": "git://github.com/jerome-benoit/benchmarks-js.git"
