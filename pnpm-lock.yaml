@@ -36,8 +36,8 @@ importers:
         specifier: ^10.3.2
         version: 10.3.2
       tatami-ng:
-        specifier: ^0.8.16
-        version: 0.8.16(typescript@5.5.4)
+        specifier: ^0.8.18
+        version: 0.8.18(typescript@5.5.4)
       uuid:
         specifier: ^11.1.0
         version: 11.1.0
@@ -943,8 +943,8 @@ packages:
   fast-levenshtein@2.0.6:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==}
 
-  fast-uri@3.0.6:
-    resolution: {integrity: sha512-Atfo14OibSv5wAp4VWNsFYE1AchQRTv9cBGWET4pZWHzYshFSS9NQI6I57rdKn9croWVMbYFbLhJ+yJvmZIIHw==}
+  fast-uri@3.1.0:
+    resolution: {integrity: sha512-iPeeDKJSWf4IEOasVVrknXpaBV0IApz/gp7S2bb7Z4Lljbl2MGJRqInZiUrQwV16cpzw/D3S5j5Julj/gT52AA==}
 
   fastq@1.19.1:
     resolution: {integrity: sha512-GwLTyxkCXjXbxqIhTsMI2Nui8huMPtnxg7krajPJAjnEG/iiOS7i+zCtWGZR9G0NBKbXKh6X9m9UIsYX/N6vvQ==}
@@ -1777,8 +1777,8 @@ packages:
     resolution: {integrity: sha512-ZL6DDuAlRlLGghwcfmSn9sK3Hr6ArtyudlSAiCqQ6IfE+b+HHbydbYDIG15IfS5do+7XQQBdBiubF/cV2dnDzg==}
     engines: {node: '>=6'}
 
-  tatami-ng@0.8.16:
-    resolution: {integrity: sha512-Ysr5BuQM7AlH5wUj1jppAHZItQDEEJXfqA/TBMJE0RbB5gsSoqmS5XI3Klc4Nglv+n7hnLBMbQQaIPLLEDja/Q==}
+  tatami-ng@0.8.18:
+    resolution: {integrity: sha512-Q22ZpW/yPXP1Hb4e2s1JQcTtoMaVHZLCt8AjAyBjARiXcorgHyvuWyIPFJOvmrTglXU2qQPLqL+7HEE0tIHdiA==}
     hasBin: true
     peerDependencies:
       typescript: ^5.4.3
@@ -2397,7 +2397,7 @@ snapshots:
   ajv@8.17.1:
     dependencies:
       fast-deep-equal: 3.1.3
-      fast-uri: 3.0.6
+      fast-uri: 3.1.0
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
 
@@ -2995,7 +2995,7 @@ snapshots:
 
   fast-levenshtein@2.0.6: {}
 
-  fast-uri@3.0.6: {}
+  fast-uri@3.1.0: {}
 
   fastq@1.19.1:
     dependencies:
@@ -3852,7 +3852,7 @@ snapshots:
 
   tapable@2.2.3: {}
 
-  tatami-ng@0.8.16(typescript@5.5.4):
+  tatami-ng@0.8.18(typescript@5.5.4):
     dependencies:
       peowly: 1.3.2
       typescript: 5.5.4

@@ -70,7 +70,7 @@
     "node-object-hash": "^3.1.1",
     "object-hash": "^3.0.0",
     "rambda": "^10.3.2",
-    "tatami-ng": "^0.8.16",
+    "tatami-ng": "^0.8.18",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
