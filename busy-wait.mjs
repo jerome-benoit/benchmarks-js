@@ -6,8 +6,10 @@ const timeout = 2000
 const interval = 1000
 
 /**
- * @param timeoutMs
- * @param intervalMs
+ * Busy wait implementation using divide and conquer strategy with sleep intervals.
+ * @param {number} timeoutMs - The total timeout in milliseconds.
+ * @param {number} intervalMs - The interval between checks in milliseconds.
+ * @returns {Promise<void>} A promise that resolves after the timeout.
  */
 async function divideAndConquerTimeoutBusyWait (
   timeoutMs,
@@ -22,7 +24,9 @@ async function divideAndConquerTimeoutBusyWait (
 }
 
 /**
- * @param timeoutMs
+ * Dummy busy wait implementation using performance.now() in a tight loop.
+ * @param {number} timeoutMs - The timeout in milliseconds.
+ * @returns {void}
  */
 function dummyTimeoutBusyWait (timeoutMs) {
   const timeoutTimestampMs = performance.now() + timeoutMs
@@ -31,8 +35,10 @@ function dummyTimeoutBusyWait (timeoutMs) {
 }
 
 /**
- * @param timeoutMs
- * @param intervalMs
+ * Busy wait implementation using setInterval.
+ * @param {number} timeoutMs - The total timeout in milliseconds.
+ * @param {number} intervalMs - The interval between checks in milliseconds.
+ * @returns {Promise<void>} A promise that resolves after the timeout.
  */
 async function setIntervalTimeoutBusyWait (timeoutMs, intervalMs = interval) {
   await new Promise(resolve => {
@@ -49,8 +55,10 @@ async function setIntervalTimeoutBusyWait (timeoutMs, intervalMs = interval) {
 }
 
 /**
- * @param timeoutMs
- * @param intervalMs
+ * Busy wait implementation using repeated sleep calls.
+ * @param {number} timeoutMs - The total timeout in milliseconds.
+ * @param {number} intervalMs - The interval between sleep calls in milliseconds.
+ * @returns {Promise<void>} A promise that resolves after the timeout.
  */
 async function sleepTimeoutBusyWait (timeoutMs, intervalMs = interval) {
   const timeoutTimestampMs = performance.now() + timeoutMs

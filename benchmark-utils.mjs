@@ -1,10 +1,10 @@
 import { getRandomValues, randomBytes, randomInt } from 'node:crypto'
 
 /**
- *
- * @param max
- * @param min
- * @returns
+ * Generates a random floating-point number between min and max.
+ * @param {number} max - The maximum value (inclusive).
+ * @param {number} min - The minimum value (inclusive).
+ * @returns {number} A random floating-point number between min and max.
  */
 export function generateRandomFloat (max = Number.MAX_VALUE, min = 0) {
   if (max < min) {
@@ -17,11 +17,11 @@ export function generateRandomFloat (max = Number.MAX_VALUE, min = 0) {
 }
 
 /**
- *
- * @param size
- * @param max
- * @param numberGenerator
- * @returns
+ * Generates an array of random numbers.
+ * @param {number} size - The size of the array to generate.
+ * @param {number} max - The maximum value for generated numbers.
+ * @param {(max: number, min?: number) => number} numberGenerator - The function to use for generating numbers.
+ * @returns {Array<number>} An array of random numbers.
  */
 export function generateRandomNumberArray (
   size,
@@ -36,11 +36,11 @@ export function generateRandomNumberArray (
 }
 
 /**
- *
- * @param sizeMax
- * @param numberMax
- * @param numberGenerator
- * @returns
+ * Generates a random object with numeric values.
+ * @param {number} sizeMax - The maximum size of the object.
+ * @param {number} numberMax - The maximum value for generated numbers.
+ * @param {(max: number, min?: number) => number} numberGenerator - The function to use for generating numbers.
+ * @returns {object} A random object with numeric properties.
  */
 export function generateRandomObject (
   sizeMax = 500,
@@ -57,7 +57,7 @@ export function generateRandomObject (
 
 /**
  * Generate a cryptographically secure random number in the [0,1[ range
- * @returns
+ * @returns {number} A secure random number between 0 (inclusive) and 1 (exclusive).
  */
 export function secureRandom () {
   return randomBytes(4).readUInt32LE() / 0x100000000
@@ -65,15 +65,16 @@ export function secureRandom () {
 
 /**
  * Generate a cryptographically secure random number in the [0,1[ range
- * @returns
+ * @returns {number} A secure random number between 0 (inclusive) and 1 (exclusive).
  */
 export function secureRandomWithRandomValues () {
   return getRandomValues(new Uint32Array(1))[0] / 0x100000000
 }
 
 /**
- * @param ms
- * @returns
+ * Asynchronously sleep for a specified number of milliseconds.
+ * @param {number} ms - The number of milliseconds to sleep.
+ * @returns {Promise<void>} A promise that resolves after the specified delay.
  */
 export async function sleep (ms) {
   return await new Promise(resolve => setTimeout(resolve, ms))

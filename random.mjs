@@ -9,9 +9,10 @@ import {
 const maximum = 281474976710655
 
 /**
- * @param max
- * @param min
- * @returns
+ * Generates a random integer between min and max using Math.random.
+ * @param {number} max - The maximum value (inclusive).
+ * @param {number} min - The minimum value (inclusive).
+ * @returns {number} A random integer between min and max.
  */
 function getRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
   if (max < min || max < 0 || min < 0) {
@@ -26,9 +27,10 @@ function getRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
 }
 
 /**
- * @param max
- * @param min
- * @returns
+ * Generates a cryptographically secure random integer using secureRandom.
+ * @param {number} max - The maximum value (inclusive).
+ * @param {number} min - The minimum value (inclusive).
+ * @returns {number} A secure random integer between min and max.
  */
 function getSecureRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
   if (max < min || max < 0 || min < 0) {
@@ -43,9 +45,10 @@ function getSecureRandomInteger (max = Number.MAX_SAFE_INTEGER, min = 0) {
 }
 
 /**
- * @param max
- * @param min
- * @returns
+ * Generates a cryptographically secure random integer using getRandomValues.
+ * @param {number} max - The maximum value (inclusive).
+ * @param {number} min - The minimum value (inclusive).
+ * @returns {number} A secure random integer between min and max.
  */
 function getSecureRandomIntegerWithRandomValues (
   max = Number.MAX_SAFE_INTEGER,

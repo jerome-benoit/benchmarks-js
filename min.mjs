@@ -6,9 +6,9 @@ const size = 10000
 const testArray = generateRandomNumberArray(size)
 
 /**
- *
- * @param values
- * @returns
+ * Finds the minimum value in an array using a loop.
+ * @param {Array<number>} values - The array of numbers to search.
+ * @returns {number} The minimum value in the array.
  */
 function loopMin (values) {
   let minimum = Number.POSITIVE_INFINITY
@@ -19,9 +19,9 @@ function loopMin (values) {
 }
 
 /**
- *
- * @param values
- * @returns
+ * Finds the minimum value in an array using reduce with Math.min.
+ * @param {Array<number>} values - The array of numbers to search.
+ * @returns {number} The minimum value in the array.
  */
 function reduceMathMin (values) {
   return values.reduce(
@@ -31,9 +31,9 @@ function reduceMathMin (values) {
 }
 
 /**
- *
- * @param values
- * @returns
+ * Finds the minimum value in an array using reduce with ternary operator.
+ * @param {Array<number>} values - The array of numbers to search.
+ * @returns {number} The minimum value in the array.
  */
 function reduceTernaryMin (values) {
   return values.reduce(
@@ -43,9 +43,9 @@ function reduceTernaryMin (values) {
 }
 
 /**
- *
- * @param values
- * @returns
+ * Finds the minimum value in an array by sorting.
+ * @param {Array<number>} values - The array of numbers to search.
+ * @returns {number} The minimum value in the array.
  */
 function sortMin (values) {
   return values.sort((a, b) => a - b)[0]

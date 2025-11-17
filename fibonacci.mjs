@@ -3,8 +3,9 @@ import { bench, group, run } from 'tatami-ng'
 const number = 30
 
 /**
- * @param num
- * @returns
+ * Calculates the Fibonacci number at position num using a loop with array.
+ * @param {number} num - The position in the Fibonacci sequence.
+ * @returns {number} The Fibonacci number at the specified position.
  */
 function fibonacciLoop (num) {
   const fib = []
@@ -17,9 +18,9 @@ function fibonacciLoop (num) {
 }
 
 /**
- *
- * @param num
- * @returns
+ * Calculates the Fibonacci number at position num using a while loop.
+ * @param {number} num - The position in the Fibonacci sequence.
+ * @returns {number} The Fibonacci number at the specified position.
  */
 function fibonacciLoopWhile (num) {
   let current = 1
@@ -33,8 +34,9 @@ function fibonacciLoopWhile (num) {
 }
 
 /**
- * @param num
- * @returns
+ * Calculates the Fibonacci number at position num using recursion.
+ * @param {number} num - The position in the Fibonacci sequence.
+ * @returns {number} The Fibonacci number at the specified position.
  */
 function fibonacciRecursion (num) {
   if (num <= 1) return num
@@ -42,9 +44,10 @@ function fibonacciRecursion (num) {
 }
 
 /**
- * @param num
- * @param memo
- * @returns
+ * Calculates the Fibonacci number at position num using recursion with memoization.
+ * @param {number} num - The position in the Fibonacci sequence.
+ * @param {{[key: number]: number}} [memo] - The memoization object to cache results.
+ * @returns {number} The Fibonacci number at the specified position.
  */
 function fibonacciRecursionMemoization (num, memo) {
   memo = memo || {}

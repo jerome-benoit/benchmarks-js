@@ -2,9 +2,10 @@ import { randomInt } from 'node:crypto'
 import { bench, group, run } from 'tatami-ng'
 
 /**
- * @param numberOfWorkers
- * @param maxNumberOfTasksPerWorker
- * @returns
+ * Generates a random tasks map for benchmarking.
+ * @param {number} numberOfWorkers - The number of workers.
+ * @param {number} maxNumberOfTasksPerWorker - The maximum number of tasks per worker.
+ * @returns {Map} A map with worker IDs as keys and task counts as values.
  */
 function generateRandomTasksMap (
   numberOfWorkers,
@@ -21,8 +22,9 @@ function generateRandomTasksMap (
 const tasksMap = generateRandomTasksMap(60, 20)
 
 /**
- * @param tasksMap
- * @returns
+ * Selects the task with minimum value using array sort.
+ * @param {Map} tasksMap - The map of tasks to search.
+ * @returns {Array} The task entry with the minimum value.
  */
 function arraySortSelect (tasksMap) {
   const tasksArray = Array.from(tasksMap)
@@ -37,8 +39,9 @@ function arraySortSelect (tasksMap) {
 }
 
 /**
- * @param tasksMap
- * @returns
+ * Selects the task with minimum value using a loop.
+ * @param {Map} tasksMap - The map of tasks to search.
+ * @returns {Array|number} The task entry with the minimum value.
  */
 function loopSelect (tasksMap) {
   let minKey
@@ -67,12 +70,14 @@ const randomPivotIndexSelect = (leftIndex, rightIndex) => {
 }
 
 /**
- * @param array
- * @param leftIndex
- * @param rightIndex
- * @param pivotIndex
- * @param compare
- * @returns
+ * Partitions an array for quickselect algorithm.
+ * @template T
+ * @param {Array<T>} array - The array to partition.
+ * @param {number} leftIndex - The left index of the partition range.
+ * @param {number} rightIndex - The right index of the partition range.
+ * @param {number} pivotIndex - The index of the pivot element.
+ * @param {(a: T, b: T) => boolean} compare - The comparison function.
+ * @returns {number} The final position of the pivot element.
  */
 function partition (
   array,
@@ -95,8 +100,9 @@ function partition (
 }
 
 /**
- * @param tasksMap
- * @returns
+ * Selects task using quickselect with loop implementation.
+ * @param {Map} tasksMap - The map of tasks to search.
+ * @returns {Array} The task entry with the minimum value.
  */
 function quickSelectLoop (tasksMap) {
   const tasksArray = Array.from(tasksMap)
@@ -107,8 +113,9 @@ function quickSelectLoop (tasksMap) {
 }
 
 /**
- * @param tasksMap
- * @returns
+ * Selects task using quickselect with loop and random pivot.
+ * @param {Map} tasksMap - The map of tasks to search.
+ * @returns {Array} The task entry with the minimum value.
  */
 function quickSelectLoopRandomPivot (tasksMap) {
   const tasksArray = Array.from(tasksMap)
@@ -126,8 +133,9 @@ function quickSelectLoopRandomPivot (tasksMap) {
 }
 
 /**
- * @param tasksMap
- * @returns
+ * Selects task using quickselect with recursion.
+ * @param {Map} tasksMap - The map of tasks to search.
+ * @returns {Array} The task entry with the minimum value.
  */
 function quickSelectRecursion (tasksMap) {
   const tasksArray = Array.from(tasksMap)
@@ -138,8 +146,9 @@ function quickSelectRecursion (tasksMap) {
 }
 
 /**
- * @param tasksMap
- * @returns
+ * Selects task using quickselect with recursion and random pivot.
+ * @param {Map} tasksMap - The map of tasks to search.
+ * @returns {Array} The task entry with the minimum value.
  */
 function quickSelectRecursionRandomPivot (tasksMap) {
   const tasksArray = Array.from(tasksMap)
@@ -157,13 +166,15 @@ function quickSelectRecursionRandomPivot (tasksMap) {
 }
 
 /**
- * @param array
- * @param k
- * @param leftIndex
- * @param rightIndex
- * @param compare
- * @param pivotIndexSelect
- * @returns
+ * Quickselect algorithm using loop implementation.
+ * @template T
+ * @param {Array<T>} array - The array to search.
+ * @param {number} k - The k-th element to find.
+ * @param {number} leftIndex - The left boundary index.
+ * @param {number} rightIndex - The right boundary index.
+ * @param {(a: T, b: T) => boolean} compare - The comparison function.
+ * @param {(leftIndex: number, rightIndex: number) => number} pivotIndexSelect - The pivot selection function.
+ * @returns {T} The k-th element.
  */
 function selectLoop (
   array,
@@ -188,13 +199,15 @@ function selectLoop (
 }
 
 /**
- * @param array
- * @param k
- * @param leftIndex
- * @param rightIndex
- * @param compare
- * @param pivotIndexSelect
- * @returns
+ * Quickselect algorithm using recursion.
+ * @template T
+ * @param {Array<T>} array - The array to search.
+ * @param {number} k - The k-th element to find.
+ * @param {number} leftIndex - The left boundary index.
+ * @param {number} rightIndex - The right boundary index.
+ * @param {(a: T, b: T) => boolean} compare - The comparison function.
+ * @param {(leftIndex: number, rightIndex: number) => number} pivotIndexSelect - The pivot selection function.
+ * @returns {T} The k-th element.
  */
 function selectRecursion (
   array,
@@ -217,9 +230,11 @@ function selectRecursion (
 }
 
 /**
- * @param array
- * @param index1
- * @param index2
+ * Swaps two elements in an array.
+ * @param {Array} array - The array containing elements to swap.
+ * @param {number} index1 - The index of the first element.
+ * @param {number} index2 - The index of the second element.
+ * @returns {void}
  */
 function swap (array, index1, index2) {
   const tmp = array[index1]
