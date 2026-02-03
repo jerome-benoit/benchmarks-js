@@ -64,7 +64,7 @@
   "dependencies": {
     "deep-clone": "^4.0.0",
     "deepmerge": "^4.3.1",
-    "hash-object": "^5.0.1",
+    "hash-object": "^5.1.0",
     "just-clone": "^6.2.0",
     "lodash": "^4.17.23",
     "node-object-hash": "^3.1.1",
@@ -75,8 +75,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.13",
-    "@commitlint/cli": "^20.4.0",
-    "@commitlint/config-conventional": "^20.4.0",
+    "@commitlint/cli": "^20.4.1",
+    "@commitlint/config-conventional": "^20.4.1",
     "@eslint/js": "^9.39.2",
     "eslint": "^9.39.2",
     "eslint-plugin-jsdoc": "^62.5.0",
