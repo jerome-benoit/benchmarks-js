@@ -1,34 +1,34 @@
 import deepClone from 'deep-clone'
 import clone from 'just-clone'
 import _ from 'lodash'
-import { clone as rambdaClone } from 'rambda'
-import { bench, group, run } from 'tatami-ng'
+import { Bench } from 'tinybench'
 
 import { generateRandomObject } from './benchmark-utils.mjs'
 
 const object = generateRandomObject()
 
-group(`Deep clone object with ${Object.keys(object).length} keys`, () => {
-  bench('JSON stringify/parse', (obj = object) => {
-    JSON.parse(JSON.stringify(obj))
-  })
-  bench('structuredClone', (obj = object) => {
-    structuredClone(obj)
-  })
-  bench('lodash cloneDeep', (obj = object) => {
-    _.cloneDeep(obj)
-  })
-  bench('rambda clone', (obj = object) => {
-    rambdaClone(obj)
-  })
-  bench('just-clone', (obj = object) => {
-    clone(obj)
-  })
-  bench('deep-clone', (obj = object) => {
-    deepClone(obj)
-  })
+const bench = new Bench({
+  name: `Deep clone object (${JSON.stringify(object)})`,
+  time: 100,
 })
 
-await run({
-  units: true,
-})
+bench
+  .add('JSON stringify/parse', (obj = object) => {
+    JSON.parse(JSON.stringify(obj))
+  })
+  .add('structuredClone', (obj = object) => {
+    structuredClone(obj)
+  })
+  .add('lodash cloneDeep', (obj = object) => {
+    _.cloneDeep(obj)
+  })
+  .add('just-clone', (obj = object) => {
+    clone(obj)
+  })
+  .add('deep-clone', (obj = object) => {
+    deepClone(obj)
+  })
+
+await bench.run()
+
+console.table(bench.table())

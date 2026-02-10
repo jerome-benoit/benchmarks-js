@@ -1,22 +1,24 @@
 import _ from 'lodash'
-import { bench, group, run } from 'tatami-ng'
+import { Bench } from 'tinybench'
 
 import { generateRandomObject } from './benchmark-utils.mjs'
 
 const object = generateRandomObject()
 
-group(`Shallow clone object with ${Object.keys(object).length} keys`, () => {
-  bench('Spread', () => {
-    return { ...object }
-  })
-  bench('Object assign', () => {
-    return Object.assign({}, object)
-  })
-  bench('lodash clone', () => {
-    _.clone(object)
-  })
+const bench = new Bench({
+  name: `Shallow clone object with ${Object.keys(object).length} keys`,
+  time: 100,
 })
 
-await run({
-  units: true,
+bench.add('Spread', () => {
+  return { ...object }
 })
+bench.add('Object assign', () => {
+  return Object.assign({}, object)
+})
+bench.add('lodash clone', () => {
+  _.clone(object)
+})
+
+await bench.run()
+console.table(bench.table())

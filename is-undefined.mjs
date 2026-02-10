@@ -1,14 +1,18 @@
-import { bench, group, run } from 'tatami-ng'
+import { Bench } from 'tinybench'
 
-group('Is undefined', () => {
-  bench('=== undefined', (value = undefined) => {
+const bench = new Bench({
+  name: 'Is undefined',
+  time: 100,
+})
+
+bench
+  .add('=== undefined', (value = undefined) => {
     return value === undefined
   })
-  bench("typeof === 'undefined'", (value = undefined) => {
+  .add("typeof === 'undefined'", (value = undefined) => {
     return typeof value === 'undefined'
   })
-})
 
-await run({
-  units: true,
-})
+await bench.run()
+
+console.table(bench.table())

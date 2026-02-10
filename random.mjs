@@ -1,5 +1,5 @@
 import { randomInt } from 'node:crypto'
-import { bench, group, run } from 'tatami-ng'
+import { Bench } from 'tinybench'
 
 import {
   secureRandom,
@@ -65,21 +65,20 @@ function getSecureRandomIntegerWithRandomValues (
   return Math.floor(secureRandomWithRandomValues() * (max + 1))
 }
 
-group('Random Integer Generator', () => {
-  bench('Secure random integer generator', () => {
-    getSecureRandomInteger(maximum)
-  })
-  bench('Secure random with getRandomValues() integer generator', () => {
-    getSecureRandomIntegerWithRandomValues(maximum)
-  })
-  bench('Crypto random integer generator', () => {
-    randomInt(maximum)
-  })
-  bench('Math random integer generator', () => {
-    getRandomInteger(maximum)
-  })
+const bench = new Bench({ name: 'Random Integer Generator', time: 100 })
+
+bench.add('Secure random integer generator', () => {
+  getSecureRandomInteger(maximum)
+})
+bench.add('Secure random with getRandomValues() integer generator', () => {
+  getSecureRandomIntegerWithRandomValues(maximum)
+})
+bench.add('Crypto random integer generator', () => {
+  randomInt(maximum)
+})
+bench.add('Math random integer generator', () => {
+  getRandomInteger(maximum)
 })
 
-await run({
-  units: true,
-})
+await bench.run()
+console.table(bench.table())

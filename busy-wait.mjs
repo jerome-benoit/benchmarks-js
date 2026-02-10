@@ -1,4 +1,4 @@
-import { bench, group, run } from 'tatami-ng'
+import { Bench } from 'tinybench'
 
 import { sleep } from './benchmark-utils.mjs'
 
@@ -67,21 +67,20 @@ async function sleepTimeoutBusyWait (timeoutMs, intervalMs = interval) {
   } while (performance.now() < timeoutTimestampMs)
 }
 
-group('Busy wait', () => {
-  bench('dummyTimeoutBusyWait', () => {
-    dummyTimeoutBusyWait(timeout)
-  })
-  bench('sleepTimeoutBusyWait', async () => {
-    await sleepTimeoutBusyWait(timeout)
-  })
-  bench('divideAndConquerTimeoutBusyWait', async () => {
-    await divideAndConquerTimeoutBusyWait(timeout)
-  })
-  bench('setIntervalTimeoutBusyWait', async () => {
-    await setIntervalTimeoutBusyWait(timeout)
-  })
+const bench = new Bench({ name: 'Busy wait', time: timeout })
+
+bench.add('dummyTimeoutBusyWait', () => {
+  dummyTimeoutBusyWait(timeout)
+})
+bench.add('sleepTimeoutBusyWait', async () => {
+  await sleepTimeoutBusyWait(timeout)
+})
+bench.add('divideAndConquerTimeoutBusyWait', async () => {
+  await divideAndConquerTimeoutBusyWait(timeout)
+})
+bench.add('setIntervalTimeoutBusyWait', async () => {
+  await setIntervalTimeoutBusyWait(timeout)
 })
 
-await run({
-  units: true,
-})
+await bench.run()
+console.table(bench.table())

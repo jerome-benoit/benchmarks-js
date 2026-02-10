@@ -1,32 +1,36 @@
-import { bench, group, run } from 'tatami-ng'
+import { Bench } from 'tinybench'
 
 import { generateRandomNumberArray } from './benchmark-utils.mjs'
 
 const size = 10000
 let testArray = generateRandomNumberArray(size)
 
-group(`Empty array with ${size} elements`, () => {
-  bench('length = 0', () => {
+const bench = new Bench({
+  name: `Empty array with ${size} elements`,
+  time: 100,
+})
+
+bench
+  .add('length = 0', () => {
     testArray.length = 0
   })
-  bench('pop loop', () => {
+  .add('pop loop', () => {
     while (testArray.length > 0) {
       testArray.pop()
     }
   })
-  bench('splice', () => {
+  .add('splice', () => {
     testArray.splice(0, testArray.length)
   })
-  bench('shift loop', () => {
+  .add('shift loop', () => {
     while (testArray.length > 0) {
       testArray.shift()
     }
   })
-  bench('initialize', () => {
+  .add('initialize', () => {
     testArray = []
   })
-})
 
-await run({
-  units: true,
-})
+await bench.run()
+
+console.table(bench.table())

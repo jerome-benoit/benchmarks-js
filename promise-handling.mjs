@@ -1,4 +1,4 @@
-import { bench, group, run } from 'tatami-ng'
+import { Bench } from 'tinybench'
 
 /**
  *
@@ -9,30 +9,34 @@ async function asyncFunction () {
   })
 }
 
-group('Promise handling', () => {
-  bench('await promise', async () => {
+const bench = new Bench({
+  name: 'Promise handling',
+  time: 100,
+})
+
+bench
+  .add('await promise', async () => {
     try {
       return await asyncFunction()
     } catch (e) {
       console.error(e)
     }
   })
-  bench('promise with then().catch()', () => {
+  .add('promise with then().catch()', () => {
     asyncFunction()
       .then(r => {
         return r
       })
       .catch(console.error)
   })
-  bench('voided promise', () => {
+  .add('voided promise', () => {
     // eslint-disable-next-line no-void
     void asyncFunction()
   })
-  bench('mishandled promise', () => {
+  .add('mishandled promise', () => {
     asyncFunction()
   })
-})
 
-await run({
-  units: true,
-})
+await bench.run()
+
+console.table(bench.table())

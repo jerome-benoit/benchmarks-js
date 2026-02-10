@@ -1,4 +1,4 @@
-import { bench, group, run } from 'tatami-ng'
+import { Bench } from 'tinybench'
 
 import { generateRandomNumberArray } from './benchmark-utils.mjs'
 
@@ -51,24 +51,28 @@ function sortMin (values) {
   return values.sort((a, b) => a - b)[0]
 }
 
-group(`Min from ${size} numbers`, () => {
-  bench('Math.min', () => {
-    Math.min(...testArray)
-  })
-  bench('loopMin', () => {
-    loopMin(testArray)
-  })
-  bench('reduceTernaryMin', () => {
-    reduceTernaryMin(testArray)
-  })
-  bench('reduceMathMin', () => {
-    reduceMathMin(testArray)
-  })
-  bench('sortMin', () => {
-    sortMin(testArray)
-  })
+const bench = new Bench({
+  name: `Min from ${size} numbers`,
+  time: 100,
 })
 
-await run({
-  units: true,
-})
+bench
+  .add('Math.min', () => {
+    Math.min(...testArray)
+  })
+  .add('loopMin', () => {
+    loopMin(testArray)
+  })
+  .add('reduceTernaryMin', () => {
+    reduceTernaryMin(testArray)
+  })
+  .add('reduceMathMin', () => {
+    reduceMathMin(testArray)
+  })
+  .add('sortMin', () => {
+    sortMin(testArray)
+  })
+
+await bench.run()
+
+console.table(bench.table())

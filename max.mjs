@@ -1,4 +1,4 @@
-import { bench, group, run } from 'tatami-ng'
+import { Bench } from 'tinybench'
 
 import { generateRandomNumberArray } from './benchmark-utils.mjs'
 
@@ -51,24 +51,28 @@ function sortMax (values) {
   return values.sort((a, b) => b - a)[0]
 }
 
-group(`Max from ${size} numbers`, () => {
-  bench('Math.max', () => {
-    Math.max(...testArray)
-  })
-  bench('loopMax', () => {
-    loopMax(testArray)
-  })
-  bench('reduceTernaryMax', () => {
-    reduceTernaryMax(testArray)
-  })
-  bench('reduceMathMax', () => {
-    reduceMathMax(testArray)
-  })
-  bench('sortMax', () => {
-    sortMax(testArray)
-  })
+const bench = new Bench({
+  name: `Max from ${size} numbers`,
+  time: 100,
 })
 
-await run({
-  units: true,
-})
+bench
+  .add('Math.max', () => {
+    Math.max(...testArray)
+  })
+  .add('loopMax', () => {
+    loopMax(testArray)
+  })
+  .add('reduceTernaryMax', () => {
+    reduceTernaryMax(testArray)
+  })
+  .add('reduceMathMax', () => {
+    reduceMathMax(testArray)
+  })
+  .add('sortMax', () => {
+    sortMax(testArray)
+  })
+
+await bench.run()
+
+console.table(bench.table())

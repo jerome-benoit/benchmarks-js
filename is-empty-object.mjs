@@ -1,16 +1,20 @@
 import _ from 'lodash'
-import { isEmpty } from 'rambda'
-import { bench, group, run } from 'tatami-ng'
+import { Bench } from 'tinybench'
 
 import { generateRandomObject } from './benchmark-utils.mjs'
 
 const object = generateRandomObject()
 
-group(`Is empty object with ${Object.keys(object).length} keys`, () => {
-  bench('Reflect keys', (obj = object) => {
+const bench = new Bench({
+  name: `Is empty object with ${Object.keys(object).length} keys`,
+  time: 100,
+})
+
+bench
+  .add('Reflect keys', (obj = object) => {
     return obj?.constructor === Object && Reflect.ownKeys(obj).length === 0
   })
-  bench('Keys iteration', (obj = object) => {
+  .add('Keys iteration', (obj = object) => {
     if (obj?.constructor !== Object) return false
     // Iterates over the keys of an object, if
     // any exist, return false.
@@ -18,17 +22,13 @@ group(`Is empty object with ${Object.keys(object).length} keys`, () => {
     for (const _ in obj) return false
     return true
   })
-  bench('Object keys', (obj = object) => {
+  .add('Object keys', (obj = object) => {
     return obj?.constructor === Object && Object.keys(obj).length === 0
   })
-  bench('lodash isEmpty', (obj = object) => {
+  .add('lodash isEmpty', (obj = object) => {
     _.isEmpty(obj)
   })
-  bench('rambda isEmpty', (obj = object) => {
-    isEmpty(obj)
-  })
-})
 
-await run({
-  units: true,
-})
+await bench.run()
+
+console.table(bench.table())

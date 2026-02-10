@@ -1,4 +1,4 @@
-import { bench, group, run } from 'tatami-ng'
+import { Bench } from 'tinybench'
 
 const sampleObj = {
   address: {
@@ -11,12 +11,15 @@ const sampleObj = {
   name: 'Sid',
 }
 
-group('JSON stringify', () => {
-  bench('JSON.stringify', () => {
-    JSON.stringify(sampleObj)
-  })
+const bench = new Bench({
+  name: 'JSON stringify',
+  time: 100,
 })
 
-await run({
-  units: true,
+bench.add('JSON.stringify', () => {
+  JSON.stringify(sampleObj)
 })
+
+await bench.run()
+
+console.table(bench.table())

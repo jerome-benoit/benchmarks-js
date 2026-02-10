@@ -1,16 +1,15 @@
 import { randomUUID } from 'node:crypto'
-import { bench, group, run } from 'tatami-ng'
+import { Bench } from 'tinybench'
 import { v4 as uuid } from 'uuid'
 
-group('UUIDv4 generator', () => {
-  bench('randomUUID', () => {
-    randomUUID()
-  })
-  bench('uuid', () => {
-    uuid()
-  })
+const bench = new Bench({ name: 'UUIDv4 generator', time: 100 })
+
+bench.add('randomUUID', () => {
+  randomUUID()
+})
+bench.add('uuid', () => {
+  uuid()
 })
 
-await run({
-  units: true,
-})
+await bench.run()
+console.table(bench.table())

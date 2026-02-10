@@ -1,4 +1,4 @@
-import { bench, group, run } from 'tatami-ng'
+import { Bench } from 'tinybench'
 
 const number = 30
 
@@ -60,21 +60,22 @@ function fibonacciRecursionMemoization (num, memo) {
     fibonacciRecursionMemoization(num - 2, memo))
 }
 
-group(`Fibonacci number ${number}`, () => {
-  bench('fibonacciLoop', () => {
+const bench = new Bench({ name: `Fibonacci number ${number}` })
+
+bench
+  .add('fibonacciLoop', () => {
     fibonacciLoop(number)
   })
-  bench('fibonacciLoopWhile', () => {
+  .add('fibonacciLoopWhile', () => {
     fibonacciLoopWhile(number)
   })
-  bench('fibonacciRecursion', () => {
+  .add('fibonacciRecursion', () => {
     fibonacciRecursion(number)
   })
-  bench('fibonacciRecursionMemoization', () => {
+  .add('fibonacciRecursionMemoization', () => {
     fibonacciRecursionMemoization(number)
   })
-})
 
-await run({
-  units: true,
-})
+await bench.run()
+
+console.table(bench.results)
