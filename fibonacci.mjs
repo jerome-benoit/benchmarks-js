@@ -78,4 +78,4 @@ bench
 
 await bench.run()
 
-console.table(bench.results)
+console.table(bench.table())
