@@ -59,6 +59,7 @@
     "benchmark:string-concatenation": "node string-concatenation.mjs",
     "benchmark:type-checking": "node type-checking.mjs",
     "benchmark:uuid-generator": "node uuid-generator.mjs",
+    "benchmark:all": "run-s benchmark:*",
     "format": "biome format . --write; eslint . --cache --fix",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --cache --fix",
@@ -94,6 +95,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "neostandard": "^0.12.2",
+    "npm-run-all2": "^8.0.4",
     "prettier": "^3.8.1"
   }
 }
