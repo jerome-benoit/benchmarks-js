@@ -1,4 +1,3 @@
-import { nanoid } from 'nanoid'
 import { randomUUID } from 'node:crypto'
 import { Bench } from 'tinybench'
 import { v4 as uuid } from 'uuid'
@@ -10,9 +9,6 @@ bench.add('randomUUID', () => {
 })
 bench.add('uuid', () => {
   uuid()
-})
-bench.add('nanoid', () => {
-  nanoid()
 })
 
 await bench.run()
