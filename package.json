@@ -69,7 +69,6 @@
     "lodash": "^4.17.23",
     "node-object-hash": "^3.1.1",
     "object-hash": "^3.0.0",
-    "rambda": "^11.1.0",
     "tinybench": "^6.0.0",
     "uuid": "^13.0.0"
   },

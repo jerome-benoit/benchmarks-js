@@ -1,6 +1,5 @@
 import deepMerge from 'deepmerge'
 import _ from 'lodash'
-import { merge as rambdaMerge } from 'rambda'
 import { Bench } from 'tinybench'
 
 import { generateRandomObject } from './benchmark-utils.mjs'
@@ -18,9 +17,6 @@ const bench = new Bench({
 bench
   .add('lodash merge', (obj = object) => {
     _.merge(obj, objectToMerge)
-  })
-  .add('rambda merge', (obj = object) => {
-    rambdaMerge(obj, objectToMerge)
   })
   .add('deepmerge', (obj = object) => {
     deepMerge(obj, objectToMerge)

@@ -32,9 +32,6 @@ importers:
       object-hash:
         specifier: ^3.0.0
         version: 3.0.0
-      rambda:
-        specifier: ^11.1.0
-        version: 11.1.0
       tinybench:
         specifier: ^6.0.0
         version: 6.0.0
@@ -1513,9 +1510,6 @@ packages:
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
-
-  rambda@11.1.0:
-    resolution: {integrity: sha512-trnSijNtQHw8QecCZR31nLAa1Ixg6QJPsUIx2iqy5ZH5jdY1Z7/DvH9bMTS4rSGJW5Tza0ST9eG6RRqAbQaohQ==}
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -3441,8 +3435,6 @@ snapshots:
       react-is: 16.13.1
 
   punycode@2.3.1: {}
-
-  rambda@11.1.0: {}
 
   react-is@16.13.1: {}
 
