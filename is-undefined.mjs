@@ -12,6 +12,13 @@ bench
   .add("typeof === 'undefined'", (value = undefined) => {
     return typeof value === 'undefined'
   })
+  .add('=== void 0', (value = undefined) => {
+    // eslint-disable-next-line no-void
+    return value === void 0
+  })
+  .add('Object.is(value, undefined)', (value = undefined) => {
+    return Object.is(value, undefined)
+  })
 
 await bench.run()
 
