@@ -65,7 +65,10 @@ function getSecureRandomIntegerWithRandomValues (
   return Math.floor(secureRandomWithRandomValues() * (max + 1))
 }
 
-const bench = new Bench({ name: 'Random Integer Generator', time: 100 })
+const bench = new Bench({
+  name: 'Random Integer Generator',
+  time: 100,
+})
 
 bench.add('Secure random integer generator', () => {
   getSecureRandomInteger(maximum)

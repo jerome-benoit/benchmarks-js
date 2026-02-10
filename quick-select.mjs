@@ -242,7 +242,10 @@ function swap (array, index1, index2) {
   array[index2] = tmp
 }
 
-const bench = new Bench({ name: 'Quick select', time: 100 })
+const bench = new Bench({
+  name: 'Quick select',
+  time: 100,
+})
 
 bench.add('Loop select', () => {
   loopSelect(tasksMap)

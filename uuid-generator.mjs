@@ -2,7 +2,10 @@ import { randomUUID } from 'node:crypto'
 import { Bench } from 'tinybench'
 import { v4 as uuid } from 'uuid'
 
-const bench = new Bench({ name: 'UUIDv4 generator', time: 100 })
+const bench = new Bench({
+  name: 'UUIDv4 generator',
+  time: 100,
+})
 
 bench.add('randomUUID', () => {
   randomUUID()

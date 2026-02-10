@@ -60,7 +60,10 @@ function fibonacciRecursionMemoization (num, memo) {
     fibonacciRecursionMemoization(num - 2, memo))
 }
 
-const bench = new Bench({ name: `Fibonacci number ${number}` })
+const bench = new Bench({
+  name: `Fibonacci number ${number}`,
+  time: 100,
+})
 
 bench
   .add('fibonacciLoop', () => {
