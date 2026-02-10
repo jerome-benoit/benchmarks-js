@@ -1,5 +1,6 @@
 import deepMerge from 'deepmerge'
 import _ from 'lodash'
+import * as R from 'ramda'
 import { Bench } from 'tinybench'
 
 import { generateRandomObject } from './benchmark-utils.mjs'
@@ -20,6 +21,9 @@ bench
   })
   .add('deepmerge', (obj = object) => {
     deepMerge(obj, objectToMerge)
+  })
+  .add('ramda mergeDeepRight', (obj = object) => {
+    R.mergeDeepRight(obj, objectToMerge)
   })
 
 await bench.run()

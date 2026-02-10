@@ -1,6 +1,7 @@
 import deepClone from 'deep-clone'
 import clone from 'just-clone'
 import _ from 'lodash'
+import * as R from 'ramda'
 import { Bench } from 'tinybench'
 
 import { generateRandomObject } from './benchmark-utils.mjs'
@@ -27,6 +28,9 @@ bench
   })
   .add('deep-clone', (obj = object) => {
     deepClone(obj)
+  })
+  .add('ramda clone', (obj = object) => {
+    R.clone(obj)
   })
 
 await bench.run()

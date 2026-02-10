@@ -1,3 +1,4 @@
+import * as R from 'ramda'
 import { Bench } from 'tinybench'
 
 import { generateRandomNumberArray } from './benchmark-utils.mjs'
@@ -71,6 +72,9 @@ bench
   })
   .add('sortMin', () => {
     sortMin(testArray)
+  })
+  .add('ramda reduce min', () => {
+    R.reduce(R.min, Number.POSITIVE_INFINITY, testArray)
   })
 
 await bench.run()
