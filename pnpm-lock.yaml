@@ -38,6 +38,9 @@ importers:
       tatami-ng:
         specifier: ^0.8.18
         version: 0.8.18(typescript@5.9.3)
+      tinybench:
+        specifier: ^6.0.0
+        version: 6.0.0
       uuid:
         specifier: ^13.0.0
         version: 13.0.0
@@ -1715,6 +1718,10 @@ packages:
     hasBin: true
     peerDependencies:
       typescript: ^5.4.3
+
+  tinybench@6.0.0:
+    resolution: {integrity: sha512-BWlWpVbbZXaYjRV0twGLNQO00Zj4HA/sjLOQP2IvzQqGwRGp+2kh7UU3ijyJ3ywFRogYDRbiHDMrUOfaMnN56g==}
+    engines: {node: '>=20.0.0'}
 
   tinyexec@1.0.2:
     resolution: {integrity: sha512-W/KYk+NFhkmsYpuHq5JykngiOCnxeVL8v8dFnqxSD8qEEdRfXk1SDM6JzNqcERbcGYj9tMrDQBYV9cjgnunFIg==}
@@ -3686,6 +3693,8 @@ snapshots:
     dependencies:
       peowly: 1.3.2
       typescript: 5.9.3
+
+  tinybench@6.0.0: {}
 
   tinyexec@1.0.2: {}
 
