@@ -1,4 +1,5 @@
 import deepClone from 'deep-clone'
+import { produce } from 'immer'
 import clone from 'just-clone'
 import _ from 'lodash'
 import { clone as ramdaClone } from 'ramda'
@@ -35,6 +36,9 @@ bench
   })
   .add('remeda clone', (obj = object) => {
     remedaClone(obj)
+  })
+  .add('immer produce', (obj = object) => {
+    produce(obj, draft => ({ ...draft }))
   })
 
 await bench.run()
