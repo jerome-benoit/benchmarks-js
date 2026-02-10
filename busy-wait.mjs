@@ -67,7 +67,12 @@ async function sleepTimeoutBusyWait (timeoutMs, intervalMs = interval) {
   } while (performance.now() < timeoutTimestampMs)
 }
 
-const bench = new Bench({ name: 'Busy wait', time: timeout + interval })
+const bench = new Bench({
+  iterations: 2,
+  name: 'Busy wait',
+  time: 5000,
+  warmup: false,
+})
 
 bench.add('dummyTimeoutBusyWait', () => {
   dummyTimeoutBusyWait(timeout)
