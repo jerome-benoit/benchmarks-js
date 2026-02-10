@@ -1,5 +1,6 @@
 import _ from 'lodash'
-import * as R from 'ramda'
+import { isEmpty as ramdaIsEmpty } from 'ramda'
+import { isEmpty as remedaIsEmpty } from 'remeda'
 import { Bench } from 'tinybench'
 
 import { generateRandomObject } from './benchmark-utils.mjs'
@@ -30,7 +31,10 @@ bench
     _.isEmpty(obj)
   })
   .add('ramda isEmpty', (obj = object) => {
-    R.isEmpty(obj)
+    ramdaIsEmpty(obj)
+  })
+  .add('remeda isEmpty', (obj = object) => {
+    remedaIsEmpty(obj)
   })
 
 await bench.run()

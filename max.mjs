@@ -1,4 +1,4 @@
-import * as R from 'ramda'
+import { max as ramdaMax, reduce as ramdaReduce } from 'ramda'
 import { Bench } from 'tinybench'
 
 import { generateRandomNumberArray } from './benchmark-utils.mjs'
@@ -74,7 +74,7 @@ bench
     sortMax(testArray)
   })
   .add('ramda reduce max', () => {
-    R.reduce(R.max, Number.NEGATIVE_INFINITY, testArray)
+    ramdaReduce(ramdaMax, Number.NEGATIVE_INFINITY, testArray)
   })
 
 await bench.run()
