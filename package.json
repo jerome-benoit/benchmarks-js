@@ -27,6 +27,11 @@
       "url": "https://github.com/sponsors/jerome-benoit"
     }
   ],
+  "pnpm": {
+    "overrides": {
+      "minimatch@<10.2.1": ">=10.2.1"
+    }
+  },
   "scripts": {
     "prepare": "node prepare.mjs",
     "benchmark:array-filter": "node array-filter.mjs",
