@@ -270,5 +270,8 @@ tags
 # pnpm
 package-lock.json
 
+# oh-my-opencode
+.sisyphus/
+
 *.orig
 benchmark/
