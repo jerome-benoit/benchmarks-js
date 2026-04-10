@@ -85,7 +85,7 @@
     "uuid": "^13.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.10",
+    "@biomejs/biome": "^2.4.11",
     "@commitlint/cli": "^20.5.0",
     "@commitlint/config-conventional": "^20.5.0",
     "@eslint/js": "^9.39.4",
@@ -96,6 +96,6 @@
     "lint-staged": "^16.4.0",
     "neostandard": "^0.13.0",
     "npm-run-all2": "^8.0.4",
-    "prettier": "^3.8.1"
+    "prettier": "^3.8.2"
   }
 }
