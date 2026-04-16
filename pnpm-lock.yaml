@@ -140,7 +140,7 @@ importers:
         version: 13.0.0
     devDependencies:
       '@biomejs/biome':
-        specifier: ^2.4.11
+        specifier: ^2.4.12
         version: 2.4.12
       '@commitlint/cli':
         specifier: ^20.5.0
