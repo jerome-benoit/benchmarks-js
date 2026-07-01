@@ -91,6 +91,6 @@
     "lint-staged": "^17.0.8",
     "neostandard": "^0.13.0",
     "npm-run-all2": "^9.0.2",
-    "prettier": "^3.8.5"
+    "prettier": "^3.9.1"
   }
 }
