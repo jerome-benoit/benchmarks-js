@@ -58,8 +58,8 @@ importers:
         specifier: ^9.39.4
         version: 9.39.4(jiti@2.6.1)
       eslint-plugin-jsdoc:
-        specifier: ^63.0.10
-        version: 63.0.10(eslint@9.39.4(jiti@2.6.1))
+        specifier: ^63.0.11
+        version: 63.0.12(eslint@9.39.4(jiti@2.6.1))
       eslint-plugin-perfectionist:
         specifier: ^5.9.1
         version: 5.9.1(eslint@9.39.4(jiti@2.6.1))(typescript@6.0.2)
@@ -231,8 +231,8 @@ packages:
     resolution: {integrity: sha512-12qHxvlKjHmP0PQ+17EREgC7lWyLwbph1RKcZQZ7k7ZWGmrxfxC9gadHGfvzr0g0u8BhiBGg3tks93txodlyRQ==}
     engines: {node: '>=22'}
 
-  '@es-joy/jsdoccomment@0.87.0':
-    resolution: {integrity: sha512-mFXZloZMzuJZXSHUmAFu/pXTk0ZJTJBluuAkrvbzidpTN8W6F2bpRFuedSH+85kbdlRLJqc+gfN+kD3JOLJK5g==}
+  '@es-joy/jsdoccomment@0.88.0':
+    resolution: {integrity: sha512-GK/HL/claLLNo5KG705auIlZMwEtmn88ofSGuLsmVZwKBqMPJhW9DiznYNq07QEqz9BPtA3LBfYImtZmhVvRAw==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
 
   '@es-joy/resolve.exports@1.2.0':
@@ -724,8 +724,8 @@ packages:
     peerDependencies:
       eslint: '>=8'
 
-  eslint-plugin-jsdoc@63.0.10:
-    resolution: {integrity: sha512-A9UIWsCquaKnit7rasXxYf12hhGIdDRjv65/RUE3AxbT6rdKBvr3MjH37g3gP+g4ipQMXuMn9slFKjO+vqNfkg==}
+  eslint-plugin-jsdoc@63.0.12:
+    resolution: {integrity: sha512-99VfBHyoLlF9n5w9wh+jLWDBzCgYd3tfw3M/aynAd+H2ylGHWLbde/GPTuo/5az3jMAN0fH7QzCYvEOY6u+Ypg==}
     engines: {node: ^22.13.0 || >=24}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
@@ -1457,6 +1457,11 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  semver@7.8.5:
+    resolution: {integrity: sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   set-function-length@1.2.2:
     resolution: {integrity: sha512-pgRc4hJ4/sNjWCSS9AmnS40x3bNMDTknHgL5UaMBTMyJnU90EgWh1Rz+MC9eFu4BuN/UwZjKQuY/1v3rM7HMfg==}
     engines: {node: '>= 0.4'}
@@ -1885,7 +1890,7 @@ snapshots:
 
   '@conventional-changelog/template@1.2.0': {}
 
-  '@es-joy/jsdoccomment@0.87.0':
+  '@es-joy/jsdoccomment@0.88.0':
     dependencies:
       '@types/estree': 1.0.9
       '@typescript-eslint/types': 8.61.1
@@ -2516,9 +2521,9 @@ snapshots:
       eslint: 9.39.4(jiti@2.6.1)
       eslint-compat-utils: 0.5.1(eslint@9.39.4(jiti@2.6.1))
 
-  eslint-plugin-jsdoc@63.0.10(eslint@9.39.4(jiti@2.6.1)):
+  eslint-plugin-jsdoc@63.0.12(eslint@9.39.4(jiti@2.6.1)):
     dependencies:
-      '@es-joy/jsdoccomment': 0.87.0
+      '@es-joy/jsdoccomment': 0.88.0
       '@es-joy/resolve.exports': 1.2.0
       are-docs-informative: 0.0.2
       comment-parser: 1.4.7
@@ -2530,7 +2535,7 @@ snapshots:
       html-entities: 2.6.0
       object-deep-merge: 2.0.1
       parse-imports-exports: 0.2.4
-      semver: 7.8.2
+      semver: 7.8.5
       spdx-expression-parse: 4.0.0
       to-valid-identifier: 1.0.0
     transitivePeerDependencies:
@@ -3309,6 +3314,8 @@ snapshots:
   semver@6.3.1: {}
 
   semver@7.8.2: {}
+
+  semver@7.8.5: {}
 
   set-function-length@1.2.2:
     dependencies:
