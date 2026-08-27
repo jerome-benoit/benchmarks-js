@@ -33,8 +33,8 @@ importers:
         specifier: ^0.32.0
         version: 0.32.0
       remeda:
-        specifier: ^2.42.0
-        version: 2.42.0
+        specifier: ^2.43.0
+        version: 2.45.0
       tinybench:
         specifier: ^6.1.3
         version: 6.1.3
@@ -1353,8 +1353,8 @@ packages:
     resolution: {integrity: sha512-dYqgNSZbDwkaJ2ceRd9ojCGjBq+mOm9LmtXnAnEGyHhN/5R7iDW2TRw3h+o/jCFxus3P2LfWIIiwowAjANm7IA==}
     engines: {node: '>= 0.4'}
 
-  remeda@2.42.0:
-    resolution: {integrity: sha512-wDnRk66DV3uXCvJ8yGVtgOtiaOJsyYlucaKWJKY9EAONW86I1OiYqtMbmVaUjv7M0qp4XiMBjJRamibvE8yA1Q==}
+  remeda@2.45.0:
+    resolution: {integrity: sha512-CTftZ0GJSox3CH77OhJemj20sXXUScH/kpkExD6t2LP3IG+mPKASBMFkbvWtsvzhU+54gKcgH38WWVihfr7bCA==}
     engines: {node: '>=18.0.0'}
 
   require-from-string@2.0.2:
@@ -3128,7 +3128,7 @@ snapshots:
       gopd: 1.2.0
       set-function-name: 2.0.2
 
-  remeda@2.42.0: {}
+  remeda@2.45.0: {}
 
   require-from-string@2.0.2: {}
 
