@@ -219,7 +219,7 @@ importers:
         specifier: ^64.5.4
         version: 64.5.4(eslint@10.11.0(jiti@2.6.1)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.2)
       eslint-plugin-perfectionist:
-        specifier: ^5.12.0
+        specifier: ^5.12.1
         version: 5.12.1(eslint@10.11.0(jiti@2.6.1)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.2)
       husky:
         specifier: ^9.1.7
