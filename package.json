@@ -10,9 +10,9 @@
   "type": "module",
   "volta": {
     "node": "24.21.0",
-    "pnpm": "12.8.2"
+    "pnpm": "12.9.1"
   },
-  "packageManager": "pnpm@12.8.2",
+  "packageManager": "pnpm@12.9.1",
   "repository": {
     "type": "git",
     "url": "git://github.com/jerome-benoit/benchmarks-js.git"
@@ -75,7 +75,7 @@
     "node-object-hash": "^3.1.1",
     "object-hash": "^3.0.0",
     "ramda": "^0.32.0",
-    "remeda": "^2.50.0",
+    "remeda": "^2.51.0",
     "tinybench": "^6.2.0",
     "uuid": "^14.0.2"
   },
@@ -84,8 +84,8 @@
     "@commitlint/cli": "^21.2.3",
     "@commitlint/config-conventional": "^21.2.3",
     "@eslint/js": "^10.0.1",
-    "eslint": "^10.11.0",
-    "eslint-plugin-jsdoc": "^65.0.1",
+    "eslint": "^10.12.0",
+    "eslint-plugin-jsdoc": "^65.1.0",
     "eslint-plugin-perfectionist": "^5.12.1",
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
