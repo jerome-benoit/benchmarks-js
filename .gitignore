@@ -275,3 +275,13 @@ package-lock.json
 
 *.orig
 benchmark/
+
+# mise local overrides
+mise.local.toml
+mise.*.local.toml
+.mise.local.toml
+.mise.*.local.toml
+mise.local.lock
+mise.*.local.lock
+.mise.local.lock
+.mise.*.local.lock
