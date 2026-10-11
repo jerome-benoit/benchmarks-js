@@ -15,7 +15,7 @@
       "onFail": "ignore"
     }
   },
-  "packageManager": "pnpm@12.10.1",
+  "packageManager": "pnpm@12.11.2",
   "repository": {
     "type": "git",
     "url": "git://github.com/jerome-benoit/benchmarks-js.git"
@@ -79,8 +79,8 @@
     "object-hash": "^3.0.0",
     "ramda": "^0.32.0",
     "remeda": "^2.51.0",
-    "tinybench": "^6.2.1",
-    "uuid": "^14.0.2"
+    "tinybench": "^6.2.2",
+    "uuid": "^14.0.3"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.15",
@@ -88,12 +88,12 @@
     "@commitlint/config-conventional": "^21.2.3",
     "@eslint/js": "^10.0.1",
     "eslint": "^10.12.0",
-    "eslint-plugin-jsdoc": "^65.2.0",
+    "eslint-plugin-jsdoc": "^65.3.0",
     "eslint-plugin-perfectionist": "^5.12.1",
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
-    "neostandard": "^0.14.0-next.1",
+    "neostandard": "^0.14.0",
     "npm-run-all2": "^9.0.3",
-    "prettier": "^3.9.9"
+    "prettier": "^3.9.10"
   }
 }
