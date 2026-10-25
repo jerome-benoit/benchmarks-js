@@ -45,6 +45,11 @@
     }
   },
   "files": {
-    "includes": ["**", "!pnpm-lock.yaml", "!benchmark/results/**"]
+    "includes": [
+      "**",
+      "!.github/**",
+      "!pnpm-lock.yaml",
+      "!benchmark/results/**"
+    ]
   }
 }
