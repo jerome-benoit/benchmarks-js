@@ -45,11 +45,11 @@
     }
   },
   "files": {
-    "includes": [
-      "**",
-      "!.github/**",
-      "!pnpm-lock.yaml",
-      "!benchmark/results/**"
-    ]
+    "includes": ["**", "!pnpm-lock.yaml", "!benchmark/results/**"]
+  },
+  "yaml": {
+    "formatter": {
+      "quoteStyle": "single"
+    }
   }
 }
