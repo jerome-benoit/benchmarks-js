@@ -44,6 +44,11 @@
       "allowComments": true
     }
   },
+  "yaml": {
+    "formatter": {
+      "quoteStyle": "single"
+    }
+  },
   "files": {
     "includes": ["**", "!pnpm-lock.yaml", "!benchmark/results/**"]
   }
