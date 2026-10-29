@@ -11,7 +11,7 @@
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "24.22.1",
+      "version": "24.22.2",
       "onFail": "ignore"
     }
   },
@@ -78,7 +78,7 @@
     "node-object-hash": "^3.1.1",
     "object-hash": "^3.0.0",
     "ramda": "^0.32.0",
-    "remeda": "^2.53.0",
+    "remeda": "^2.54.1",
     "tinybench": "^6.2.2",
     "uuid": "^14.0.3"
   },
