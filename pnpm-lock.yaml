@@ -191,7 +191,7 @@ importers:
         specifier: ^0.32.0
         version: 0.32.0
       remeda:
-        specifier: ^2.56.0
+        specifier: ^2.57.0
         version: 2.57.0
       tinybench:
         specifier: ^6.2.2
